@@ -115,3 +115,20 @@ create policy "Admins have full access to testimonials" on testimonials
 
 create policy "Admins can read contact submissions" on contact_submissions
   for select using (auth.role() = 'authenticated');
+
+-- Newsletter signups table
+create table if not exists newsletter_signups (
+  id uuid primary key default uuid_generate_v4(),
+  first_name text not null,
+  last_name text not null,
+  email text unique not null,
+  created_at timestamptz not null default now()
+);
+
+alter table newsletter_signups enable row level security;
+
+create policy "Anyone can sign up" on newsletter_signups
+  for insert with check (true);
+
+create policy "Admins can read signups" on newsletter_signups
+  for select using (auth.role() = 'authenticated');
