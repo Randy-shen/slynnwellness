@@ -119,7 +119,20 @@ export default function AdminSettingsPage() {
         const res = await fetch('/api/admin/settings')
         if (!res.ok) throw new Error('Failed to fetch')
         const data = await res.json()
-        setSettings(data)
+        // Ensure all fields have string defaults to prevent uncontrolled input errors
+        setSettings(prev => ({
+          ...prev,
+          ...data,
+          instagram_url: data.instagram_url ?? '',
+          facebook_url: data.facebook_url ?? '',
+          tiktok_url: data.tiktok_url ?? '',
+          yelp_url: data.yelp_url ?? '',
+          google_business_url: data.google_business_url ?? '',
+          hero_video_url: data.hero_video_url ?? '',
+          hero_poster_url: data.hero_poster_url ?? '',
+          google_maps_url: data.google_maps_url ?? '',
+          popup_description: data.popup_description ?? '',
+        }))
       } catch {
         showToast('Failed to load settings. Using defaults.', 'error')
       } finally {
@@ -336,6 +349,15 @@ export default function AdminSettingsPage() {
               onChange={handleChange}
               placeholder="https://tiktok.com/@slynnwellness"
               type="url"
+            />
+            <Field
+              label="Google Business URL"
+              name="google_business_url"
+              value={settings.google_business_url}
+              onChange={handleChange}
+              placeholder="https://g.page/slynn-wellness"
+              type="url"
+              hint="Your Google Business Profile link — shows as Google icon in footer"
             />
             <Field
               label="Yelp URL"

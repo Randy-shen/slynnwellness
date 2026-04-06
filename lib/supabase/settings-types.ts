@@ -20,6 +20,7 @@ export interface SiteSettings {
   hero_poster_url: string
   hero_tagline: string
   google_maps_url: string
+  google_business_url: string
   popup_enabled: boolean
   popup_headline: string
   popup_description: string
@@ -48,6 +49,7 @@ export const defaultSettings: SiteSettings = {
   hero_poster_url: '',
   hero_tagline: 'Rejuvenate. Restore. Radiate.',
   google_maps_url: '',
+  google_business_url: '',
   popup_enabled: true,
   popup_headline: 'Get in the Know',
   popup_description:

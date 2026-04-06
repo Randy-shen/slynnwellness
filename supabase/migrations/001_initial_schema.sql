@@ -162,6 +162,7 @@ create table if not exists site_settings (
   hero_tagline text not null default 'Rejuvenate. Restore. Radiate.',
   -- Google Maps
   google_maps_url text default '',
+  google_business_url text default '',
   -- Newsletter Popup
   popup_enabled boolean not null default true,
   popup_headline text not null default 'Get in the Know',
