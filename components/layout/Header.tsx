@@ -55,7 +55,11 @@ interface NavItem {
   dropdown?: DropdownItem[]
 }
 
-export default function Header() {
+interface HeaderProps {
+  bookingUrl: string
+}
+
+export default function Header({ bookingUrl }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -137,7 +141,7 @@ export default function Header() {
             {/* Book Now CTA */}
             <div className="hidden lg:flex items-center">
               <a
-                href="https://booking.aestheticrecord.com/slynn-wellness"
+                href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-2 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors duration-200"
@@ -166,6 +170,7 @@ export default function Header() {
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
         navItems={navItems}
+        bookingUrl={bookingUrl}
       />
     </>
   )

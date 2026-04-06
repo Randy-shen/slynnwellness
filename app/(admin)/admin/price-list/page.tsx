@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { getPriceList } from '@/lib/supabase/admin'
-import { placeholderServices, getCategoryLabel } from '@/lib/content/placeholder-services'
+import { createClient } from '@/lib/supabase/server'
+import { getCategoryLabel } from '@/lib/content/placeholder-services'
 import { Edit } from 'lucide-react'
 
 interface PriceItem {
@@ -12,29 +12,20 @@ interface PriceItem {
 }
 
 export default async function AdminPriceListPage() {
-  let priceItems: PriceItem[] = []
+  const supabase = await createClient()
+  const { data: services } = await supabase
+    .from('services')
+    .select('id, name, category, price, short_description')
+    .order('category')
+    .order('display_order')
 
-  try {
-    priceItems = await getPriceList()
-  } catch {
-    priceItems = placeholderServices.map((s) => ({
-      id: s.id,
-      service_name: s.name,
-      category: s.category,
-      price: s.price ?? 'Contact for pricing',
-      description: s.short_description,
-    }))
-  }
-
-  if (!priceItems || priceItems.length === 0) {
-    priceItems = placeholderServices.map((s) => ({
-      id: s.id,
-      service_name: s.name,
-      category: s.category,
-      price: s.price ?? 'Contact for pricing',
-      description: s.short_description,
-    }))
-  }
+  const priceItems: PriceItem[] = (services ?? []).map((s) => ({
+    id: s.id,
+    service_name: s.name,
+    category: s.category,
+    price: s.price ?? 'Contact for pricing',
+    description: s.short_description,
+  }))
 
   const categories = ['medical-aesthetic', 'wellness', 'skin-scalp-care']
   const itemsByCategory = categories.map((cat) => ({

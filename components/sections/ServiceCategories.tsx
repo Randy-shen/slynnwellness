@@ -10,7 +10,6 @@ const categories = [
     gradient: 'linear-gradient(135deg, #F7E7CE 0%, #D4AF37 50%, #8B7355 100%)',
     services: ['Botox & Dysport', 'Dermal Fillers', 'Sculptra', 'Kybella'],
     description: 'Transform your appearance with expert injectable treatments that deliver natural, beautiful results.',
-    bookHref: 'https://booking.aestheticrecord.com/slynn-wellness',
   },
   {
     title: 'Wellness',
@@ -18,7 +17,6 @@ const categories = [
     gradient: 'linear-gradient(135deg, #FDF8F3 0%, #F5E1DA 50%, #B8A99A 100%)',
     services: ['IV Vitamin Therapy', 'Medical Weight Loss', 'Hormone Replacement', 'Vitamin Injections'],
     description: 'Optimize your health from within through physician-supervised wellness and longevity programs.',
-    bookHref: 'https://booking.aestheticrecord.com/slynn-wellness',
   },
   {
     title: 'Skin & Scalp Care',
@@ -26,11 +24,14 @@ const categories = [
     gradient: 'linear-gradient(135deg, #F5E1DA 0%, #F7E7CE 50%, #D4AF37 100%)',
     services: ['HydraFacial', 'Microneedling', 'Chemical Peels', 'PRP Hair Restoration'],
     description: 'Reveal your most radiant skin with advanced clinical treatments tailored to your unique needs.',
-    bookHref: 'https://booking.aestheticrecord.com/slynn-wellness',
   },
 ]
 
-export default function ServiceCategories() {
+interface ServiceCategoriesProps {
+  bookingUrl: string
+}
+
+export default function ServiceCategories({ bookingUrl }: ServiceCategoriesProps) {
   return (
     <section id="services" className="py-20 lg:py-28 bg-[#FFFAF5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +109,7 @@ export default function ServiceCategories() {
                 </ul>
 
                 <a
-                  href={cat.bookHref}
+                  href={bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-2.5 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"

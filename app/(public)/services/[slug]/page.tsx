@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { CheckCircle, ArrowLeft } from 'lucide-react'
 import { placeholderServices, getCategoryLabel, getServiceBySlug } from '@/lib/content/placeholder-services'
+import { getSiteSettings } from '@/lib/supabase/settings'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -35,7 +36,7 @@ const categoryGradients: Record<string, string> = {
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
-  const { slug } = await params
+  const [settings, { slug }] = await Promise.all([getSiteSettings(), params])
   const service = getServiceBySlug(slug)
 
   if (!service) {
@@ -221,7 +222,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 Pricing may vary based on individual treatment plans. A consultation is required before booking.
               </p>
               <a
-                href="https://booking.aestheticrecord.com/slynn-wellness"
+                href={settings.booking_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full py-3 bg-[#D4AF37] text-white text-center text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"
@@ -303,7 +304,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               Book your appointment today and take the first step toward your best self.
             </p>
             <a
-              href="https://booking.aestheticrecord.com/slynn-wellness"
+              href={settings.booking_url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-white text-[#2C2C2C] text-xs font-medium tracking-wider uppercase hover:bg-[#F7E7CE] transition-colors"

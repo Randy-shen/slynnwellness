@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import ServiceGrid from '@/components/services/ServiceGrid'
 import { getServices } from '@/lib/supabase/admin'
 import { placeholderServices } from '@/lib/content/placeholder-services'
+import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
   title: 'Medical Aesthetic Treatments',
@@ -10,9 +11,13 @@ export const metadata: Metadata = {
 }
 
 export default async function MedicalAestheticPage() {
-  let services = await getServices('medical-aesthetic').catch(() =>
-    placeholderServices.filter((s) => s.category === 'medical-aesthetic')
-  )
+  const [settings, servicesResult] = await Promise.all([
+    getSiteSettings(),
+    getServices('medical-aesthetic').catch(() =>
+      placeholderServices.filter((s) => s.category === 'medical-aesthetic')
+    ),
+  ])
+  let services = servicesResult
 
   if (!services || services.length === 0) {
     services = placeholderServices.filter((s) => s.category === 'medical-aesthetic')
@@ -76,7 +81,7 @@ export default async function MedicalAestheticPage() {
             Book a complimentary consultation with one of our expert providers.
           </p>
           <a
-            href="https://booking.aestheticrecord.com/slynn-wellness"
+            href={settings.booking_url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"

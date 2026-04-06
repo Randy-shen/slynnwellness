@@ -2,9 +2,15 @@
 
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react'
+import { SiteSettings, defaultSettings } from '@/lib/supabase/settings-types'
 
-export default function LocationPreview() {
-  const googleMapsEmbed = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED || ''
+interface LocationPreviewProps {
+  settings?: SiteSettings
+}
+
+export default function LocationPreview({ settings = defaultSettings }: LocationPreviewProps) {
+  const fullAddress = `${settings.address}, ${settings.city}, ${settings.state} ${settings.zip}`
+  const googleMapsUrl = settings.google_maps_url || ''
 
   return (
     <section className="py-20 lg:py-28 bg-[#FDF8F3]">
@@ -37,9 +43,9 @@ export default function LocationPreview() {
             transition={{ duration: 0.6 }}
             className="h-80 lg:h-full min-h-[400px] bg-[#E8E0D8] relative overflow-hidden"
           >
-            {googleMapsEmbed ? (
+            {googleMapsUrl ? (
               <iframe
-                src={googleMapsEmbed}
+                src={googleMapsUrl}
                 className="w-full h-full border-0"
                 allowFullScreen
                 loading="lazy"
@@ -51,11 +57,11 @@ export default function LocationPreview() {
                 <MapPin className="h-16 w-16 text-[#D4AF37] mb-4" />
                 <p className="text-center font-light text-[#8B7355] text-lg mb-2"
                   style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-                  123 S Lake Ave, Suite 200
+                  {settings.address}
                 </p>
                 <p className="text-center font-light text-[#8B7355] text-lg"
                   style={{ fontFamily: 'Cormorant Garamond, serif' }}>
-                  Pasadena, CA 91101
+                  {settings.city}, {settings.state} {settings.zip}
                 </p>
               </div>
             )}
@@ -79,8 +85,8 @@ export default function LocationPreview() {
                     style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem' }}>
                     Address
                   </p>
-                  <p className="text-sm text-[#8B7355]">123 S Lake Ave, Suite 200</p>
-                  <p className="text-sm text-[#8B7355]">Pasadena, CA 91101</p>
+                  <p className="text-sm text-[#8B7355]">{settings.address}</p>
+                  <p className="text-sm text-[#8B7355]">{settings.city}, {settings.state} {settings.zip}</p>
                 </div>
               </div>
 
@@ -93,8 +99,11 @@ export default function LocationPreview() {
                     style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem' }}>
                     Phone
                   </p>
-                  <a href="tel:+16265550100" className="text-sm text-[#8B7355] hover:text-[#D4AF37] transition-colors">
-                    (626) 555-0100
+                  <a
+                    href={`tel:${settings.phone.replace(/[^+\d]/g, '')}`}
+                    className="text-sm text-[#8B7355] hover:text-[#D4AF37] transition-colors"
+                  >
+                    {settings.phone}
                   </a>
                 </div>
               </div>
@@ -108,8 +117,11 @@ export default function LocationPreview() {
                     style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem' }}>
                     Email
                   </p>
-                  <a href="mailto:info@slynnwellness.com" className="text-sm text-[#8B7355] hover:text-[#D4AF37] transition-colors">
-                    info@slynnwellness.com
+                  <a
+                    href={`mailto:${settings.email}`}
+                    className="text-sm text-[#8B7355] hover:text-[#D4AF37] transition-colors"
+                  >
+                    {settings.email}
                   </a>
                 </div>
               </div>
@@ -124,16 +136,19 @@ export default function LocationPreview() {
                     Hours
                   </p>
                   <div className="text-sm text-[#8B7355] space-y-0.5">
-                    <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
-                    <p>Saturday: 10:00 AM – 5:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>{settings.hours_weekday}</p>
+                    <p>{settings.hours_saturday}</p>
+                    <p>{settings.hours_sunday}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <a
-              href="https://maps.google.com/?q=123+S+Lake+Ave+Suite+200+Pasadena+CA+91101"
+              href={
+                googleMapsUrl ||
+                `https://maps.google.com/?q=${encodeURIComponent(fullAddress)}`
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[#D4AF37] hover:text-[#B8960A] transition-colors"

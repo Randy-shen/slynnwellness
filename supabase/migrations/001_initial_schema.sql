@@ -132,3 +132,50 @@ create policy "Anyone can sign up" on newsletter_signups
 
 create policy "Admins can read signups" on newsletter_signups
   for select using (auth.role() = 'authenticated');
+
+-- Site settings table (single row)
+create table if not exists site_settings (
+  id uuid primary key default uuid_generate_v4(),
+  -- Business Info
+  business_name text not null default 'Slynn Wellness',
+  tagline text not null default 'Rejuvenate. Restore. Radiate.',
+  address text not null default '123 S Lake Ave, Suite 200',
+  city text not null default 'Pasadena',
+  state text not null default 'CA',
+  zip text not null default '91101',
+  phone text not null default '(626) 555-0100',
+  email text not null default 'info@slynnwellness.com',
+  -- Hours
+  hours_weekday text not null default 'Mon–Fri: 9am–6pm',
+  hours_saturday text not null default 'Sat: 10am–5pm',
+  hours_sunday text not null default 'Sun: Closed',
+  -- Booking
+  booking_url text not null default 'https://booking.aestheticrecord.com/slynn-wellness',
+  -- Social
+  instagram_url text default '',
+  facebook_url text default '',
+  tiktok_url text default '',
+  yelp_url text default '',
+  -- Hero
+  hero_video_url text default '',
+  hero_poster_url text default '',
+  hero_tagline text not null default 'Rejuvenate. Restore. Radiate.',
+  -- Google Maps
+  google_maps_url text default '',
+  -- Newsletter Popup
+  popup_enabled boolean not null default true,
+  popup_headline text not null default 'Get in the Know',
+  popup_description text not null default 'Get exclusive offers and up to date educational information when you sign up to receive our emails.',
+  updated_at timestamptz not null default now()
+);
+
+alter table site_settings enable row level security;
+
+create policy "Site settings are publicly readable" on site_settings
+  for select using (true);
+
+create policy "Admins can update site settings" on site_settings
+  for all using (auth.role() = 'authenticated');
+
+-- Insert default row
+insert into site_settings (id) values (uuid_generate_v4()) on conflict do nothing;

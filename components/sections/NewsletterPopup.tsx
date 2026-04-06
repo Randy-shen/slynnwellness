@@ -6,7 +6,17 @@ import { X } from 'lucide-react'
 
 const STORAGE_KEY = 'slynn_newsletter_dismissed'
 
-export default function NewsletterPopup() {
+interface NewsletterPopupProps {
+  enabled?: boolean
+  headline?: string
+  description?: string
+}
+
+export default function NewsletterPopup({
+  enabled = true,
+  headline = 'Get in the Know',
+  description = 'Get exclusive offers and up to date educational information when you sign up to receive our emails.',
+}: NewsletterPopupProps) {
   const [isVisible, setIsVisible] = useState(false)
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -14,12 +24,14 @@ export default function NewsletterPopup() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
   useEffect(() => {
+    if (!enabled) return
+
     const dismissed = localStorage.getItem(STORAGE_KEY)
     if (dismissed) return
 
     const timer = setTimeout(() => setIsVisible(true), 5000)
     return () => clearTimeout(timer)
-  }, [])
+  }, [enabled])
 
   function dismiss() {
     localStorage.setItem(STORAGE_KEY, 'true')
@@ -109,13 +121,13 @@ export default function NewsletterPopup() {
                       className="text-3xl font-light text-[#2C2C2C] text-center mb-2"
                       style={{ fontFamily: 'Cormorant Garamond, serif' }}
                     >
-                      Get in the Know
+                      {headline}
                     </h2>
                     <p
                       className="text-xs text-[#8B7355] text-center mb-6 leading-relaxed"
                       style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                      Get exclusive offers and up to date educational information when you sign up to receive our emails.
+                      {description}
                     </p>
 
                     <form onSubmit={handleSubmit} className="space-y-3">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import ServiceGrid from '@/components/services/ServiceGrid'
 import { getServices } from '@/lib/supabase/admin'
 import { placeholderServices } from '@/lib/content/placeholder-services'
+import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
   title: 'Wellness Services',
@@ -10,9 +11,13 @@ export const metadata: Metadata = {
 }
 
 export default async function WellnessPage() {
-  let services = await getServices('wellness').catch(() =>
-    placeholderServices.filter((s) => s.category === 'wellness')
-  )
+  const [settings, servicesResult] = await Promise.all([
+    getSiteSettings(),
+    getServices('wellness').catch(() =>
+      placeholderServices.filter((s) => s.category === 'wellness')
+    ),
+  ])
+  let services = servicesResult
 
   if (!services || services.length === 0) {
     services = placeholderServices.filter((s) => s.category === 'wellness')
@@ -76,7 +81,7 @@ export default async function WellnessPage() {
             Schedule a consultation with our wellness team to create your personalized health plan.
           </p>
           <a
-            href="https://booking.aestheticrecord.com/slynn-wellness"
+            href={settings.booking_url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { placeholderServices, getCategoryLabel } from '@/lib/content/placeholder-services'
+import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
   title: 'Price List',
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
 
 const categories = ['medical-aesthetic', 'wellness', 'skin-scalp-care'] as const
 
-export default function PriceListPage() {
+export default async function PriceListPage() {
+  const settings = await getSiteSettings()
   const servicesByCategory = categories.map((cat) => ({
     category: cat,
     label: getCategoryLabel(cat),
@@ -144,7 +146,7 @@ export default function PriceListPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://booking.aestheticrecord.com/slynn-wellness"
+              href={settings.booking_url}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import ServiceForm from '@/components/forms/ServiceForm'
 import { useState, useEffect, use } from 'react'
-import { Service, placeholderServices } from '@/lib/content/placeholder-services'
+import { Service } from '@/lib/content/placeholder-services'
 
 interface Props {
   params: Promise<{ id: string }>
@@ -19,19 +19,13 @@ export default function EditServicePage({ params }: Props) {
   const [notFound, setNotFound] = useState(false)
 
   useEffect(() => {
-    // Try to find the service from placeholder data or Supabase
-    const foundService = placeholderServices.find((s) => s.id === id)
-    if (foundService) {
-      setService(foundService)
-    } else {
-      // Try Supabase
-      import('@/lib/supabase/admin')
-        .then(({ getServiceBySlug }) => {
-          // We search by id - fallback if not found
-          setNotFound(true)
-        })
-        .catch(() => setNotFound(true))
-    }
+    fetch(`/api/admin/services/${id}`)
+      .then(res => {
+        if (!res.ok) throw new Error('Not found')
+        return res.json()
+      })
+      .then(data => setService(data))
+      .catch(() => setNotFound(true))
   }, [id])
 
   const handleSubmit = async (data: {
@@ -47,16 +41,21 @@ export default function EditServicePage({ params }: Props) {
   }) => {
     setIsLoading(true)
     try {
-      const { updateService } = await import('@/lib/supabase/admin')
       const serviceData = {
         ...data,
         benefits: data.benefits.split('\n').filter((b) => b.trim() !== ''),
       }
-      await updateService(id, serviceData)
+
+      const res = await fetch(`/api/admin/services/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(serviceData),
+      })
+
+      if (!res.ok) throw new Error('Failed to update')
       router.push('/admin/services')
-    } catch (error) {
-      console.error('Failed to update service:', error)
-      alert('Failed to update service. Please check your Supabase connection.')
+    } catch {
+      alert('Failed to update service. Please try again.')
     } finally {
       setIsLoading(false)
     }

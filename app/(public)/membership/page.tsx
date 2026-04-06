@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
   title: 'ProCare Membership',
@@ -102,7 +103,8 @@ const faqs = [
   },
 ]
 
-export default function MembershipPage() {
+export default async function MembershipPage() {
+  const settings = await getSiteSettings()
   return (
     <>
       {/* Hero */}
@@ -206,7 +208,7 @@ export default function MembershipPage() {
                 </ul>
 
                 <a
-                  href="https://booking.aestheticrecord.com/slynn-wellness"
+                  href={settings.booking_url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full py-3 text-center text-xs font-medium tracking-wider uppercase transition-colors ${
@@ -279,7 +281,7 @@ export default function MembershipPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://booking.aestheticrecord.com/slynn-wellness"
+              href={settings.booking_url}
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"

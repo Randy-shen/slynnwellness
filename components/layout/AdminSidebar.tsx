@@ -5,15 +5,13 @@ import { usePathname, useRouter } from 'next/navigation'
 import {
   LayoutDashboard,
   Sparkles,
-  DollarSign,
-  LogOut,
   Settings,
+  LogOut,
 } from 'lucide-react'
 
 const navItems = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { label: 'Services', href: '/admin/services', icon: Sparkles },
-  { label: 'Price List', href: '/admin/price-list', icon: DollarSign },
   { label: 'Settings', href: '/admin/settings', icon: Settings },
 ]
 
@@ -54,7 +52,9 @@ export default function AdminSidebar() {
       <nav className="flex-1 px-3 py-6 space-y-1">
         {navItems.map((item) => {
           const Icon = item.icon
-          const isActive = pathname === item.href || pathname.startsWith(item.href + '/')
+          const isActive = item.href === '/admin'
+            ? pathname === '/admin'
+            : pathname === item.href || pathname.startsWith(item.href + '/')
           return (
             <Link
               key={item.href}

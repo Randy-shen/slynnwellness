@@ -3,21 +3,34 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import Link from 'next/link'
+import { defaultSettings } from '@/lib/supabase/settings-types'
 
-export default function Hero() {
+interface HeroProps {
+  videoUrl?: string
+  posterUrl?: string
+  tagline?: string
+  bookingUrl?: string
+}
+
+export default function Hero({
+  videoUrl,
+  posterUrl,
+  tagline = 'Rejuvenate. Restore. Radiate.',
+  bookingUrl = defaultSettings.booking_url,
+}: HeroProps) {
   return (
     <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Video Background (swap src when ready) */}
+      {/* Video Background */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
-        poster="/images/hero-poster.jpg"
+        poster={posterUrl || undefined}
         aria-hidden="true"
       >
-        <source src="/videos/hero.mp4" type="video/mp4" />
+        {videoUrl && <source src={videoUrl} type="video/mp4" />}
       </video>
 
       {/* Animated Gradient Fallback (visible when no video) */}
@@ -55,7 +68,7 @@ export default function Hero() {
           className="text-lg sm:text-xl font-light tracking-[0.2em] text-white/90 mb-10"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
-          Rejuvenate. Restore. Radiate.
+          {tagline}
         </motion.p>
 
         <motion.div
@@ -72,7 +85,7 @@ export default function Hero() {
             Explore Services
           </Link>
           <a
-            href="https://booking.aestheticrecord.com/slynn-wellness"
+            href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3.5 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-all duration-300 min-w-[180px] text-center"

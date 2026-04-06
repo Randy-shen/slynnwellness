@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { getServices } from '@/lib/supabase/admin'
 import { placeholderServices, getCategoryLabel, Service } from '@/lib/content/placeholder-services'
-import { Plus, Edit, Trash2 } from 'lucide-react'
+import { Plus } from 'lucide-react'
+import ServiceActions from '@/components/admin/ServiceActions'
 
 export default async function AdminServicesPage() {
   let services: Service[] = []
@@ -111,21 +112,7 @@ export default async function AdminServicesPage() {
                           {service.display_order}
                         </td>
                         <td className="px-6 py-4">
-                          <div className="flex items-center justify-end gap-2">
-                            <Link
-                              href={`/admin/services/${service.id}/edit`}
-                              className="p-2 text-[#8B7355] hover:text-[#D4AF37] transition-colors"
-                              aria-label="Edit service"
-                            >
-                              <Edit className="h-4 w-4" />
-                            </Link>
-                            <button
-                              className="p-2 text-[#8B7355] hover:text-red-500 transition-colors"
-                              aria-label="Delete service"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </button>
-                          </div>
+                          <ServiceActions id={service.id} name={service.name} />
                         </td>
                       </tr>
                     ))}
