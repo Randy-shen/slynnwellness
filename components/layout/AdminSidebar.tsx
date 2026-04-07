@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import {
   LayoutDashboard,
   Sparkles,
+  Droplets,
   Settings,
   LogOut,
 } from 'lucide-react'
@@ -12,6 +13,7 @@ import {
 const navItems = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { label: 'Services', href: '/admin/services', icon: Sparkles },
+  { label: 'IV Therapy', href: '/admin/iv-therapy', icon: Droplets },
   { label: 'Settings', href: '/admin/settings', icon: Settings },
 ]
 
@@ -34,12 +36,14 @@ export default function AdminSidebar() {
     <aside className="w-64 bg-[#1A1A1A] min-h-screen flex flex-col">
       {/* Logo */}
       <div className="px-6 py-8 border-b border-white/10">
-        <span
-          className="text-lg font-light tracking-[0.2em] text-[#D4AF37]"
+        <div
+          className="flex items-center gap-2 text-[#D4AF37]"
           style={{ fontFamily: 'Cormorant Garamond, serif' }}
         >
-          SLYNN WELLNESS
-        </span>
+          <span className="text-lg font-light tracking-[0.2em]">SLYNN</span>
+          <span className="w-px h-4 bg-[#D4AF37] opacity-60" />
+          <span className="text-lg font-light tracking-[0.2em]">WELLNESS</span>
+        </div>
         <p
           className="text-xs text-[#B8A99A] mt-1 tracking-wider"
           style={{ fontFamily: 'Montserrat, sans-serif' }}

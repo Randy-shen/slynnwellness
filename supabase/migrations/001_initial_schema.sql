@@ -180,3 +180,31 @@ create policy "Admins can update site settings" on site_settings
 
 -- Insert default row
 insert into site_settings (id) values (uuid_generate_v4()) on conflict do nothing;
+
+-- IV Therapies table
+create table if not exists iv_therapies (
+  id uuid primary key default uuid_generate_v4(),
+  name text not null,
+  purpose text not null,
+  ingredients text[] not null default '{}',
+  infusion_time text not null default '45–60 min',
+  is_special boolean not null default false,
+  note text,
+  display_order integer not null default 0,
+  price text default 'Starting at $150/session',
+  is_visible boolean not null default true,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+alter table iv_therapies enable row level security;
+
+create policy "IV therapies are publicly readable" on iv_therapies
+  for select using (is_visible = true);
+
+create policy "Admins have full access to iv_therapies" on iv_therapies
+  for all using (auth.role() = 'authenticated');
+
+create trigger iv_therapies_updated_at
+  before update on iv_therapies
+  for each row execute function handle_updated_at();

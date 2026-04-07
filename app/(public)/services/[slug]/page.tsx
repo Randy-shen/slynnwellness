@@ -172,34 +172,6 @@ export default async function ServiceDetailPage({ params }: Props) {
               </div>
             </section>
 
-            {/* Before/After Gallery Placeholder */}
-            <section>
-              <h2
-                className="text-2xl font-light text-[#2C2C2C] mb-6"
-                style={{ fontFamily: 'Cormorant Garamond, serif' }}
-              >
-                Before & After Gallery
-              </h2>
-              <div className="grid grid-cols-2 gap-4">
-                <div
-                  className="h-48 bg-[#F0E8DF] flex items-center justify-center rounded-sm"
-                >
-                  <p className="text-xs text-[#B8A99A]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    Before Photo
-                  </p>
-                </div>
-                <div
-                  className="h-48 bg-[#F7E7CE] flex items-center justify-center rounded-sm"
-                >
-                  <p className="text-xs text-[#B8A99A]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    After Photo
-                  </p>
-                </div>
-              </div>
-              <p className="text-xs text-[#B8A99A] mt-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                * Individual results may vary. Photos shown are for illustrative purposes.
-              </p>
-            </section>
           </div>
 
           {/* Right Sidebar */}

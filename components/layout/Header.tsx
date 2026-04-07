@@ -85,14 +85,24 @@ export default function Header({ bookingUrl }: HeaderProps) {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <span
-                className={`text-xl lg:text-2xl font-light tracking-[0.2em] transition-colors duration-300 ${
+              <div
+                className={`flex items-center gap-3 transition-colors duration-300 ${
                   scrolled ? 'text-[#2C2C2C]' : 'text-white'
                 }`}
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}
               >
-                SLYNN WELLNESS
-              </span>
+                {/* Desktop: side by side with divider */}
+                <div className="hidden sm:flex items-center gap-3">
+                  <span className="text-xl lg:text-2xl font-light tracking-[0.2em]">SLYNN</span>
+                  <span className="w-px h-5 lg:h-6 bg-[#D4AF37] opacity-80" />
+                  <span className="text-xl lg:text-2xl font-light tracking-[0.2em]">WELLNESS</span>
+                </div>
+                {/* Mobile: stacked */}
+                <div className="flex sm:hidden flex-col items-start leading-none">
+                  <span className="text-base font-light tracking-[0.2em]">SLYNN</span>
+                  <span className="text-base font-light tracking-[0.2em]">WELLNESS</span>
+                </div>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
