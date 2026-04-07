@@ -152,23 +152,30 @@ export default async function IVVitaminTherapyPage() {
 
               {/* Ingredient ticker */}
               <div
-                className="mx-6 mb-5 overflow-hidden py-2"
+                className="mx-6 mb-5 overflow-hidden py-2.5 relative"
                 style={{
-                  backgroundColor: '#FFFAF5',
-                  borderTop: '1px solid #F0E8DF',
-                  borderBottom: '1px solid #F0E8DF',
+                  background: 'linear-gradient(90deg, #F7E7CE 0%, #FDF3E7 30%, #FFF8F0 50%, #FDF3E7 70%, #F7E7CE 100%)',
+                  backgroundSize: '200% 100%',
+                  animation: 'gradient-x 6s ease infinite',
+                  borderTop: '1px solid #E8C97A',
+                  borderBottom: '1px solid #E8C97A',
                 }}
               >
+                {/* Left fade edge */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 z-10 pointer-events-none"
+                  style={{ background: 'linear-gradient(to right, #F7E7CE, transparent)' }} />
+                {/* Right fade edge */}
+                <div className="absolute right-0 top-0 bottom-0 w-8 z-10 pointer-events-none"
+                  style={{ background: 'linear-gradient(to left, #F7E7CE, transparent)' }} />
                 <div className="animate-marquee flex whitespace-nowrap">
-                  {/* Render ingredients twice for seamless loop */}
                   {[...therapy.ingredients, ...therapy.ingredients].map((ingredient, idx) => (
                     <span
                       key={idx}
                       className="inline-flex items-center"
                       style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                      <span className="text-[11px] text-[#8B7355]">{ingredient}</span>
-                      <span className="mx-2 text-[#D4AF37] text-[11px]">·</span>
+                      <span className="text-[11px] font-medium text-[#8B5E3C]">{ingredient}</span>
+                      <span className="mx-2 text-[#D4AF37] text-[11px]">✦</span>
                     </span>
                   ))}
                 </div>
