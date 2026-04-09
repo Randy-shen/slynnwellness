@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import { placeholderServices, getCategoryLabel } from '@/lib/content/placeholder-services'
+import { getCategoryLabel } from '@/lib/content/placeholder-services'
 import { getSiteSettings } from '@/lib/supabase/settings'
+import { getServices } from '@/lib/supabase/admin'
 
 export const metadata: Metadata = {
   title: 'Price List',
@@ -11,11 +12,11 @@ export const metadata: Metadata = {
 const categories = ['medical-aesthetic', 'wellness', 'skin-scalp-care'] as const
 
 export default async function PriceListPage() {
-  const settings = await getSiteSettings()
+  const [settings, allServices] = await Promise.all([getSiteSettings(), getServices()])
   const servicesByCategory = categories.map((cat) => ({
     category: cat,
     label: getCategoryLabel(cat),
-    services: placeholderServices.filter(
+    services: allServices.filter(
       (s) => s.category === cat && s.is_visible
     ).sort((a, b) => a.display_order - b.display_order),
   }))

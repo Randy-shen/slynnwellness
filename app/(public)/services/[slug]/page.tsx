@@ -2,22 +2,17 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { CheckCircle, ArrowLeft } from 'lucide-react'
-import { placeholderServices, getCategoryLabel, getServiceBySlug } from '@/lib/content/placeholder-services'
+import { getCategoryLabel } from '@/lib/content/placeholder-services'
 import { getSiteSettings } from '@/lib/supabase/settings'
+import { getServiceBySlug, getServices } from '@/lib/supabase/admin'
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
-export async function generateStaticParams() {
-  return placeholderServices.map((service) => ({
-    slug: service.slug,
-  }))
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const service = getServiceBySlug(slug)
+  const service = await getServiceBySlug(slug)
 
   if (!service) {
     return { title: 'Service Not Found' }
@@ -36,15 +31,16 @@ const categoryGradients: Record<string, string> = {
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
-  const [settings, { slug }] = await Promise.all([getSiteSettings(), params])
-  const service = getServiceBySlug(slug)
+  const { slug } = await params
+  const [settings, service] = await Promise.all([getSiteSettings(), getServiceBySlug(slug)])
 
   if (!service) {
     notFound()
   }
 
-  const relatedServices = placeholderServices
-    .filter((s) => s.category === service.category && s.slug !== service.slug && s.is_visible)
+  const allServices = await getServices(service.category)
+  const relatedServices = allServices
+    .filter((s) => s.slug !== service.slug && s.is_visible)
     .slice(0, 3)
 
   const categoryPath = `/${service.category}`
