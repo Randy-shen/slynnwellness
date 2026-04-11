@@ -206,6 +206,9 @@ insert into iv_therapies (name, purpose, ingredients, infusion_time, is_special,
   '2–4 hours', true, 'Slow infusion required — 2 to 4 hours', 'Starting at $250/session', 9, true
 );
 
+-- Note: Assets are uploaded via Admin → Assets portal and stored in Supabase Storage media bucket
+-- No seed data needed for assets table
+
 -- Seed testimonials
 insert into testimonials (client_name, rating, content, service, is_visible) values
 (

@@ -208,3 +208,20 @@ create policy "Admins have full access to iv_therapies" on iv_therapies
 create trigger iv_therapies_updated_at
   before update on iv_therapies
   for each row execute function handle_updated_at();
+
+-- Assets table
+create table if not exists assets (
+  id uuid primary key default uuid_generate_v4(),
+  name text not null,
+  file_path text not null,
+  public_url text not null,
+  file_type text not null check (file_type in ('image', 'video')),
+  file_size integer not null,
+  folder text not null check (folder in ('images', 'videos')),
+  created_at timestamptz not null default now()
+);
+
+alter table assets enable row level security;
+
+create policy "Admins have full access to assets" on assets
+  for all using (auth.role() = 'authenticated');

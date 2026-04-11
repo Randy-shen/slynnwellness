@@ -6,6 +6,7 @@ import {
   LayoutDashboard,
   Sparkles,
   Droplets,
+  ImageIcon,
   Settings,
   LogOut,
 } from 'lucide-react'
@@ -14,6 +15,7 @@ const navItems = [
   { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
   { label: 'Services', href: '/admin/services', icon: Sparkles },
   { label: 'IV Therapy', href: '/admin/iv-therapy', icon: Droplets },
+  { label: 'Assets', href: '/admin/assets', icon: ImageIcon },
   { label: 'Settings', href: '/admin/settings', icon: Settings },
 ]
 
