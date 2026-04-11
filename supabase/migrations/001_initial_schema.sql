@@ -224,4 +224,27 @@ create table if not exists assets (
 alter table assets enable row level security;
 
 create policy "Admins have full access to assets" on assets
-  for all using (auth.role() = 'authenticated');
+  for all using (auth.role() = 'authenticated')
+  with check (auth.role() = 'authenticated');
+
+-- Storage policies for media bucket
+create policy "Admins can upload to media bucket"
+  on storage.objects for insert
+  with check (
+    bucket_id = 'media'
+    and auth.role() = 'authenticated'
+  );
+
+create policy "Admins can delete from media bucket"
+  on storage.objects for delete
+  using (
+    bucket_id = 'media'
+    and auth.role() = 'authenticated'
+  );
+
+create policy "Admins can update media bucket"
+  on storage.objects for update
+  using (
+    bucket_id = 'media'
+    and auth.role() = 'authenticated'
+  );
