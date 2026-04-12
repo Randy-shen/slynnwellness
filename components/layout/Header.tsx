@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import MobileNav from './MobileNav'
 
@@ -28,6 +29,8 @@ interface HeaderProps {
 }
 
 export default function Header({ bookingUrl, navServices }: HeaderProps) {
+  const pathname = usePathname()
+  const isHomepage = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
@@ -65,7 +68,9 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
 
   const headerClass = scrolled
     ? 'bg-[#FFFAF5] shadow-sm border-b border-[#F0E8DF]'
-    : 'bg-[#FFFAF5]/80 backdrop-blur-md border-b border-[#F0E8DF]/50'
+    : isHomepage
+      ? 'bg-transparent'
+      : 'bg-[#FFFAF5]/80 backdrop-blur-md border-b border-[#F0E8DF]/50'
 
   return (
     <>
@@ -77,7 +82,7 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <div
-                className="flex items-center gap-3 transition-colors duration-300 text-[#2C2C2C]"
+                className={`flex items-center gap-3 transition-colors duration-300 ${!scrolled && isHomepage ? 'text-white' : 'text-[#2C2C2C]'}`}
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}
               >
                 {/* Desktop: side by side with divider */}
@@ -105,7 +110,9 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
                 >
                   <Link
                     href={item.href}
-                    className="flex items-center px-3 py-2 text-xs font-medium tracking-wider uppercase transition-colors duration-200 text-[#2C2C2C] hover:text-[#D4AF37]"
+                    className={`flex items-center px-3 py-2 text-xs font-medium tracking-wider uppercase transition-colors duration-200 ${
+                      !scrolled && isHomepage ? 'text-white/90 hover:text-white' : 'text-[#2C2C2C] hover:text-[#D4AF37]'
+                    }`}
                     style={{ fontFamily: 'Montserrat, sans-serif' }}
                   >
                     {item.label}
@@ -149,7 +156,7 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileOpen(true)}
-              className="xl:hidden p-2 transition-colors text-[#2C2C2C]"
+              className={`xl:hidden p-2 transition-colors ${!scrolled && isHomepage ? 'text-white' : 'text-[#2C2C2C]'}`}
               aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
