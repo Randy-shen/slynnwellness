@@ -76,7 +76,7 @@ export default function ShopPage() {
               className="text-xs font-medium tracking-wider uppercase text-[#8B7355] mb-6"
               style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
-              Expected Launch: Summer 2025
+              Expected Launch: Summer 2026
             </p>
 
             {submitted ? (

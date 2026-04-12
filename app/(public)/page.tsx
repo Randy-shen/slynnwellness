@@ -1,4 +1,5 @@
 import { getSiteSettings } from '@/lib/supabase/settings'
+import { getServices } from '@/lib/supabase/admin'
 import Hero from '@/components/sections/Hero'
 import ServiceCategories from '@/components/sections/ServiceCategories'
 import WhyUs from '@/components/sections/WhyUs'
@@ -6,7 +7,17 @@ import Testimonials from '@/components/sections/Testimonials'
 import LocationPreview from '@/components/sections/LocationPreview'
 
 export default async function HomePage() {
-  const settings = await getSiteSettings()
+  const [settings, allServices] = await Promise.all([
+    getSiteSettings(),
+    getServices(),
+  ])
+
+  const servicesByCategory = {
+    medical: allServices.filter(s => s.category === 'medical-aesthetic' && s.is_visible).slice(0, 4).map(s => s.name),
+    wellness: allServices.filter(s => s.category === 'wellness' && s.is_visible).slice(0, 4).map(s => s.name),
+    skin: allServices.filter(s => s.category === 'skin-scalp-care' && s.is_visible).slice(0, 4).map(s => s.name),
+  }
+
   return (
     <>
       <Hero
@@ -15,7 +26,7 @@ export default async function HomePage() {
         tagline={settings.hero_tagline}
         bookingUrl={settings.booking_url}
       />
-      <ServiceCategories bookingUrl={settings.booking_url} />
+      <ServiceCategories bookingUrl={settings.booking_url} servicesByCategory={servicesByCategory} />
       <WhyUs />
       <Testimonials />
       <LocationPreview settings={settings} />

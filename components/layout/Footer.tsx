@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
+import { getServices } from '@/lib/supabase/admin'
 
 function InstagramIcon() {
   return (
@@ -39,7 +40,12 @@ function GoogleIcon() {
 }
 
 export default async function Footer() {
-  const settings = await getSiteSettings()
+  const [settings, services] = await Promise.all([
+    getSiteSettings(),
+    getServices(),
+  ])
+
+  const featuredServices = services.filter(s => s.is_visible).slice(0, 6)
 
   return (
     <footer className="bg-[#2C2C2C] text-white">
@@ -108,10 +114,6 @@ export default async function Footer() {
                 { label: 'Medical Aesthetic', href: '/medical-aesthetic' },
                 { label: 'Wellness', href: '/wellness' },
                 { label: 'Skin & Scalp Care', href: '/skin-scalp-care' },
-                { label: 'IV Vitamin Therapy', href: '/services/iv-vitamin-therapy' },
-                { label: 'Medical Weight Loss', href: '/services/medical-weight-loss' },
-                { label: 'Botox & Dysport', href: '/services/botox-dysport' },
-                { label: 'HydraFacial', href: '/services/hydrafacial' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
@@ -119,6 +121,16 @@ export default async function Footer() {
                     className="text-sm text-[#B8A99A] hover:text-[#D4AF37] transition-colors"
                   >
                     {item.label}
+                  </Link>
+                </li>
+              ))}
+              {featuredServices.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="text-sm text-[#B8A99A] hover:text-[#D4AF37] transition-colors"
+                  >
+                    {service.name}
                   </Link>
                 </li>
               ))}

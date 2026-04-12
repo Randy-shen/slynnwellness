@@ -3,35 +3,42 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-const categories = [
-  {
-    title: 'Medical Aesthetic',
-    href: '/medical-aesthetic',
-    gradient: 'linear-gradient(135deg, #F7E7CE 0%, #D4AF37 50%, #8B7355 100%)',
-    services: ['Botox & Dysport', 'Dermal Fillers', 'Sculptra', 'Kybella'],
-    description: 'Transform your appearance with expert injectable treatments that deliver natural, beautiful results.',
-  },
-  {
-    title: 'Wellness',
-    href: '/wellness',
-    gradient: 'linear-gradient(135deg, #FDF8F3 0%, #F5E1DA 50%, #B8A99A 100%)',
-    services: ['IV Vitamin Therapy', 'Medical Weight Loss', 'Hormone Replacement', 'Vitamin Injections'],
-    description: 'Optimize your health from within through physician-supervised wellness and longevity programs.',
-  },
-  {
-    title: 'Skin & Scalp Care',
-    href: '/skin-scalp-care',
-    gradient: 'linear-gradient(135deg, #F5E1DA 0%, #F7E7CE 50%, #D4AF37 100%)',
-    services: ['HydraFacial', 'Microneedling', 'Chemical Peels', 'PRP Hair Restoration'],
-    description: 'Reveal your most radiant skin with advanced clinical treatments tailored to your unique needs.',
-  },
-]
+interface ServicesByCategory {
+  medical: string[]
+  wellness: string[]
+  skin: string[]
+}
 
 interface ServiceCategoriesProps {
   bookingUrl: string
+  servicesByCategory: ServicesByCategory
 }
 
-export default function ServiceCategories({ bookingUrl }: ServiceCategoriesProps) {
+export default function ServiceCategories({ bookingUrl, servicesByCategory }: ServiceCategoriesProps) {
+  const categories = [
+    {
+      title: 'Medical Aesthetic',
+      href: '/medical-aesthetic',
+      gradient: 'linear-gradient(160deg, #4A3520 0%, #6B4E32 50%, #D4AF37 100%)',
+      services: servicesByCategory.medical,
+      description: 'Transform your appearance with expert injectable treatments that deliver natural, beautiful results.',
+    },
+    {
+      title: 'Wellness',
+      href: '/wellness',
+      gradient: 'linear-gradient(160deg, #3D2E18 0%, #6B4E2A 50%, #B8915A 100%)',
+      services: servicesByCategory.wellness,
+      description: 'Optimize your health from within through physician-supervised wellness and longevity programs.',
+    },
+    {
+      title: 'Skin & Scalp Care',
+      href: '/skin-scalp-care',
+      gradient: 'linear-gradient(160deg, #352515 0%, #5C3D20 50%, #C4956A 100%)',
+      services: servicesByCategory.skin,
+      description: 'Reveal your most radiant skin with advanced clinical treatments tailored to your unique needs.',
+    },
+  ]
+
   return (
     <section id="services" className="py-20 lg:py-28 bg-[#FFFAF5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,16 +74,17 @@ export default function ServiceCategories({ bookingUrl }: ServiceCategoriesProps
             >
               {/* Image Placeholder */}
               <div
-                className="h-52 w-full"
+                className="h-52 w-full relative"
                 style={{ background: cat.gradient }}
               >
-                <div className="h-full flex items-center justify-center">
+                <div className="h-full flex flex-col items-center justify-center gap-2">
                   <h3
-                    className="text-2xl font-light text-white/80 tracking-wide"
+                    className="text-2xl font-light text-white tracking-[0.15em]"
                     style={{ fontFamily: 'Cormorant Garamond, serif' }}
                   >
                     {cat.title}
                   </h3>
+                  <div className="w-8 h-px bg-[#D4AF37] opacity-70" />
                 </div>
               </div>
 

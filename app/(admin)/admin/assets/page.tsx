@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { createClient } from '@/lib/supabase/client'
 import { Clipboard, Trash2, ImageIcon, Video, Loader2, Upload } from 'lucide-react'
 
 interface Asset {
@@ -119,32 +118,22 @@ export default function AssetsPage() {
 
     setUploading(true)
     try {
-      const supabase = createClient()
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('filePath', filePath)
+      formData.append('name', cleanName)
+      formData.append('fileType', folder === 'images' ? 'image' : 'video')
+      formData.append('folder', folder)
 
-      const { error: uploadError } = await supabase.storage
-        .from('media')
-        .upload(filePath, file, { upsert: true })
-
-      if (uploadError) throw uploadError
-
-      const {
-        data: { publicUrl },
-      } = supabase.storage.from('media').getPublicUrl(filePath)
-
-      const res = await fetch('/api/admin/assets', {
+      const res = await fetch('/api/admin/assets/upload', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: cleanName,
-          file_path: filePath,
-          public_url: publicUrl,
-          file_type: folder === 'images' ? 'image' : 'video',
-          file_size: file.size,
-          folder,
-        }),
+        body: formData,
       })
 
-      if (!res.ok) throw new Error('Failed to save asset record')
+      if (!res.ok) {
+        const err = await res.json()
+        throw new Error(err.error || 'Upload failed')
+      }
 
       setUploadSuccess(`"${cleanName}${ext}" uploaded successfully.`)
       setFileName('')

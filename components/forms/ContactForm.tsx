@@ -16,7 +16,7 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>
 
-const serviceOptions = [
+const fallbackServiceOptions = [
   'Botox & Dysport',
   'Dermal Fillers',
   'Sculptra',
@@ -34,7 +34,14 @@ const serviceOptions = [
   'Other',
 ]
 
-export default function ContactForm() {
+interface ContactFormProps {
+  serviceOptions?: string[]
+}
+
+export default function ContactForm({ serviceOptions }: ContactFormProps) {
+  const resolvedServiceOptions = serviceOptions && serviceOptions.length > 0
+    ? serviceOptions
+    : fallbackServiceOptions
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
 
@@ -168,7 +175,7 @@ export default function ContactForm() {
           className="w-full px-4 py-3 border border-[#F0E8DF] bg-[#FFFAF5] text-[#2C2C2C] text-sm focus:outline-none focus:border-[#D4AF37] transition-colors"
         >
           <option value="">Select a service...</option>
-          {serviceOptions.map((option) => (
+          {resolvedServiceOptions.map((option) => (
             <option key={option} value={option}>
               {option}
             </option>

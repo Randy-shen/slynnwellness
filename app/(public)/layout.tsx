@@ -1,18 +1,30 @@
+import { getSiteSettings } from '@/lib/supabase/settings'
+import { getServices } from '@/lib/supabase/admin'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import NewsletterPopup from '@/components/sections/NewsletterPopup'
-import { getSiteSettings } from '@/lib/supabase/settings'
 
 export default async function PublicLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const settings = await getSiteSettings()
+  const [settings, medicalServices, wellnessServices, skinServices] = await Promise.all([
+    getSiteSettings(),
+    getServices('medical-aesthetic'),
+    getServices('wellness'),
+    getServices('skin-scalp-care'),
+  ])
+
+  const navServices = {
+    medical: medicalServices.filter(s => s.is_visible).slice(0, 6).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
+    wellness: wellnessServices.filter(s => s.is_visible).slice(0, 6).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
+    skin: skinServices.filter(s => s.is_visible).slice(0, 6).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
+  }
 
   return (
     <>
-      <Header bookingUrl={settings.booking_url} />
+      <Header bookingUrl={settings.booking_url} navServices={navServices} />
       <main className="flex-1">{children}</main>
       <Footer />
       <NewsletterPopup

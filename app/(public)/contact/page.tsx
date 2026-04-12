@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import ContactForm from '@/components/forms/ContactForm'
 import { getSiteSettings } from '@/lib/supabase/settings'
+import { getServices } from '@/lib/supabase/admin'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -10,8 +11,12 @@ export const metadata: Metadata = {
 }
 
 export default async function ContactPage() {
-  const settings = await getSiteSettings()
+  const [settings, allServices] = await Promise.all([
+    getSiteSettings(),
+    getServices(),
+  ])
 
+  const serviceOptions = allServices.filter(s => s.is_visible).map(s => s.name)
   const fullAddress = `${settings.address}, ${settings.city}, ${settings.state} ${settings.zip}`
 
   return (
@@ -59,7 +64,7 @@ export default async function ContactPage() {
               >
                 Get in Touch
               </h2>
-              <ContactForm />
+              <ContactForm serviceOptions={serviceOptions} />
             </div>
 
             {/* Info */}
