@@ -106,7 +106,7 @@ export default async function BotoxXeominPage() {
 
       {/* Hero */}
       <div className="pt-20 pb-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/medical-aesthetic"
             className="inline-flex items-center gap-2 text-xs text-[#8B7355] hover:text-[#D4AF37] transition-colors mb-8"
@@ -256,7 +256,6 @@ export default async function BotoxXeominPage() {
                 {[
                   { label: 'Best for', value: "Forehead lines, frown lines, crow's feet" },
                   { label: 'Consultation', value: 'Customized dosing and facial balance review' },
-                  { label: 'Pricing', value: price },
                 ].map((row) => (
                   <div
                     key={row.label}
@@ -286,9 +285,92 @@ export default async function BotoxXeominPage() {
         </div>
       </div>
 
+      {/* Pricing */}
+      <section className="py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+            <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
+              Pricing
+            </h2>
+            <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
+              Pricing is based on units used. Your provider will recommend the right amount during consultation.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { name: 'Botox', perUnit: '$11 / unit', tiers: [{ units: '30 units', price: '$330' }, { units: '40 units', price: '$440' }, { units: '50 units', price: '$550' }] },
+              { name: 'Xeomin', perUnit: '$9 / unit', tiers: [{ units: '30 units', price: '$270' }, { units: '40 units', price: '$360' }, { units: '50 units', price: '$450' }] },
+            ].map((product) => (
+              <div key={product.name} className="rounded-2xl p-5" style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', margin: 0 }}>{product.name}</h3>
+                  <span className="text-xs font-semibold" style={{ fontFamily: 'Montserrat, sans-serif', color: '#D4AF37' }}>{product.perUnit}</span>
+                </div>
+                <div className="w-full h-px mb-3" style={{ background: 'rgba(233,221,209,0.9)' }} />
+                <div className="grid grid-cols-3 gap-2 mb-3">
+                  {product.tiers.map((tier) => (
+                    <div key={tier.units} className="flex flex-col items-center py-2 px-1 rounded-xl text-center" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
+                      <span className="text-xs mb-1" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{tier.units}</span>
+                      <span className="font-semibold" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem', color: '#2C2C2C' }}>{tier.price}</span>
+                    </div>
+                  ))}
+                </div>
+                <a href={settings.booking_url} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5" style={{ background: 'linear-gradient(135deg, #D4AF37 0%, #C6A050 100%)', fontFamily: 'Montserrat, sans-serif' }}>
+                  Book Now
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Before & After */}
+      <section className="py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+            <h2
+              className="font-light"
+              style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}
+            >
+              Before & After
+            </h2>
+            <p
+              className="text-sm lg:max-w-sm"
+              style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}
+            >
+              Individual results may vary. Photos shown with patient consent.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/slynn-botox-xeomin-set-1.jpg',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/slynn-botox-xeomin-set-2.jpg',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/slynn-botox-xeomin-set-3.jpg',
+            ].map((url, i) => (
+              <div
+                key={i}
+                className="rounded-3xl overflow-hidden"
+                style={{
+                  background: 'rgba(255,250,245,0.85)',
+                  border: '1px solid rgba(233,221,209,0.9)',
+                  boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
+                }}
+              >
+                <img
+                  src={url}
+                  alt={`Botox & Xeomin result ${i + 1}`}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Overview */}
       <section id="overview" className="py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2
               className="font-light"
@@ -379,7 +461,7 @@ export default async function BotoxXeominPage() {
 
       {/* Treatment Areas */}
       <section id="areas" className="py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2
               className="font-light"
@@ -436,7 +518,7 @@ export default async function BotoxXeominPage() {
 
       {/* What to Expect */}
       <section id="process" className="py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2
               className="font-light"
@@ -493,7 +575,7 @@ export default async function BotoxXeominPage() {
 
       {/* Mid CTA */}
       <section className="py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className="rounded-3xl p-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
             style={{
@@ -561,7 +643,7 @@ export default async function BotoxXeominPage() {
 
       {/* FAQ */}
       <section id="faq" className="py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2
               className="font-light"
@@ -608,7 +690,7 @@ export default async function BotoxXeominPage() {
 
       {/* Final CTA */}
       <section id="contact" className="py-10 pb-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className="rounded-3xl p-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
             style={{

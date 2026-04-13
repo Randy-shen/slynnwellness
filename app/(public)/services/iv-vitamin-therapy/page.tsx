@@ -10,6 +10,15 @@ export const metadata: Metadata = {
     'Customized IV vitamin drips delivering essential vitamins, minerals, and antioxidants directly into your bloodstream for 100% absorption.',
 }
 
+// Strip dosage info — keep only ingredient name before any number/unit
+function cleanIngredient(ingredient: string): string {
+  return ingredient
+    .replace(/\s+\d[\d\s\-–.]*(?:mg|mcg|g|mL|L|IU|ml|iu)[\w\s\-–/]*$/i, '')
+    .replace(/\s*\(.*?\)\s*$/, '')
+    .replace(/\s*\[.*?\]\s*$/, '')
+    .trim()
+}
+
 export default async function IVVitaminTherapyPage() {
   const [settings, ivTherapies] = await Promise.all([getSiteSettings(), getIVTherapies()])
 
@@ -169,12 +178,13 @@ export default async function IVVitaminTherapyPage() {
                   style={{ background: 'linear-gradient(to left, #F7E7CE, transparent)' }} />
                 <div className="animate-marquee flex whitespace-nowrap">
                   {[...therapy.ingredients, ...therapy.ingredients].map((ingredient, idx) => (
+
                     <span
                       key={idx}
                       className="inline-flex items-center"
                       style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                      <span className="text-[11px] font-medium text-[#8B5E3C]">{ingredient}</span>
+                      <span className="text-[11px] font-medium text-[#8B5E3C]">{cleanIngredient(ingredient)}</span>
                       <span className="mx-2 text-[#D4AF37] text-[11px]">✦</span>
                     </span>
                   ))}

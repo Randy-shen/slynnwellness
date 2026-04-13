@@ -47,6 +47,16 @@ export default function WhyUs() {
             Why Choose Slynn Wellness
           </h2>
           <div className="mt-4 w-16 h-px bg-[#D4AF37] mx-auto" />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-8 text-sm leading-relaxed text-[#8B7355] max-w-3xl mx-auto"
+            style={{ fontFamily: 'Montserrat, sans-serif' }}
+          >
+            At Slynn Wellness Medical Spa, our strong medical team provides the expert clinical guidance and technical support behind every treatment we offer. We carefully select the latest aesthetic technologies, advanced devices, and effective medical-grade products for you, with strict attention to quality, safety, and results. From technology and treatment planning to product selection and competitive pricing, we are committed to delivering the best combination of innovation, value, and personalized care to meet each client&apos;s unique needs.
+          </motion.p>
         </motion.div>
 
         {/* Grid */}

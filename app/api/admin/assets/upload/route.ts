@@ -41,17 +41,17 @@ export async function POST(request: NextRequest) {
       .from('media')
       .getPublicUrl(filePath)
 
-    // Save to assets table
+    // Upsert to assets table — update if file_path already exists
     const { data, error: dbError } = await supabase
       .from('assets')
-      .insert({
+      .upsert({
         name,
         file_path: filePath,
         public_url: publicUrl,
         file_type: fileType,
         file_size: file.size,
         folder,
-      })
+      }, { onConflict: 'file_path' })
       .select()
       .single()
 

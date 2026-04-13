@@ -23,17 +23,24 @@ export default function NewServicePage() {
   }) => {
     setIsLoading(true)
     try {
-      const { createService } = await import('@/lib/supabase/admin')
       const serviceData = {
         ...data,
         benefits: data.benefits.split('\n').filter((b) => b.trim() !== ''),
         image_url: null,
       }
-      await createService(serviceData)
+      const res = await fetch('/api/admin/services', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(serviceData),
+      })
+      if (!res.ok) {
+        const err = await res.json()
+        throw new Error(err.error || 'Failed to create service')
+      }
       router.push('/admin/services')
     } catch (error) {
       console.error('Failed to create service:', error)
-      alert('Failed to create service. Please check your Supabase connection.')
+      alert(`Failed to create service: ${error instanceof Error ? error.message : 'Unknown error'}`)
     } finally {
       setIsLoading(false)
     }

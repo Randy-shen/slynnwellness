@@ -5,9 +5,9 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
 
 export const metadata: Metadata = {
-  title: 'RF Microneedling (Candela Matrix Pro) | Slynn Wellness',
+  title: 'Candela Matrix Pro | Slynn Wellness',
   description:
-    'Lift, tighten, and renew your skin with Candela Matrix Pro RF Microneedling at Slynn Wellness in Pasadena, CA. Collagen-focused skin renewal for texture, laxity, and fine lines.',
+    'Lift, tighten, and renew your skin with Candela Matrix Pro at Slynn Wellness in Pasadena, CA. Collagen-focused skin renewal for texture, laxity, and fine lines.',
 }
 
 const benefits = [
@@ -160,7 +160,7 @@ export default async function MicroneedlingPage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                RF Microneedling
+                Candela Matrix Pro
               </h1>
 
               <p
@@ -245,6 +245,66 @@ export default async function MicroneedlingPage() {
       </div>
 
       {/* Overview */}
+      {/* Before & After */}
+      <section className="py-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+            <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
+              Before & After
+            </h2>
+            <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
+              Individual results may vary. Photos shown with patient consent.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="rounded-3xl overflow-hidden"
+                style={{
+                  background: 'rgba(255,250,245,0.85)',
+                  border: '1px solid rgba(233,221,209,0.9)',
+                  boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
+                }}
+              >
+                <div
+                  className="relative"
+                  style={{
+                    height: '280px',
+                    background: 'linear-gradient(145deg, #1A100A 0%, #35200F 30%, #8B5E30 65%, #C4956A 100%)',
+                  }}
+                >
+                  <span
+                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
+                    style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
+                  >
+                    Before
+                  </span>
+                  <span
+                    className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
+                    style={{ background: 'rgba(212,175,55,0.85)', backdropFilter: 'blur(6px)', color: 'white', fontFamily: 'Montserrat, sans-serif' }}
+                  >
+                    After
+                  </span>
+                  <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>
+                      Photo coming soon
+                    </p>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
+                    Patient {i} · Candela Matrix Pro
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="overview" className="py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
@@ -454,7 +514,7 @@ export default async function MicroneedlingPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', margin: '0 0 12px' }}>
-                Is Matrix Pro RF Microneedling right for you?
+                Is Candela Matrix Pro right for you?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
                 A consultation helps us review your skin goals, treatment history, and whether Matrix Pro fits your plan — then build a personalized treatment series around your timeline.
