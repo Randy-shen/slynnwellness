@@ -206,15 +206,12 @@ export default async function SculptraPage() {
                 className="rounded-2xl flex-1 flex items-end p-4 relative overflow-hidden"
                 style={{
                   minHeight: '220px',
-                  background: `
-                    radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.18) 0%, transparent 50%),
-                    radial-gradient(ellipse at 80% 80%, rgba(212,175,55,0.22) 0%, transparent 45%),
-                    radial-gradient(ellipse at 60% 10%, rgba(255,220,160,0.15) 0%, transparent 40%),
-                    linear-gradient(135deg, #2C1F0E 0%, #4A3218 25%, #6B4A28 50%, #8B6535 70%, #C49A50 85%, #D4AF37 100%)
-                  `,
+                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/scupltra-product.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'repeating-linear-gradient(105deg, transparent 0px, transparent 18px, rgba(255,255,255,0.025) 18px, rgba(255,255,255,0.025) 19px)', borderRadius: 'inherit' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)', borderRadius: 'inherit' }} />
                 <span
                   className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase"
                   style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}

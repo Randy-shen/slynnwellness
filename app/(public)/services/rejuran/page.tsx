@@ -196,10 +196,12 @@ export default async function RejuranPage() {
                 className="rounded-2xl flex-1 flex flex-col justify-between p-4 relative overflow-hidden"
                 style={{
                   minHeight: '220px',
-                  background: 'linear-gradient(135deg, #0A0E1A 0%, #141E35 30%, #1E2E55 55%, #2E4480 80%, #D4AF37 100%)',
+                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-skin-booster.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, transparent 40%, rgba(0,0,0,0.25) 100%)', borderRadius: 'inherit' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)', borderRadius: 'inherit' }} />
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
                   Regenerate · Repair · Renew
                 </span>

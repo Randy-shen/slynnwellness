@@ -206,10 +206,12 @@ export default async function HydraFacialPage() {
                 className="rounded-2xl flex-1 flex flex-col justify-between p-4 relative overflow-hidden"
                 style={{
                   minHeight: '220px',
-                  background: 'linear-gradient(135deg, #0A1A1C 0%, #0F2D30 30%, #1A4A50 55%, #2E7080 80%, #D4AF37 100%)',
+                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/hydrafacial.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, transparent 40%, rgba(0,0,0,0.25) 100%)', borderRadius: 'inherit' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, transparent 40%, rgba(0,0,0,0.30) 100%)', borderRadius: 'inherit' }} />
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
                   Cleanse · Extract · Hydrate
                 </span>
@@ -284,7 +286,11 @@ export default async function HydraFacialPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[1, 2, 3].map((i) => (
+            {[
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/hydrafacial-before-after-1.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/hydrafacial-before-after-2.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/hydrafacial-before-after-3.png',
+            ].map((url, i) => (
               <div
                 key={i}
                 className="rounded-3xl overflow-hidden"
@@ -294,37 +300,11 @@ export default async function HydraFacialPage() {
                   boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
                 }}
               >
-                <div
-                  className="relative"
-                  style={{
-                    height: '280px',
-                    background: 'linear-gradient(145deg, #0A1A1C 0%, #0F2D30 30%, #1A4A50 65%, #2E7080 100%)',
-                  }}
-                >
-                  <span
-                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                    style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
-                  >
-                    Before
-                  </span>
-                  <span
-                    className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                    style={{ background: 'rgba(212,175,55,0.85)', backdropFilter: 'blur(6px)', color: 'white', fontFamily: 'Montserrat, sans-serif' }}
-                  >
-                    After
-                  </span>
-                  <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>
-                      Photo coming soon
-                    </p>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · HydraFacial
-                  </p>
-                </div>
+                <img
+                  src={url}
+                  alt={`HydraFacial result ${i + 1}`}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
               </div>
             ))}
           </div>
