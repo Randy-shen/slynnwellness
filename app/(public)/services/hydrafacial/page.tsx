@@ -2,54 +2,53 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
-import { getServiceBySlug } from '@/lib/supabase/admin'
 
 export const metadata: Metadata = {
-  title: 'Candela Matrix Pro | Slynn Wellness',
+  title: 'HydraFacial | Slynn Wellness',
   description:
-    'Lift, tighten, and renew your skin with Candela Matrix Pro at Slynn Wellness in Pasadena, CA. Collagen-focused skin renewal for texture, laxity, and fine lines.',
+    'HydraFacial at Slynn Wellness in Pasadena, CA. The world\'s leading hydradermabrasion treatment — cleanse, extract, and hydrate for an instant visible glow with zero downtime.',
 }
 
 const benefits = [
   {
     tag: '01',
-    title: 'Fine Lines & Wrinkles',
-    description: 'Supports smoother-looking skin and softens visible signs of aging with collagen-stimulating RF energy.',
+    title: 'Deep Cleansing',
+    description: 'Removes surface debris, dead skin cells, and buildup that daily cleansing cannot reach.',
   },
   {
     tag: '02',
-    title: 'Texture & Pores',
-    description: 'Often selected for rough texture, enlarged pores, and an overall skin-quality refresh.',
+    title: 'Pore Purification',
+    description: 'Painless vortex suction extracts blackheads and congestion without manual extractions.',
   },
   {
     tag: '03',
-    title: 'Skin Laxity',
-    description: 'Part of a nonsurgical plan to support firmer-looking skin on the face, jawline, and neck.',
+    title: 'Instant Hydration',
+    description: 'High-potency hyaluronic acid and peptides penetrate deep for lasting moisture.',
   },
   {
     tag: '04',
-    title: 'Acne Scars & Marks',
-    description: 'Frequently chosen when patients want a more advanced treatment for textural acne scarring.',
+    title: 'Radiant Glow',
+    description: 'Clients consistently report a visible brightness and glow immediately after treatment.',
   },
   {
     tag: '05',
-    title: 'Under-Eye & Delicate Areas',
-    description: 'May be discussed for select rejuvenation goals in delicate facial zones during consultation.',
+    title: 'Fine Line Reduction',
+    description: 'Regular treatments support collagen production and reduce the appearance of fine lines.',
   },
   {
     tag: '06',
-    title: 'Post-Weight-Loss Skin',
-    description: 'Can support patients looking to improve firmness and skin quality after facial volume changes.',
+    title: 'Even Skin Tone',
+    description: 'Targeted brightening serums address hyperpigmentation and uneven texture.',
   },
   {
     tag: '07',
-    title: 'Healthy Aging Plans',
-    description: 'Works beautifully as a foundation treatment in long-term maintenance and skin renewal programs.',
+    title: 'No Downtime',
+    description: 'Return to makeup, work, and activities immediately after your session.',
   },
   {
     tag: '08',
-    title: 'Custom Combinations',
-    description: 'Can be paired with injectables, facials, or skincare as part of a broader aesthetic plan.',
+    title: 'Customizable',
+    description: 'Every treatment is tailored to your skin type, concerns, and goals.',
   },
 ]
 
@@ -57,60 +56,54 @@ const timeline = [
   {
     step: 'Step 01',
     title: 'Consultation',
-    description: 'We assess your skin quality, treatment history, lifestyle, and goals — then determine whether Matrix Pro is the right fit for your plan.',
+    description: 'Skin assessment to determine your ideal HydraFacial level and any targeted boosters for your specific concerns.',
   },
   {
     step: 'Step 02',
-    title: 'Preparation',
-    description: 'Your skin is cleansed and prepared. A numbing approach may be used based on the area being treated and the treatment intensity.',
+    title: 'Treatment',
+    description: 'Relaxing 30–45 minute treatment using the HydraFacial device with customized serums.',
   },
   {
     step: 'Step 03',
-    title: 'Treatment',
-    description: 'The device is passed strategically through the treatment area to deliver RF microneedling energy in a customized, precise pattern.',
+    title: 'Immediate Glow',
+    description: 'Skin appears brighter, smoother, and more hydrated immediately after treatment — no redness or downtime.',
   },
   {
     step: 'Step 04',
-    title: 'Recovery',
-    description: 'Most clients experience a short recovery window with temporary redness or warmth, followed by progressive skin renewal over weeks.',
+    title: 'Maintenance',
+    description: 'Monthly treatments are recommended for ongoing skin health and cumulative results.',
   },
 ]
 
 const faqs = [
   {
-    q: 'How is Matrix Pro different from regular microneedling?',
-    a: 'Matrix Pro adds radiofrequency energy to microneedling, allowing the treatment to support deeper skin renewal goals such as firmness, fine lines, and more advanced texture concerns.',
+    q: 'How often should I get a HydraFacial?',
+    a: 'Monthly treatments are ideal for maintaining results. Many clients notice a significant cumulative improvement with consistent sessions.',
   },
   {
-    q: 'How many treatments do I usually need?',
-    a: 'Many patients are guided toward a treatment series rather than a single visit. The right number depends on whether the main concern is texture, laxity, scars, or overall skin rejuvenation.',
+    q: 'Is there any downtime?',
+    a: 'No. HydraFacial has zero downtime. Your skin may appear slightly flushed immediately after, but you can apply makeup and resume all activities right away.',
   },
   {
-    q: 'Is there downtime?',
-    a: 'Downtime is generally manageable. Temporary redness, warmth, or mild sensitivity is common early on. Most clients return to their regular routine within 24–48 hours.',
+    q: 'Is HydraFacial suitable for sensitive skin?',
+    a: 'Yes. HydraFacial is gentle enough for sensitive skin types and can be customized to avoid any irritating ingredients.',
   },
   {
-    q: 'When will I see results?',
-    a: 'Some patients notice an early glow or tighter feel within days, while continued improvement becomes more visible over the following weeks as collagen response develops.',
+    q: 'What is the difference between Signature, Deluxe, and Platinum?',
+    a: 'Signature is the core treatment. Deluxe adds a targeted booster serum. Platinum adds lymphatic drainage and LED light therapy for the most comprehensive result.',
   },
   {
-    q: 'Can this be combined with Botox, filler, or facials?',
-    a: 'Often yes — but timing and sequence matter. Combination planning should always be reviewed during consultation so your treatment calendar is intentional and safe.',
+    q: 'Can HydraFacial be combined with other treatments?',
+    a: 'Yes — it pairs beautifully with Botox, fillers, and chemical peels (with appropriate timing). Your provider will advise on the best sequence.',
   },
   {
-    q: 'Is Matrix Pro right for all skin tones?',
-    a: 'Candela positions the Matrix system for diverse skin types and tones, but candidacy and settings should be determined by a qualified provider after evaluating your skin.',
+    q: 'How soon will I see results?',
+    a: 'Most clients see visible improvement in tone, texture, and hydration immediately after their first treatment.',
   },
 ]
 
-export default async function MicroneedlingPage() {
-  const [settings, service] = await Promise.all([
-    getSiteSettings(),
-    getServiceBySlug('microneedling'),
-  ])
-
-  const price = service?.price || 'Starting at $300/session'
-  const description = service?.short_description || 'Stimulate collagen production for smoother, firmer, rejuvenated skin.'
+export default async function HydraFacialPage() {
+  const settings = await getSiteSettings()
 
   const cardStyle = {
     background: 'rgba(255,250,245,0.85)',
@@ -140,7 +133,7 @@ export default async function MicroneedlingPage() {
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Skin & Scalp Care
+            Skin &amp; Scalp Care
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
@@ -153,21 +146,21 @@ export default async function MicroneedlingPage() {
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6"
                 style={{ background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(233,221,209,0.9)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif' }}
               >
-                Candela Skin Renewal Technology
+                Signature Resurfacing Treatment
               </div>
 
               <h1
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                Candela Matrix Pro
+                HydraFacial
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                {description} Our Candela Matrix Pro approach is elegant, collagen-focused, and designed around natural-looking skin renewal.
+                The world&apos;s leading hydradermabrasion treatment — HydraFacial simultaneously cleanses, exfoliates, extracts, and infuses your skin with nourishing serums for an instant, visible glow with zero downtime.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -191,9 +184,9 @@ export default async function MicroneedlingPage() {
 
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { value: '2–3 sessions', label: 'Often recommended in a series' },
-                  { value: '4–8 weeks', label: 'Common spacing between treatments' },
-                  { value: 'Minimal', label: 'Downtime required' },
+                  { value: 'No Downtime', label: 'Return to activities immediately' },
+                  { value: 'All Skin Types', label: 'Safe and effective for everyone' },
+                  { value: 'Instant Glow', label: 'Visible results after one treatment' },
                 ].map((stat) => (
                   <div key={stat.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
                     <strong className="block mb-1" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem' }}>{stat.value}</strong>
@@ -213,25 +206,23 @@ export default async function MicroneedlingPage() {
                 className="rounded-2xl flex-1 flex flex-col justify-between p-4 relative overflow-hidden"
                 style={{
                   minHeight: '220px',
-                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela_microneedling.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  background: 'linear-gradient(135deg, #0A1A1C 0%, #0F2D30 30%, #1A4A50 55%, #2E7080 80%, #D4AF37 100%)',
                 }}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 40%, rgba(0,0,0,0.30) 100%)', borderRadius: 'inherit' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, transparent 40%, rgba(0,0,0,0.25) 100%)', borderRadius: 'inherit' }} />
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  Collagen · Texture · Tightness
+                  Cleanse · Extract · Hydrate
                 </span>
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  Candela Matrix Pro
+                  HydraFacial
                 </span>
               </div>
 
               <div className="flex flex-col gap-3">
                 {[
-                  { label: 'Best for', value: 'Texture, fine lines, acne scars, laxity, pores' },
-                  { label: 'Technology', value: 'RF microneedling with customized energy delivery' },
-                  { label: 'Pricing', value: price },
+                  { label: 'Best for', value: 'Congestion, dullness, fine lines, uneven texture, hydration' },
+                  { label: 'Technology', value: 'Vortex-Fusion® hydradermabrasion' },
+                  { label: 'Goal', value: 'Clearer, brighter, deeply hydrated skin' },
                 ].map((row) => (
                   <div key={row.label} className="flex justify-between items-center gap-4 px-4 py-3.5 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
                     <strong className="text-sm flex-shrink-0" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem' }}>{row.label}</strong>
@@ -252,14 +243,14 @@ export default async function MicroneedlingPage() {
               Pricing
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Save with our 3-session packages — recommended for optimal results.
+              Save with our 3-session packages — regular treatments deliver the best long-term results.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { name: 'Sublime', single: '$278', package: '$799', sessions: '3 sessions' },
-              { name: 'Sublative', single: '$569', package: '$1,499', sessions: '3 sessions' },
-              { name: 'Matrix Pro RF Microneedling', single: '$699', package: '$1,780', sessions: '3 sessions' },
+              { name: 'Signature', single: '$189', package: '$499', sessions: '3 sessions' },
+              { name: 'Deluxe', single: '$229', package: '$599', sessions: '3 sessions' },
+              { name: 'Platinum', single: '$299', package: '$799', sessions: '3 sessions' },
             ].map((item) => (
               <div key={item.name} className="rounded-2xl p-6" style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}>
                 <h3 className="font-light mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', margin: '0 0 16px' }}>{item.name}</h3>
@@ -285,7 +276,7 @@ export default async function MicroneedlingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Before & After
+              Before &amp; After
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
               Individual results may vary. Photos shown with patient consent.
@@ -307,7 +298,7 @@ export default async function MicroneedlingPage() {
                   className="relative"
                   style={{
                     height: '280px',
-                    background: 'linear-gradient(145deg, #1A100A 0%, #35200F 30%, #8B5E30 65%, #C4956A 100%)',
+                    background: 'linear-gradient(145deg, #0A1A1C 0%, #0F2D30 30%, #1A4A50 65%, #2E7080 100%)',
                   }}
                 >
                   <span
@@ -331,7 +322,7 @@ export default async function MicroneedlingPage() {
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · Candela Matrix Pro
+                    Patient {i} · HydraFacial
                   </p>
                 </div>
               </div>
@@ -340,35 +331,36 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
+      {/* Overview */}
       <section id="overview" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              A complete approach to skin renewal
+              Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              RF microneedling appeals to patients who want more than a surface-level facial but are not ready for surgery.
+              HydraFacial is more than a facial — it&apos;s a complete skin health treatment backed by clinical results.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                title: 'What is Candela Matrix Pro?',
-                body: "Matrix Pro is Candela's RF microneedling treatment designed to support skin renewal by delivering radiofrequency energy through ultra-fine microneedles. It is commonly used in treatment plans focused on collagen support, texture refinement, and visible skin tightening.",
+                title: 'What is HydraFacial?',
+                body: 'HydraFacial uses patented Vortex-Fusion® technology to deliver a multi-step treatment in a single session. Unlike traditional facials, it simultaneously cleanses, exfoliates, extracts impurities, and infuses the skin with targeted serums — all without irritation or downtime. It\'s one of the most performed aesthetic treatments worldwide, trusted by dermatologists and skin care professionals.',
                 pills: [
-                  { label: 'Renew', value: 'Supports healthier, smoother skin' },
-                  { label: 'Refine', value: 'Targets texture and pores' },
-                  { label: 'Refresh', value: 'Natural-looking rejuvenation' },
+                  { label: 'Vortex-Fusion®', value: 'Patented delivery technology' },
+                  { label: 'No Downtime', value: 'Return to activities immediately' },
+                  { label: 'Clinically Proven', value: 'FDA-cleared for all skin types' },
                 ],
               },
               {
-                title: 'Why patients love RF microneedling',
-                body: "RF microneedling fits beautifully into healthy-aging treatment plans because it addresses multiple concerns at once — fine lines, scars, laxity, and overall skin quality. It can be used on the face, jawline, neck, and select body areas.",
+                title: 'The 3 Steps',
+                body: 'Step 1 — Cleanse & Peel: Gentle exfoliation and resurfacing reveal a fresh skin layer. Step 2 — Extract & Hydrate: Painless suction removes debris from pores while nourishing serums are delivered. Step 3 — Fuse & Protect: Antioxidants and peptides are saturated into the skin for long-lasting hydration and protection.',
                 pills: [
-                  { label: 'Collagen', value: 'Deep collagen stimulation' },
-                  { label: 'Series', value: 'Gradual, natural improvement' },
-                  { label: 'Versatile', value: 'Face, neck & body areas' },
+                  { label: 'Cleanse', value: 'Exfoliate & resurface' },
+                  { label: 'Extract', value: 'Remove & nourish' },
+                  { label: 'Hydrate', value: 'Fuse & protect' },
                 ],
               },
             ].map((card) => (
@@ -389,20 +381,41 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section id="benefits" className="py-10">
+      {/* Treatment Levels */}
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              What Matrix Pro can help address
+              Choose Your Treatment Level
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              RF microneedling is one of the most versatile nonsurgical treatments available for skin renewal.
+              Each level builds on the last for a progressively enhanced experience.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {benefits.map((item) => (
+            {[
+              {
+                tag: '01',
+                title: 'Signature',
+                description: 'The core HydraFacial experience. Deep cleansing, gentle exfoliation, painless extraction, and intense hydration in one streamlined treatment.',
+              },
+              {
+                tag: '02',
+                title: 'Deluxe',
+                description: 'Everything in Signature plus a targeted booster serum customized to your skin concern — brightening, anti-aging, or clarifying.',
+              },
+              {
+                tag: '03',
+                title: 'Platinum',
+                description: 'The ultimate HydraFacial. Full Deluxe treatment enhanced with lymphatic drainage to reduce puffiness and LED light therapy for collagen support.',
+              },
+              {
+                tag: '04',
+                title: 'Add-Ons Available',
+                description: 'Boost any treatment with targeted enhancements. Ask your provider about lip treatment, eye treatment, or décolleté add-ons.',
+              },
+            ].map((item) => (
               <div key={item.tag} className="rounded-3xl p-6" style={cardStyle}>
                 <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4" style={tagStyle}>{item.tag}</span>
                 <h4 className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, margin: '0 0 8px' }}>{item.title}</h4>
@@ -413,40 +426,12 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
-      {/* Why this technology */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
-            <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Why this technology stands out
-            </h2>
-            <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Patients appreciate understanding why RF microneedling delivers more than a basic facial or standard microneedling alone.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { tag: 'Candela', title: 'RF + Microneedling', desc: 'Matrix Pro combines radiofrequency energy with microneedling to support deeper, more comprehensive skin renewal than superficial treatments alone.' },
-              { tag: 'Customization', title: 'Personalized Depth & Energy', desc: 'The Matrix platform is built around customizable treatment delivery, helping providers tailor each session to your unique skin and goals.' },
-              { tag: 'Comfort', title: 'Designed for Efficiency', desc: 'Patients are drawn to the balance of visible results, comfortable treatment design, and manageable recovery compared to more aggressive options.' },
-            ].map((item) => (
-              <div key={item.tag} className="rounded-3xl p-6" style={cardStyle}>
-                <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4" style={tagStyle}>{item.tag}</span>
-                <h4 className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, margin: '0 0 8px' }}>{item.title}</h4>
-                <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Treatment Experience */}
+      {/* What to Expect */}
       <section id="experience" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              The treatment experience
+              What to expect
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
               From consultation to visible results — here is what the experience looks like at Slynn Wellness.
@@ -465,75 +450,24 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
-      {/* Candidate + Results */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'Who may be a good candidate?',
-                body: 'Patients often explore Matrix Pro when they want a more advanced rejuvenation treatment for visible aging, texture, acne scars, pore concerns, or laxity — but still want a nonsurgical path. A consultation is important to review candidacy and realistic expectations.',
-                bullets: ['You want more correction than a standard facial can provide', 'You are interested in collagen support and gradual, natural-looking improvement', 'You are comfortable with a treatment series for stronger results'],
-              },
-              {
-                title: 'What results feel like',
-                body: 'Patients often describe a visible glow and a tighter feel within days, with more progressive improvement over the following weeks as new collagen develops. Series treatments are commonly recommended when the goal is more meaningful change in texture, firmness, or scarring.',
-                bullets: ['Early glow and refreshed skin appearance', 'Gradual improvement in smoothness and skin quality', 'Longer-term support for firmness and texture with maintenance'],
-              },
-            ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
-                <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-5" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
-                <ul className="space-y-3">
-                  {card.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>
-                      <span className="w-2 h-2 rounded-full bg-[#D4AF37] flex-shrink-0 mt-1.5" style={{ boxShadow: '0 0 0 4px rgba(212,175,55,0.15)' }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Aftercare */}
-      <section id="aftercare" className="py-10">
+      {/* Benefits */}
+      <section id="benefits" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Aftercare & recovery guidance
+              What HydraFacial Can Do For You
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Following post-care instructions carefully helps protect your results and support the renewal process.
+              HydraFacial is one of the most versatile and beloved aesthetic treatments for all skin types.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'Immediately after treatment',
-                body: 'It is normal to experience temporary redness, warmth, or a lightly flushed look after treatment. Depending on settings and the area treated, mild sensitivity or dryness may occur during early recovery.',
-                bullets: ['Follow post-care instructions exactly as given by your provider', 'Keep skincare simple and gentle during early recovery', 'Prioritize hydration and diligent sun protection'],
-              },
-              {
-                title: 'Planning your series',
-                body: 'Matrix Pro is often not a one-and-done treatment when the goals involve laxity, scarring, or advanced rejuvenation. Building a thoughtful series and maintenance plan creates the most elegant, lasting outcome.',
-                bullets: ['Many clients start with a series rather than a single treatment', 'Spacing is commonly based on skin goals and recovery response', 'Maintenance helps preserve visible firmness and glow over time'],
-              },
-            ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
-                <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-5" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
-                <ul className="space-y-3">
-                  {card.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>
-                      <span className="w-2 h-2 rounded-full bg-[#D4AF37] flex-shrink-0 mt-1.5" style={{ boxShadow: '0 0 0 4px rgba(212,175,55,0.15)' }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {benefits.map((item) => (
+              <div key={item.tag} className="rounded-3xl p-6" style={cardStyle}>
+                <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4" style={tagStyle}>{item.tag}</span>
+                <h4 className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, margin: '0 0 8px' }}>{item.title}</h4>
+                <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>{item.description}</p>
               </div>
             ))}
           </div>
@@ -549,10 +483,10 @@ export default async function MicroneedlingPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', margin: '0 0 12px' }}>
-                Is Candela Matrix Pro right for you?
+                Ready for Your Best Skin?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                A consultation helps us review your skin goals, treatment history, and whether Matrix Pro fits your plan — then build a personalized treatment series around your timeline.
+                A consultation helps us understand your skin goals, choose the right HydraFacial level, and customize the perfect serum boosters for your unique concerns.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -616,10 +550,10 @@ export default async function MicroneedlingPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book your Matrix Pro consultation
+                Book Your HydraFacial
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness offers a refined, welcoming environment for advanced skin care in Pasadena. Book your consultation and receive a personalized treatment recommendation.
+                Slynn Wellness offers all three levels of HydraFacial treatment in a serene, luxury environment. Book your consultation and let our skin care experts customize the perfect treatment for your skin.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

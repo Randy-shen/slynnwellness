@@ -16,56 +16,43 @@ export const metadata: Metadata = {
 
 const tiers = [
   {
-    name: 'Silver',
+    name: 'ProSkin',
     price: '$99',
     period: '/month',
-    description: 'Perfect for those new to medical spa treatments.',
+    description: 'Elevate your skin health with monthly treatments and exclusive savings.',
     color: '#B8A99A',
     popular: false,
-    benefits: [
-      '1 complimentary vitamin injection/month',
-      '10% off all services',
-      'Priority booking access',
-      'Birthday month bonus',
-      'Member-only promotions',
-      'Free annual skin consultation',
+    freeLabel: 'Choose One Free Each Month:',
+    freeOptions: [
+      'Vitamin Shot',
+      'Anti-Aging Facial Treatment',
+    ],
+    perksLabel: 'Member Perks:',
+    perks: [
+      '10% off Candela Matrix Pro Microneedling',
+      '10% off Sculptra',
+      '10% off Juvederm Fillers (all areas)',
     ],
   },
   {
-    name: 'Gold',
-    price: '$199',
+    name: 'ProWellness',
+    price: '$179',
     period: '/month',
-    description: 'Our most popular plan for the wellness enthusiast.',
+    description: 'Our most comprehensive membership for total mind and body wellness.',
     color: '#D4AF37',
     popular: true,
-    benefits: [
-      '1 IV drip OR HydraFacial/month',
-      '15% off all services',
-      'Priority booking access',
-      'Birthday month bonus + free service',
-      'Member-only promotions',
-      'Free quarterly skin consultation',
-      'Complimentary LED add-on per visit',
-      'Exclusive access to new treatments',
+    freeLabel: 'Choose One Free Each Month:',
+    freeOptions: [
+      'IV Therapy (excluding NAD+)',
+      'Signature HydraFacial Treatment',
+      'Scalp Treatment',
+      'Sublime Treatment',
     ],
-  },
-  {
-    name: 'Platinum',
-    price: '$399',
-    period: '/month',
-    description: 'The ultimate luxury wellness experience.',
-    color: '#8B7355',
-    popular: false,
-    benefits: [
-      '2 treatments/month (choose any)',
-      '20% off all additional services',
-      'VIP priority booking',
-      'Birthday month luxury gift',
-      'Exclusive member events',
-      'Monthly provider check-in',
-      'Complimentary LED + enhancements',
-      'Dedicated care coordinator',
-      'Free annual comprehensive assessment',
+    perksLabel: 'Member Perks:',
+    perks: [
+      '10% off Candela Matrix Pro Microneedling',
+      '10% off Sculptra',
+      '10% off Juvederm Fillers (all areas)',
     ],
   },
 ]
@@ -141,7 +128,7 @@ export default async function MembershipPage() {
       {/* Membership Tiers */}
       <section className="py-20 bg-[#FFFAF5]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
@@ -158,54 +145,63 @@ export default async function MembershipPage() {
                   </div>
                 )}
 
-                <div className="mb-8">
+                {/* Header */}
+                <div className="mb-6">
                   <h3
-                    className="text-2xl font-medium mb-2"
-                    style={{
-                      fontFamily: 'Cormorant Garamond, serif',
-                      color: tier.color,
-                    }}
+                    className="text-3xl font-medium mb-2"
+                    style={{ fontFamily: 'Cormorant Garamond, serif', color: tier.color }}
                   >
                     {tier.name}
                   </h3>
                   <div className="flex items-baseline gap-1 mb-3">
-                    <span
-                      className="text-4xl font-light text-[#2C2C2C]"
-                      style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                    >
+                    <span className="text-4xl font-light text-[#2C2C2C]" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
                       {tier.price}
                     </span>
-                    <span
-                      className="text-sm text-[#B8A99A]"
-                      style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    >
+                    <span className="text-sm text-[#B8A99A]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                       {tier.period}
                     </span>
                   </div>
-                  <p
-                    className="text-xs text-[#8B7355] leading-relaxed"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
-                  >
+                  <p className="text-xs text-[#8B7355] leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     {tier.description}
                   </p>
                 </div>
 
-                <ul className="space-y-3 flex-1 mb-8">
-                  {tier.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3">
-                      <Check
-                        className="h-4 w-4 flex-shrink-0 mt-0.5"
-                        style={{ color: tier.color }}
-                      />
-                      <span
-                        className="text-xs text-[#8B7355]"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                      >
-                        {benefit}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Free options */}
+                <div className="mb-5">
+                  <p className="text-xs font-semibold tracking-wider uppercase text-[#D4AF37] mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    {tier.freeLabel}
+                  </p>
+                  <ul className="space-y-2">
+                    {tier.freeOptions.map((option) => (
+                      <li key={option} className="flex items-start gap-3">
+                        <Check className="h-4 w-4 flex-shrink-0 mt-0.5 text-[#D4AF37]" />
+                        <span className="text-xs text-[#2C2C2C] font-medium" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                          {option}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Divider */}
+                <div className="w-full h-px bg-[#F0E8DF] mb-5" />
+
+                {/* Perks */}
+                <div className="flex-1 mb-8">
+                  <p className="text-xs font-semibold tracking-wider uppercase text-[#8B7355] mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    {tier.perksLabel}
+                  </p>
+                  <ul className="space-y-2">
+                    {tier.perks.map((perk) => (
+                      <li key={perk} className="flex items-start gap-3">
+                        <Check className="h-4 w-4 flex-shrink-0 mt-0.5" style={{ color: tier.color }} />
+                        <span className="text-xs text-[#8B7355]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                          {perk}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <a
                   href={settings.booking_url}

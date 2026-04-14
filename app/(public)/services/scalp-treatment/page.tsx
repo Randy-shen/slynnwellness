@@ -2,115 +2,98 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
-import { getServiceBySlug } from '@/lib/supabase/admin'
 
 export const metadata: Metadata = {
-  title: 'Candela Matrix Pro | Slynn Wellness',
+  title: 'Scalp Relaxation Treatment | Slynn Wellness',
   description:
-    'Lift, tighten, and renew your skin with Candela Matrix Pro at Slynn Wellness in Pasadena, CA. Collagen-focused skin renewal for texture, laxity, and fine lines.',
+    'Scalp Relaxation Treatment at Slynn Wellness in Pasadena, CA. A deeply therapeutic scalp treatment combining expert massage, targeted exfoliation, and nourishing serums to relieve tension, restore scalp health, and support healthy hair growth.',
 }
 
-const benefits = [
+const concerns = [
   {
     tag: '01',
-    title: 'Fine Lines & Wrinkles',
-    description: 'Supports smoother-looking skin and softens visible signs of aging with collagen-stimulating RF energy.',
+    title: 'Scalp Tension & Stress',
+    description: 'Expert massage techniques release chronic tension in the scalp, neck, and surrounding muscles for deep physical and mental relaxation.',
   },
   {
     tag: '02',
-    title: 'Texture & Pores',
-    description: 'Often selected for rough texture, enlarged pores, and an overall skin-quality refresh.',
+    title: 'Dryness & Flakiness',
+    description: 'Targeted hydrating serums and gentle exfoliation address dry scalp conditions and reduce flaking.',
   },
   {
     tag: '03',
-    title: 'Skin Laxity',
-    description: 'Part of a nonsurgical plan to support firmer-looking skin on the face, jawline, and neck.',
+    title: 'Sebum Buildup',
+    description: 'Professional-grade cleansing removes excess oil, product buildup, and environmental debris from the scalp and follicles.',
   },
   {
     tag: '04',
-    title: 'Acne Scars & Marks',
-    description: 'Frequently chosen when patients want a more advanced treatment for textural acne scarring.',
+    title: 'Poor Circulation',
+    description: 'Stimulating massage techniques increase blood flow to hair follicles, supporting a healthier growth environment.',
   },
   {
     tag: '05',
-    title: 'Under-Eye & Delicate Areas',
-    description: 'May be discussed for select rejuvenation goals in delicate facial zones during consultation.',
+    title: 'Hair Thinning Support',
+    description: 'By optimizing scalp health and circulation, the treatment supports the conditions necessary for healthy hair follicle function.',
   },
   {
     tag: '06',
-    title: 'Post-Weight-Loss Skin',
-    description: 'Can support patients looking to improve firmness and skin quality after facial volume changes.',
-  },
-  {
-    tag: '07',
-    title: 'Healthy Aging Plans',
-    description: 'Works beautifully as a foundation treatment in long-term maintenance and skin renewal programs.',
-  },
-  {
-    tag: '08',
-    title: 'Custom Combinations',
-    description: 'Can be paired with injectables, facials, or skincare as part of a broader aesthetic plan.',
+    title: 'Scalp Sensitivity',
+    description: 'Calming, anti-inflammatory serums soothe reactive or sensitive scalp conditions and restore balance.',
   },
 ]
 
 const timeline = [
   {
     step: 'Step 01',
-    title: 'Consultation',
-    description: 'We assess your skin quality, treatment history, lifestyle, and goals — then determine whether Matrix Pro is the right fit for your plan.',
+    title: 'Scalp Analysis',
+    description: 'Your provider assesses your scalp condition, hair concerns, and selects the appropriate cleansing and serum protocol.',
   },
   {
     step: 'Step 02',
-    title: 'Preparation',
-    description: 'Your skin is cleansed and prepared. A numbing approach may be used based on the area being treated and the treatment intensity.',
+    title: 'Cleanse & Exfoliate',
+    description: 'Deep scalp cleansing and gentle exfoliation remove buildup and prepare the scalp for serum absorption.',
   },
   {
     step: 'Step 03',
-    title: 'Treatment',
-    description: 'The device is passed strategically through the treatment area to deliver RF microneedling energy in a customized, precise pattern.',
+    title: 'Massage & Serum',
+    description: 'Extended therapeutic scalp massage to stimulate circulation and relieve tension, followed by targeted nourishing serum application.',
   },
   {
     step: 'Step 04',
-    title: 'Recovery',
-    description: 'Most clients experience a short recovery window with temporary redness or warmth, followed by progressive skin renewal over weeks.',
+    title: 'Finish & Recommend',
+    description: 'Treatment concludes with styling recommendations and a personalized home care plan to maintain scalp health between sessions.',
   },
 ]
 
 const faqs = [
   {
-    q: 'How is Matrix Pro different from regular microneedling?',
-    a: 'Matrix Pro adds radiofrequency energy to microneedling, allowing the treatment to support deeper skin renewal goals such as firmness, fine lines, and more advanced texture concerns.',
+    q: 'How often should I get this treatment?',
+    a: 'Monthly sessions are recommended for maintaining scalp health. More frequent treatments may be advised for specific concerns like dryness or thinning.',
   },
   {
-    q: 'How many treatments do I usually need?',
-    a: 'Many patients are guided toward a treatment series rather than a single visit. The right number depends on whether the main concern is texture, laxity, scars, or overall skin rejuvenation.',
+    q: 'Is there any downtime?',
+    a: 'No. The Scalp Relaxation Treatment has zero downtime. Hair can be styled immediately after the session.',
   },
   {
-    q: 'Is there downtime?',
-    a: 'Downtime is generally manageable. Temporary redness, warmth, or mild sensitivity is common early on. Most clients return to their regular routine within 24–48 hours.',
+    q: 'Will it help with hair loss?',
+    a: 'The treatment supports a healthy scalp environment which is beneficial for hair retention and growth. For active hair loss concerns, we recommend combining with our PRP Hair Restoration treatment.',
   },
   {
-    q: 'When will I see results?',
-    a: 'Some patients notice an early glow or tighter feel within days, while continued improvement becomes more visible over the following weeks as collagen response develops.',
+    q: 'Is it suitable for color-treated hair?',
+    a: 'Yes. The treatment is gentle and compatible with color-treated, chemically processed, and natural hair.',
   },
   {
-    q: 'Can this be combined with Botox, filler, or facials?',
-    a: 'Often yes — but timing and sequence matter. Combination planning should always be reviewed during consultation so your treatment calendar is intentional and safe.',
+    q: 'Can I combine this with other scalp treatments?',
+    a: 'Absolutely. This treatment pairs beautifully with PRP Hair Restoration. Your provider will advise on the optimal treatment sequence and timing.',
   },
   {
-    q: 'Is Matrix Pro right for all skin tones?',
-    a: 'Candela positions the Matrix system for diverse skin types and tones, but candidacy and settings should be determined by a qualified provider after evaluating your skin.',
+    q: 'What should I do after the treatment?',
+    a: 'Avoid washing your hair for 12–24 hours to allow the serums to fully absorb. Follow your provider\'s recommendations for home scalp care.',
   },
 ]
 
-export default async function MicroneedlingPage() {
-  const [settings, service] = await Promise.all([
-    getSiteSettings(),
-    getServiceBySlug('microneedling'),
-  ])
-
-  const price = service?.price || 'Starting at $300/session'
-  const description = service?.short_description || 'Stimulate collagen production for smoother, firmer, rejuvenated skin.'
+export default async function ScalpTreatmentPage() {
+  const settings = await getSiteSettings()
 
   const cardStyle = {
     background: 'rgba(255,250,245,0.85)',
@@ -140,7 +123,7 @@ export default async function MicroneedlingPage() {
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Skin & Scalp Care
+            Skin &amp; Scalp Care
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
@@ -153,21 +136,21 @@ export default async function MicroneedlingPage() {
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-semibold tracking-widest uppercase mb-6"
                 style={{ background: 'rgba(255,255,255,0.8)', border: '1px solid rgba(233,221,209,0.9)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif' }}
               >
-                Candela Skin Renewal Technology
+                Therapeutic Scalp Care
               </div>
 
               <h1
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                Candela Matrix Pro
+                Scalp Relaxation Treatment
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                {description} Our Candela Matrix Pro approach is elegant, collagen-focused, and designed around natural-looking skin renewal.
+                A deeply therapeutic scalp treatment that combines expert massage, targeted exfoliation, and nourishing serums to relieve tension, restore scalp health, and create the optimal environment for healthy hair growth.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -191,9 +174,9 @@ export default async function MicroneedlingPage() {
 
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { value: '2–3 sessions', label: 'Often recommended in a series' },
-                  { value: '4–8 weeks', label: 'Common spacing between treatments' },
-                  { value: 'Minimal', label: 'Downtime required' },
+                  { value: 'No Downtime', label: 'Return to activities immediately' },
+                  { value: 'Deeply Relaxing', label: 'Stress and tension relief' },
+                  { value: 'Scalp Health', label: 'Foundation for healthy hair' },
                 ].map((stat) => (
                   <div key={stat.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
                     <strong className="block mb-1" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem' }}>{stat.value}</strong>
@@ -213,25 +196,24 @@ export default async function MicroneedlingPage() {
                 className="rounded-2xl flex-1 flex flex-col justify-between p-4 relative overflow-hidden"
                 style={{
                   minHeight: '220px',
-                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela_microneedling.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  background: 'linear-gradient(135deg, #0A1A0E 0%, #122A16 30%, #1A4020 55%, #2E6535 80%, #D4AF37 100%)',
                 }}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 40%, rgba(0,0,0,0.30) 100%)', borderRadius: 'inherit' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, transparent 40%, rgba(0,0,0,0.25) 100%)', borderRadius: 'inherit' }} />
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  Collagen · Texture · Tightness
+                  Therapeutic · Restorative
                 </span>
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  Candela Matrix Pro
+                  Restore · Relax · Revitalize
                 </span>
               </div>
 
               <div className="flex flex-col gap-3">
                 {[
-                  { label: 'Best for', value: 'Texture, fine lines, acne scars, laxity, pores' },
-                  { label: 'Technology', value: 'RF microneedling with customized energy delivery' },
-                  { label: 'Pricing', value: price },
+                  { label: 'Best for', value: 'Scalp tension, dryness, buildup, hair thinning, stress relief' },
+                  { label: 'Treatment', value: 'Scalp analysis, cleanse, exfoliation, massage & serums' },
+                  { label: 'Goal', value: 'Healthy scalp, relieved tension, optimal hair environment' },
+                  { label: 'Pricing', value: '$99 / session' },
                 ].map((row) => (
                   <div key={row.label} className="flex justify-between items-center gap-4 px-4 py-3.5 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
                     <strong className="text-sm flex-shrink-0" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem' }}>{row.label}</strong>
@@ -244,48 +226,12 @@ export default async function MicroneedlingPage() {
         </div>
       </div>
 
-      {/* Pricing */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
-            <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Pricing
-            </h2>
-            <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Save with our 3-session packages — recommended for optimal results.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { name: 'Sublime', single: '$278', package: '$799', sessions: '3 sessions' },
-              { name: 'Sublative', single: '$569', package: '$1,499', sessions: '3 sessions' },
-              { name: 'Matrix Pro RF Microneedling', single: '$699', package: '$1,780', sessions: '3 sessions' },
-            ].map((item) => (
-              <div key={item.name} className="rounded-2xl p-6" style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}>
-                <h3 className="font-light mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', margin: '0 0 16px' }}>{item.name}</h3>
-                <div className="w-full h-px mb-4" style={{ background: 'rgba(233,221,209,0.9)' }} />
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>Single session</span>
-                    <span className="font-semibold" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem', color: '#2C2C2C' }}>{item.single}</span>
-                  </div>
-                  <div className="flex items-center justify-between px-3 py-2 rounded-xl" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)' }}>
-                    <span className="text-xs font-medium" style={{ fontFamily: 'Montserrat, sans-serif', color: '#8B6340' }}>{item.sessions}</span>
-                    <span className="font-semibold" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem', color: '#D4AF37' }}>{item.package}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Before & After */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Before & After
+              Before &amp; After
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
               Individual results may vary. Photos shown with patient consent.
@@ -307,7 +253,7 @@ export default async function MicroneedlingPage() {
                   className="relative"
                   style={{
                     height: '280px',
-                    background: 'linear-gradient(145deg, #1A100A 0%, #35200F 30%, #8B5E30 65%, #C4956A 100%)',
+                    background: 'linear-gradient(145deg, #0A1A0E 0%, #122A16 30%, #1A4020 65%, #2E6535 100%)',
                   }}
                 >
                   <span
@@ -331,7 +277,7 @@ export default async function MicroneedlingPage() {
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · Candela Matrix Pro
+                    Patient {i} · Scalp Relaxation Treatment
                   </p>
                 </div>
               </div>
@@ -340,35 +286,36 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
+      {/* Overview */}
       <section id="overview" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              A complete approach to skin renewal
+              Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              RF microneedling appeals to patients who want more than a surface-level facial but are not ready for surgery.
+              A therapeutic approach to scalp wellness that begins where all healthy hair starts.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
-                title: 'What is Candela Matrix Pro?',
-                body: "Matrix Pro is Candela's RF microneedling treatment designed to support skin renewal by delivering radiofrequency energy through ultra-fine microneedles. It is commonly used in treatment plans focused on collagen support, texture refinement, and visible skin tightening.",
+                title: 'What is the Scalp Relaxation Treatment?',
+                body: 'Our Scalp Relaxation Treatment is a comprehensive therapeutic service designed to restore balance to the scalp environment. Beginning with a detailed scalp analysis, your provider customizes a protocol using professional-grade cleansing, gentle exfoliation to remove buildup, stimulating massage to boost circulation, and targeted nourishing serums to address your specific scalp concerns.',
                 pills: [
-                  { label: 'Renew', value: 'Supports healthier, smoother skin' },
-                  { label: 'Refine', value: 'Targets texture and pores' },
-                  { label: 'Refresh', value: 'Natural-looking rejuvenation' },
+                  { label: 'Therapeutic', value: 'Tension and stress relief' },
+                  { label: 'Restorative', value: 'Scalp balance and renewal' },
+                  { label: 'Customized', value: 'Tailored to your concerns' },
                 ],
               },
               {
-                title: 'Why patients love RF microneedling',
-                body: "RF microneedling fits beautifully into healthy-aging treatment plans because it addresses multiple concerns at once — fine lines, scars, laxity, and overall skin quality. It can be used on the face, jawline, neck, and select body areas.",
+                title: 'Why scalp health matters',
+                body: 'The scalp is the foundation of hair health — yet it is one of the most neglected areas of skincare. Buildup, dryness, poor circulation, and chronic tension can compromise hair follicle function and contribute to thinning, shedding, and poor hair quality. A healthy scalp creates the optimal environment for stronger, fuller, more vibrant hair growth.',
                 pills: [
-                  { label: 'Collagen', value: 'Deep collagen stimulation' },
-                  { label: 'Series', value: 'Gradual, natural improvement' },
-                  { label: 'Versatile', value: 'Face, neck & body areas' },
+                  { label: 'Circulation', value: 'Feeds hair follicles' },
+                  { label: 'Hair Health', value: 'Foundation for growth' },
+                  { label: 'Relaxation', value: 'Whole-body tension relief' },
                 ],
               },
             ].map((card) => (
@@ -389,20 +336,20 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section id="benefits" className="py-10">
+      {/* What This Treatment Addresses */}
+      <section id="concerns" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              What Matrix Pro can help address
+              What This Treatment Addresses
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              RF microneedling is one of the most versatile nonsurgical treatments available for skin renewal.
+              From chronic tension to poor circulation — targeted protocols for your most pressing scalp concerns.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {benefits.map((item) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {concerns.map((item) => (
               <div key={item.tag} className="rounded-3xl p-6" style={cardStyle}>
                 <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4" style={tagStyle}>{item.tag}</span>
                 <h4 className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, margin: '0 0 8px' }}>{item.title}</h4>
@@ -413,43 +360,15 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
-      {/* Why this technology */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
-            <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Why this technology stands out
-            </h2>
-            <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Patients appreciate understanding why RF microneedling delivers more than a basic facial or standard microneedling alone.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[
-              { tag: 'Candela', title: 'RF + Microneedling', desc: 'Matrix Pro combines radiofrequency energy with microneedling to support deeper, more comprehensive skin renewal than superficial treatments alone.' },
-              { tag: 'Customization', title: 'Personalized Depth & Energy', desc: 'The Matrix platform is built around customizable treatment delivery, helping providers tailor each session to your unique skin and goals.' },
-              { tag: 'Comfort', title: 'Designed for Efficiency', desc: 'Patients are drawn to the balance of visible results, comfortable treatment design, and manageable recovery compared to more aggressive options.' },
-            ].map((item) => (
-              <div key={item.tag} className="rounded-3xl p-6" style={cardStyle}>
-                <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4" style={tagStyle}>{item.tag}</span>
-                <h4 className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', fontWeight: 400, margin: '0 0 8px' }}>{item.title}</h4>
-                <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Treatment Experience */}
+      {/* What to Expect */}
       <section id="experience" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              The treatment experience
+              Your Treatment Experience
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              From consultation to visible results — here is what the experience looks like at Slynn Wellness.
+              From scalp analysis to personalized home care — here is what your session looks like at Slynn Wellness.
             </p>
           </div>
 
@@ -465,75 +384,40 @@ export default async function MicroneedlingPage() {
         </div>
       </section>
 
-      {/* Candidate + Results */}
-      <section className="py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'Who may be a good candidate?',
-                body: 'Patients often explore Matrix Pro when they want a more advanced rejuvenation treatment for visible aging, texture, acne scars, pore concerns, or laxity — but still want a nonsurgical path. A consultation is important to review candidacy and realistic expectations.',
-                bullets: ['You want more correction than a standard facial can provide', 'You are interested in collagen support and gradual, natural-looking improvement', 'You are comfortable with a treatment series for stronger results'],
-              },
-              {
-                title: 'What results feel like',
-                body: 'Patients often describe a visible glow and a tighter feel within days, with more progressive improvement over the following weeks as new collagen develops. Series treatments are commonly recommended when the goal is more meaningful change in texture, firmness, or scarring.',
-                bullets: ['Early glow and refreshed skin appearance', 'Gradual improvement in smoothness and skin quality', 'Longer-term support for firmness and texture with maintenance'],
-              },
-            ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
-                <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-5" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
-                <ul className="space-y-3">
-                  {card.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>
-                      <span className="w-2 h-2 rounded-full bg-[#D4AF37] flex-shrink-0 mt-1.5" style={{ boxShadow: '0 0 0 4px rgba(212,175,55,0.15)' }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Aftercare */}
-      <section id="aftercare" className="py-10">
+      {/* Why This Treatment */}
+      <section id="why" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Aftercare & recovery guidance
+              Why This Treatment?
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Following post-care instructions carefully helps protect your results and support the renewal process.
+              Scalp care is the most overlooked step in a complete hair and wellness routine.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               {
-                title: 'Immediately after treatment',
-                body: 'It is normal to experience temporary redness, warmth, or a lightly flushed look after treatment. Depending on settings and the area treated, mild sensitivity or dryness may occur during early recovery.',
-                bullets: ['Follow post-care instructions exactly as given by your provider', 'Keep skincare simple and gentle during early recovery', 'Prioritize hydration and diligent sun protection'],
+                tag: 'Holistic',
+                title: 'More Than a Head Massage',
+                description: 'A clinically structured scalp treatment that combines therapeutic technique with medical-grade serums for measurable scalp health improvement.',
               },
               {
-                title: 'Planning your series',
-                body: 'Matrix Pro is often not a one-and-done treatment when the goals involve laxity, scarring, or advanced rejuvenation. Building a thoughtful series and maintenance plan creates the most elegant, lasting outcome.',
-                bullets: ['Many clients start with a series rather than a single treatment', 'Spacing is commonly based on skin goals and recovery response', 'Maintenance helps preserve visible firmness and glow over time'],
+                tag: 'Foundation',
+                title: 'Healthy Scalp, Healthy Hair',
+                description: 'Scalp health is the most overlooked factor in hair care. Addressing the root environment creates lasting improvements in hair quality and growth.',
               },
-            ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
-                <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-5" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
-                <ul className="space-y-3">
-                  {card.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-3 text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>
-                      <span className="w-2 h-2 rounded-full bg-[#D4AF37] flex-shrink-0 mt-1.5" style={{ boxShadow: '0 0 0 4px rgba(212,175,55,0.15)' }} />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+              {
+                tag: 'Pair',
+                title: 'Pairs with PRP Therapy',
+                description: 'Combine with our PRP Hair Restoration treatment for a comprehensive hair wellness protocol addressing both scalp health and follicle stimulation.',
+              },
+            ].map((item) => (
+              <div key={item.tag} className="rounded-3xl p-8" style={cardStyle}>
+                <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4" style={tagStyle}>{item.tag}</span>
+                <h4 className="mb-3" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', fontWeight: 400, margin: '0 0 12px' }}>{item.title}</h4>
+                <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0, lineHeight: 1.7 }}>{item.description}</p>
               </div>
             ))}
           </div>
@@ -549,10 +433,10 @@ export default async function MicroneedlingPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', margin: '0 0 12px' }}>
-                Is Candela Matrix Pro right for you?
+                Give Your Scalp the Care It Deserves
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                A consultation helps us review your skin goals, treatment history, and whether Matrix Pro fits your plan — then build a personalized treatment series around your timeline.
+                A consultation with our scalp care team helps us select the optimal treatment protocol for your concerns and goals.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -616,10 +500,10 @@ export default async function MicroneedlingPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book your Matrix Pro consultation
+                Book Your Scalp Relaxation Treatment
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness offers a refined, welcoming environment for advanced skin care in Pasadena. Book your consultation and receive a personalized treatment recommendation.
+                Slynn Wellness is proud to offer therapeutic scalp care in Pasadena. Let our team create a personalized scalp treatment plan for your healthiest hair environment.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

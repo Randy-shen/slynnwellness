@@ -53,7 +53,6 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
       dropdown: navServices.skin,
     },
     { label: 'Procare Membership', href: '/membership' },
-    { label: 'Price List', href: '/price-list' },
     { label: 'Shop', href: '/shop' },
     { label: 'Contact', href: '/contact' },
   ]

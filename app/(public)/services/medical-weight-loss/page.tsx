@@ -195,7 +195,7 @@ export default async function MedicalWeightLossPage() {
             right: 0,
             top: 0,
             bottom: 0,
-            width: '44%',
+            width: '52%',
             zIndex: 1,
             pointerEvents: 'none',
           }}
@@ -235,10 +235,8 @@ export default async function MedicalWeightLossPage() {
         >
           <div
             style={{
-              maxWidth: '1220px',
-              margin: '0 auto',
-              padding: '0 2rem',
-              paddingRight: '48%',
+              padding: '0 4vw',
+              paddingRight: '55%',
             }}
           >
             {/* Back link */}
@@ -333,10 +331,8 @@ export default async function MedicalWeightLossPage() {
         >
           <div
             style={{
-              maxWidth: '1220px',
-              margin: '0 auto',
-              padding: '0 2rem',
-              paddingRight: '48%',
+              padding: '0 4vw',
+              paddingRight: '55%',
             }}
           >
             <h2
