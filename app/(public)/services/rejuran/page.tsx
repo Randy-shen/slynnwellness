@@ -201,7 +201,7 @@ export default async function REJURANPage() {
               style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,248,242,0.90))', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 20px 60px rgba(90,66,44,0.10)' }}
             >
               {/* Carousel */}
-              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '0' }}>
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '280px' }}>
                 <ImageCarousel images={carouselImages} autoPlayInterval={3500} fillHeight />
               </div>
 
@@ -236,49 +236,44 @@ export default async function REJURANPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[1, 2, 3].map((i) => (
+            <div
+              className="rounded-3xl overflow-hidden"
+              style={{
+                background: 'rgba(255,250,245,0.85)',
+                border: '1px solid rgba(233,221,209,0.9)',
+                boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
+              }}
+            >
               <div
-                key={i}
-                className="rounded-3xl overflow-hidden"
+                className="relative"
                 style={{
-                  background: 'rgba(255,250,245,0.85)',
-                  border: '1px solid rgba(233,221,209,0.9)',
-                  boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
+                  height: '280px',
+                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-bf%26af.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
-                <div
-                  className="relative"
-                  style={{
-                    height: '280px',
-                    background: 'linear-gradient(145deg, #0A0E1A 0%, #141E35 30%, #1E2E55 65%, #2E4480 100%)',
-                  }}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 40%, rgba(0,0,0,0.22) 100%)' }} />
+                <span
+                  className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
+                  style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
                 >
-                  <span
-                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                    style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
-                  >
-                    Before
-                  </span>
-                  <span
-                    className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                    style={{ background: 'rgba(212,175,55,0.85)', backdropFilter: 'blur(6px)', color: 'white', fontFamily: 'Montserrat, sans-serif' }}
-                  >
-                    After
-                  </span>
-                  <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>
-                      Photo coming soon
-                    </p>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · REJURAN PDRN Treatment
-                  </p>
-                </div>
+                  Before
+                </span>
+                <span
+                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
+                  style={{ background: 'rgba(212,175,55,0.85)', backdropFilter: 'blur(6px)', color: 'white', fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  After
+                </span>
+                <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
               </div>
-            ))}
+              <div className="p-4">
+                <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
+                  Patient 1 · REJURAN PDRN Treatment
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

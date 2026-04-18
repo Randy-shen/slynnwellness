@@ -236,7 +236,7 @@ export default async function BotoxXeominPage() {
               }}
             >
               {/* Carousel */}
-              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '0' }}>
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '280px' }}>
                 <ImageCarousel images={carouselImages} autoPlayInterval={3500} fillHeight />
               </div>
 

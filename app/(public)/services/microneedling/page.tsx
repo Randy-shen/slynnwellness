@@ -223,7 +223,7 @@ export default async function MicroneedlingPage() {
               style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,248,242,0.90))', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 20px 60px rgba(90,66,44,0.10)' }}
             >
               {/* Carousel */}
-              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '0' }}>
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '280px' }}>
                 <ImageCarousel images={overviewImages} autoPlayInterval={3500} fillHeight />
               </div>
 
