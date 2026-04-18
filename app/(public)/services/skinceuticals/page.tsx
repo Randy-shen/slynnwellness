@@ -2,6 +2,14 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
+import ImageCarousel from '@/components/sections/ImageCarousel'
+
+const carouselImages = [
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-1.png', alt: 'SkinCeuticals treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-2.png', alt: 'SkinCeuticals products' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-3.png', alt: 'SkinCeuticals facial' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-4.png', alt: 'SkinCeuticals results' },
+]
 
 export const metadata: Metadata = {
   title: 'SKINCEUTICALS Advanced Facial | Slynn Wellness',
@@ -201,21 +209,9 @@ export default async function SKINCEUTICALSPage() {
               className="lg:col-span-2 rounded-3xl p-6 flex flex-col gap-5"
               style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,248,242,0.90))', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 20px 60px rgba(90,66,44,0.10)' }}
             >
-              {/* Portrait */}
-              <div
-                className="rounded-2xl flex-1 flex flex-col justify-between p-4 relative overflow-hidden"
-                style={{
-                  minHeight: '220px',
-                  background: 'linear-gradient(135deg, #1A0E0A 0%, #2E1A12 30%, #4A2C20 55%, #7A4A38 80%, #D4AF37 100%)',
-                }}
-              >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, transparent 40%, rgba(0,0,0,0.25) 100%)', borderRadius: 'inherit' }} />
-                <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  Medical-Grade · Science-Backed
-                </span>
-                <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  SKINCEUTICALS
-                </span>
+              {/* Carousel */}
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '280px' }}>
+                <ImageCarousel images={carouselImages} autoPlayInterval={3500} fillHeight />
               </div>
 
               <div className="flex flex-col gap-3">
@@ -249,7 +245,11 @@ export default async function SKINCEUTICALSPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[1, 2, 3].map((i) => (
+            {[
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-bf%26af-1.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-bf%26af-2.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-bf%26af-3.png',
+            ].map((src, i) => (
               <div
                 key={i}
                 className="rounded-3xl overflow-hidden"
@@ -263,9 +263,12 @@ export default async function SKINCEUTICALSPage() {
                   className="relative"
                   style={{
                     height: '280px',
-                    background: 'linear-gradient(145deg, #1A0E0A 0%, #2E1A12 30%, #4A2C20 65%, #7A4A38 100%)',
+                    backgroundImage: `url(${src})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                   }}
                 >
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 40%, rgba(0,0,0,0.22) 100%)' }} />
                   <span
                     className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
                     style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
@@ -279,15 +282,10 @@ export default async function SKINCEUTICALSPage() {
                     After
                   </span>
                   <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>
-                      Photo coming soon
-                    </p>
-                  </div>
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · SKINCEUTICALS Advanced Facial
+                    Patient {i + 1} · SKINCEUTICALS Advanced Facial
                   </p>
                 </div>
               </div>

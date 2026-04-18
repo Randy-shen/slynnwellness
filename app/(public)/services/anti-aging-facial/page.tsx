@@ -250,50 +250,30 @@ export default async function AntiAgingFacialPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="rounded-3xl overflow-hidden"
-                style={{
-                  background: 'rgba(255,250,245,0.85)',
-                  border: '1px solid rgba(233,221,209,0.9)',
-                  boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
-                }}
-              >
-                <div
-                  className="relative"
-                  style={{
-                    height: '280px',
-                    background: 'linear-gradient(145deg, #1A1008 0%, #2E2010 30%, #4A3820 65%, #8B6535 100%)',
-                  }}
-                >
-                  <span
-                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                    style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
-                  >
-                    Before
-                  </span>
-                  <span
-                    className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                    style={{ background: 'rgba(212,175,55,0.85)', backdropFilter: 'blur(6px)', color: 'white', fontFamily: 'Montserrat, sans-serif' }}
-                  >
-                    After
-                  </span>
-                  <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>
-                      Photo coming soon
-                    </p>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · Anti-Aging Facial
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div
+            className="rounded-3xl flex flex-col items-center justify-center py-16 px-8 text-center"
+            style={{
+              background: 'rgba(255,250,245,0.85)',
+              border: '1px solid rgba(233,221,209,0.9)',
+              boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
+            }}
+          >
+            <div
+              className="w-14 h-14 rounded-full flex items-center justify-center mb-5"
+              style={{ background: 'rgba(212,175,55,0.10)', border: '1px solid rgba(212,175,55,0.25)' }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <path d="M21 15l-5-5L5 21" />
+              </svg>
+            </div>
+            <h3 className="mb-2" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400 }}>
+              Photos Coming Soon
+            </h3>
+            <p className="text-sm max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>
+              We are currently curating before &amp; after photos for this treatment. Check back soon.
+            </p>
           </div>
         </div>
       </section>

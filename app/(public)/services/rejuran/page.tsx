@@ -236,44 +236,51 @@ export default async function REJURANPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div
-              className="rounded-3xl overflow-hidden"
-              style={{
-                background: 'rgba(255,250,245,0.85)',
-                border: '1px solid rgba(233,221,209,0.9)',
-                boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
-              }}
-            >
+            {[
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-bf%26af.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-bf%26af-2.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-bf%26af--3.png',
+            ].map((src, i) => (
               <div
-                className="relative"
+                key={i}
+                className="rounded-3xl overflow-hidden"
                 style={{
-                  height: '280px',
-                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-bf%26af.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  background: 'rgba(255,250,245,0.85)',
+                  border: '1px solid rgba(233,221,209,0.9)',
+                  boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
                 }}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 40%, rgba(0,0,0,0.22) 100%)' }} />
-                <span
-                  className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                  style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
+                <div
+                  className="relative"
+                  style={{
+                    height: '280px',
+                    backgroundImage: `url(${src})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
                 >
-                  Before
-                </span>
-                <span
-                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
-                  style={{ background: 'rgba(212,175,55,0.85)', backdropFilter: 'blur(6px)', color: 'white', fontFamily: 'Montserrat, sans-serif' }}
-                >
-                  After
-                </span>
-                <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 40%, rgba(0,0,0,0.22) 100%)' }} />
+                  <span
+                    className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
+                    style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
+                  >
+                    Before
+                  </span>
+                  <span
+                    className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
+                    style={{ background: 'rgba(212,175,55,0.85)', backdropFilter: 'blur(6px)', color: 'white', fontFamily: 'Montserrat, sans-serif' }}
+                  >
+                    After
+                  </span>
+                  <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
+                </div>
+                <div className="p-4">
+                  <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
+                    Patient {i + 1} · REJURAN PDRN Treatment
+                  </p>
+                </div>
               </div>
-              <div className="p-4">
-                <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                  Patient 1 · REJURAN PDRN Treatment
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

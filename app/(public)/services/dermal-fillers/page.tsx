@@ -3,6 +3,14 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
+import ImageCarousel from '@/components/sections/ImageCarousel'
+
+const carouselImages = [
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/restylane-1.webp', alt: 'RESTYLANE treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/restylane-2.jpeg', alt: 'RESTYLANE results' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/restylane-2.webp', alt: 'RESTYLANE filler' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/restylane-4.png', alt: 'RESTYLANE natural volume' },
+]
 
 export const metadata: Metadata = {
   title: 'RESTYLANE | Slynn Wellness',
@@ -216,23 +224,9 @@ export default async function RESTYLANEFillerPage() {
               className="lg:col-span-2 rounded-3xl p-6 flex flex-col gap-5"
               style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,248,242,0.90))', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 20px 60px rgba(90,66,44,0.10)' }}
             >
-              {/* Portrait */}
-              <div
-                className="rounded-2xl flex-1 flex items-end p-4 relative overflow-hidden"
-                style={{
-                  minHeight: '220px',
-                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/restylane-4.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)', borderRadius: 'inherit' }} />
-                <span
-                  className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase"
-                  style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}
-                >
-                  Natural volume & contour
-                </span>
+              {/* Carousel */}
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '280px' }}>
+                <ImageCarousel images={carouselImages} autoPlayInterval={3500} fillHeight />
               </div>
 
               <div className="flex flex-col gap-3">
