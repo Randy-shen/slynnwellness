@@ -27,13 +27,15 @@ export default function Hero({
         muted
         loop
         playsInline
+        disablePictureInPicture
         poster={posterUrl || undefined}
         aria-hidden="true"
+        style={{ WebkitTransform: 'translateZ(0)' }}
       >
         {videoUrl && <source src={videoUrl} type="video/mp4" />}
       </video>
 
-      {/* Animated Gradient Fallback (visible when no video) */}
+      {/* Gradient Fallback — shows when no video OR video fails to load on mobile */}
       {!videoUrl && <div className="hero-gradient absolute inset-0 w-full h-full" />}
 
       {/* Dark Overlay */}
