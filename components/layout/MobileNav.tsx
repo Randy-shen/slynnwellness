@@ -21,9 +21,12 @@ interface MobileNavProps {
   onClose: () => void
   navItems: NavItem[]
   bookingUrl: string
+  address?: string
+  phone?: string
+  email?: string
 }
 
-export default function MobileNav({ isOpen, onClose, navItems, bookingUrl }: MobileNavProps) {
+export default function MobileNav({ isOpen, onClose, navItems, bookingUrl, address, phone, email }: MobileNavProps) {
   const [expandedItem, setExpandedItem] = useState<string | null>(null)
 
   const toggleExpanded = (label: string) => {
@@ -87,14 +90,6 @@ export default function MobileNav({ isOpen, onClose, navItems, bookingUrl }: Mob
                             className="overflow-hidden"
                           >
                             <div className="pb-3 pl-4 space-y-2">
-                              <Link
-                                href={item.href}
-                                onClick={onClose}
-                                className="block py-2 text-sm text-[#D4AF37] font-medium"
-                                style={{ fontFamily: 'Montserrat, sans-serif' }}
-                              >
-                                View All {item.label}
-                              </Link>
                               {item.dropdown.map((subItem) => (
                                 <Link
                                   key={subItem.href}
@@ -139,18 +134,24 @@ export default function MobileNav({ isOpen, onClose, navItems, bookingUrl }: Mob
 
               {/* Contact Info */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-[#8B7355]">
-                  <MapPin className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
-                  <span>123 S Lake Ave, Suite 200, Pasadena, CA 91101</span>
-                </div>
-                <a href="tel:+16265550100" className="flex items-center gap-3 text-sm text-[#8B7355] hover:text-[#D4AF37]">
-                  <Phone className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
-                  <span>(626) 555-0100</span>
-                </a>
-                <a href="mailto:info@slynnwellness.com" className="flex items-center gap-3 text-sm text-[#8B7355] hover:text-[#D4AF37]">
-                  <Mail className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
-                  <span>info@slynnwellness.com</span>
-                </a>
+                {address && (
+                  <div className="flex items-center gap-3 text-sm text-[#8B7355]">
+                    <MapPin className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
+                    <span>{address}</span>
+                  </div>
+                )}
+                {phone && (
+                  <a href={`tel:${phone.replace(/\D/g, '')}`} className="flex items-center gap-3 text-sm text-[#8B7355] hover:text-[#D4AF37]">
+                    <Phone className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
+                    <span>{phone}</span>
+                  </a>
+                )}
+                {email && (
+                  <a href={`mailto:${email}`} className="flex items-center gap-3 text-sm text-[#8B7355] hover:text-[#D4AF37]">
+                    <Mail className="h-4 w-4 text-[#D4AF37] flex-shrink-0" />
+                    <span>{email}</span>
+                  </a>
+                )}
               </div>
             </div>
           </div>

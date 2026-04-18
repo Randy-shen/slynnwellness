@@ -287,8 +287,8 @@ export default async function BotoxXeominPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { name: 'Botox', perUnit: '$11 / unit', tiers: [{ units: '30 units', price: '$330' }, { units: '40 units', price: '$440' }, { units: '50 units', price: '$550' }] },
-              { name: 'Xeomin', perUnit: '$9 / unit', tiers: [{ units: '30 units', price: '$270' }, { units: '40 units', price: '$360' }, { units: '50 units', price: '$450' }] },
+              { name: 'Botox', perUnit: '$11 / unit', tiers: [{ units: '30 units', price: '$300' }, { units: '40 units', price: '$360' }, { units: '50 units', price: '$400' }] },
+              { name: 'Xeomin', perUnit: '$9 / unit', tiers: [{ units: '30 units', price: '$255' }, { units: '40 units', price: '$320' }, { units: '50 units', price: '$375' }] },
             ].map((product) => (
               <div key={product.name} className="rounded-2xl p-5" style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}>
                 <div className="flex items-center justify-between mb-3">
@@ -375,7 +375,7 @@ export default async function BotoxXeominPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
                 title: 'What is Botox?',
@@ -398,7 +398,7 @@ export default async function BotoxXeominPage() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="rounded-3xl p-8"
+                className="rounded-3xl p-8 flex flex-col"
                 style={{
                   background: 'rgba(255,250,245,0.85)',
                   border: '1px solid rgba(233,221,209,0.9)',
@@ -412,7 +412,7 @@ export default async function BotoxXeominPage() {
                   {card.title}
                 </h3>
                 <p
-                  className="text-sm leading-relaxed mb-6"
+                  className="text-sm leading-relaxed mb-6 flex-grow"
                   style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
                 >
                   {card.body}

@@ -4,9 +4,9 @@ import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
-  title: 'SkinCeuticals Advanced Facial | Slynn Wellness',
+  title: 'SKINCEUTICALS Advanced Facial | Slynn Wellness',
   description:
-    'SkinCeuticals Advanced Facial at Slynn Wellness in Pasadena, CA. Medical-grade, science-backed skincare treatment delivering targeted correction, deep hydration, and a luminous, healthy glow.',
+    'SKINCEUTICALS Advanced Facial at Slynn Wellness in Pasadena, CA. Medical-grade, science-backed skincare treatment delivering targeted correction, deep hydration, and a luminous, healthy glow.',
 }
 
 const concerns = [
@@ -56,7 +56,7 @@ const timeline = [
   {
     step: 'Step 01',
     title: 'Skin Analysis',
-    description: 'Your provider performs a detailed skin assessment to identify your primary concerns and select the optimal SkinCeuticals treatment protocol.',
+    description: 'Your provider performs a detailed skin assessment to identify your primary concerns and select the optimal SKINCEUTICALS treatment protocol.',
   },
   {
     step: 'Step 02',
@@ -66,7 +66,7 @@ const timeline = [
   {
     step: 'Step 03',
     title: 'Customized Treatment',
-    description: 'Professional exfoliation, targeted SkinCeuticals serum application, and a corrective mask — all selected for your unique skin profile.',
+    description: 'Professional exfoliation, targeted SKINCEUTICALS serum application, and a corrective mask — all selected for your unique skin profile.',
   },
   {
     step: 'Step 04',
@@ -77,8 +77,8 @@ const timeline = [
 
 const faqs = [
   {
-    q: 'How is SkinCeuticals different from a regular facial?',
-    a: 'SkinCeuticals uses medical-grade, clinically proven formulations with higher concentrations of active ingredients than retail or spa-grade products — delivering measurable, visible results.',
+    q: 'How is SKINCEUTICALS different from a regular facial?',
+    a: 'SKINCEUTICALS uses medical-grade, clinically proven formulations with higher concentrations of active ingredients than retail or spa-grade products — delivering measurable, visible results.',
   },
   {
     q: 'How often should I get this treatment?',
@@ -86,23 +86,23 @@ const faqs = [
   },
   {
     q: 'Is there downtime?',
-    a: 'No. The SkinCeuticals Advanced Facial has no downtime. You can apply makeup and resume normal activities immediately.',
+    a: 'No. The SKINCEUTICALS Advanced Facial has no downtime. You can apply makeup and resume normal activities immediately.',
   },
   {
     q: 'Is it suitable for sensitive skin?',
-    a: 'Yes. Your provider customizes the treatment to your skin sensitivity. SkinCeuticals offers protocols specifically designed for reactive and sensitive skin types.',
+    a: 'Yes. Your provider customizes the treatment to your skin sensitivity. SKINCEUTICALS offers protocols specifically designed for reactive and sensitive skin types.',
   },
   {
     q: 'Can I combine this with other treatments?',
-    a: 'Absolutely. SkinCeuticals Advanced Facial pairs beautifully with Botox, fillers, and other skin treatments. Your provider will advise on the best timing and sequence.',
+    a: 'Absolutely. SKINCEUTICALS Advanced Facial pairs beautifully with Botox, fillers, and other skin treatments. Your provider will advise on the best timing and sequence.',
   },
   {
     q: 'What should I do after my treatment?',
-    a: 'Follow your provider\'s post-care recommendations. Generally: avoid direct sun exposure, use SPF daily, and continue with your recommended SkinCeuticals home care routine.',
+    a: 'Follow your provider\'s post-care recommendations. Generally: avoid direct sun exposure, use SPF daily, and continue with your recommended SKINCEUTICALS home care routine.',
   },
 ]
 
-export default async function SkinCeuticalsPage() {
+export default async function SKINCEUTICALSPage() {
   const settings = await getSiteSettings()
 
   const cardStyle = {
@@ -153,14 +153,14 @@ export default async function SkinCeuticalsPage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                SkinCeuticals Advanced Facial
+                SKINCEUTICALS Advanced Facial
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                Experience the power of medical-grade skincare with our SkinCeuticals Advanced Facial — a customized, science-backed treatment that delivers targeted correction, deep hydration, and a luminous, healthy glow.
+                Experience the power of medical-grade skincare with our SKINCEUTICALS Advanced Facial — a customized, science-backed treatment that delivers targeted correction, deep hydration, and a luminous, healthy glow.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -184,7 +184,7 @@ export default async function SkinCeuticalsPage() {
 
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { value: 'Medical-Grade', label: 'Professional SkinCeuticals formulations' },
+                  { value: 'Medical-Grade', label: 'Professional SKINCEUTICALS formulations' },
                   { value: 'No Downtime', label: 'Return to activities immediately' },
                   { value: 'Customized', label: 'Tailored to your specific skin concerns' },
                 ].map((stat) => (
@@ -214,14 +214,14 @@ export default async function SkinCeuticalsPage() {
                   Medical-Grade · Science-Backed
                 </span>
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  SkinCeuticals
+                  SKINCEUTICALS
                 </span>
               </div>
 
               <div className="flex flex-col gap-3">
                 {[
                   { label: 'Best for', value: 'Dullness, fine lines, hyperpigmentation, dehydration, skin health' },
-                  { label: 'Technology', value: 'Medical-grade SkinCeuticals professional serums' },
+                  { label: 'Technology', value: 'Medical-grade SKINCEUTICALS professional serums' },
                   { label: 'Goal', value: 'Corrected, protected, and radiant skin' },
                   { label: 'Pricing', value: '$159 / session' },
                 ].map((row) => (
@@ -287,7 +287,7 @@ export default async function SkinCeuticalsPage() {
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · SkinCeuticals Advanced Facial
+                    Patient {i} · SKINCEUTICALS Advanced Facial
                   </p>
                 </div>
               </div>
@@ -304,15 +304,15 @@ export default async function SkinCeuticalsPage() {
               Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              SkinCeuticals bridges the gap between professional skincare and clinical dermatology.
+              SKINCEUTICALS bridges the gap between professional skincare and clinical dermatology.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
-                title: 'What is SkinCeuticals?',
-                body: 'SkinCeuticals is a professional skincare brand with over 25 years of clinical research. Founded on the principle of Prevention, Protection, and Correction, their formulations are developed in partnership with leading dermatologists and backed by published clinical studies. The Advanced Facial Treatment harnesses their most powerful professional-grade products — exclusive to licensed medical providers.',
+                title: 'What is SKINCEUTICALS?',
+                body: 'SKINCEUTICALS is a professional skincare brand with over 25 years of clinical research. Founded on the principle of Prevention, Protection, and Correction, their formulations are developed in partnership with leading dermatologists and backed by published clinical studies. The Advanced Facial Treatment harnesses their most powerful professional-grade products — exclusive to licensed medical providers.',
                 pills: [
                   { label: 'Clinical Research', value: '25+ years of published studies' },
                   { label: 'Vitamin C', value: 'Landmark antioxidant science' },
@@ -321,7 +321,7 @@ export default async function SkinCeuticalsPage() {
               },
               {
                 title: 'The Advanced Facial Experience',
-                body: 'Your treatment begins with a thorough skin analysis to identify your primary concerns. Your provider then selects the optimal SkinCeuticals professional protocol — combining targeted exfoliation, corrective serums, and restorative masking. Every step is customized to your skin type, sensitivity, and goals for a result that is both immediately visible and progressively beneficial with regular treatments.',
+                body: 'Your treatment begins with a thorough skin analysis to identify your primary concerns. Your provider then selects the optimal SKINCEUTICALS professional protocol — combining targeted exfoliation, corrective serums, and restorative masking. Every step is customized to your skin type, sensitivity, and goals for a result that is both immediately visible and progressively beneficial with regular treatments.',
                 pills: [
                   { label: 'Customized', value: 'Tailored to your skin' },
                   { label: 'Corrective', value: 'Targeted active ingredients' },
@@ -329,9 +329,9 @@ export default async function SkinCeuticalsPage() {
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
                     <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
@@ -346,7 +346,7 @@ export default async function SkinCeuticalsPage() {
         </div>
       </section>
 
-      {/* What SkinCeuticals Addresses */}
+      {/* What SKINCEUTICALS Addresses */}
       <section id="concerns" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
@@ -354,7 +354,7 @@ export default async function SkinCeuticalsPage() {
               What This Treatment Can Address
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              SkinCeuticals&apos; medical-grade formulations target a wide range of skin concerns with clinical precision.
+              SKINCEUTICALS&apos; medical-grade formulations target a wide range of skin concerns with clinical precision.
             </p>
           </div>
 
@@ -378,7 +378,7 @@ export default async function SkinCeuticalsPage() {
               Your Treatment Experience
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              From skin analysis to a luminous finish — here is what your SkinCeuticals session looks like at Slynn Wellness.
+              From skin analysis to a luminous finish — here is what your SKINCEUTICALS session looks like at Slynn Wellness.
             </p>
           </div>
 
@@ -394,15 +394,15 @@ export default async function SkinCeuticalsPage() {
         </div>
       </section>
 
-      {/* Why SkinCeuticals */}
+      {/* Why SKINCEUTICALS */}
       <section id="why" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              Why SkinCeuticals?
+              Why SKINCEUTICALS?
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Not all skincare is created equal. SkinCeuticals is the gold standard in medical-grade professional treatment.
+              Not all skincare is created equal. SKINCEUTICALS is the gold standard in medical-grade professional treatment.
             </p>
           </div>
 
@@ -411,12 +411,12 @@ export default async function SkinCeuticalsPage() {
               {
                 tag: 'Clinical',
                 title: '25+ Years of Research',
-                description: 'SkinCeuticals formulations are backed by over 25 years of published clinical studies and dermatology research — not marketing claims.',
+                description: 'SKINCEUTICALS formulations are backed by over 25 years of published clinical studies and dermatology research — not marketing claims.',
               },
               {
                 tag: 'Exclusive',
                 title: 'Medical Provider Only',
-                description: 'Professional SkinCeuticals treatments are exclusively available through licensed medical providers, ensuring proper use and maximum results.',
+                description: 'Professional SKINCEUTICALS treatments are exclusively available through licensed medical providers, ensuring proper use and maximum results.',
               },
               {
                 tag: 'Results',
@@ -446,7 +446,7 @@ export default async function SkinCeuticalsPage() {
                 Ready for Medical-Grade Skin Transformation?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                A consultation with our skin care team helps us select the optimal SkinCeuticals protocol for your skin concerns and goals.
+                A consultation with our skin care team helps us select the optimal SKINCEUTICALS protocol for your skin concerns and goals.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -510,10 +510,10 @@ export default async function SkinCeuticalsPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book Your SkinCeuticals Facial
+                Book Your SKINCEUTICALS Facial
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness is proud to offer professional SkinCeuticals treatments in Pasadena. Let our skin care experts create a customized treatment plan for your healthiest, most radiant skin.
+                Slynn Wellness is proud to offer professional SKINCEUTICALS treatments in Pasadena. Let our skin care experts create a customized treatment plan for your healthiest, most radiant skin.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

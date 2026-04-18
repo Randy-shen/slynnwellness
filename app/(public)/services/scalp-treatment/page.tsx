@@ -298,7 +298,7 @@ export default async function ScalpTreatmentPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
                 title: 'What is the Scalp Relaxation Treatment?',
@@ -319,9 +319,9 @@ export default async function ScalpTreatmentPage() {
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
                     <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>

@@ -26,9 +26,12 @@ interface NavServices {
 interface HeaderProps {
   bookingUrl: string
   navServices: NavServices
+  address?: string
+  phone?: string
+  email?: string
 }
 
-export default function Header({ bookingUrl, navServices }: HeaderProps) {
+export default function Header({ bookingUrl, navServices, address, phone, email }: HeaderProps) {
   const pathname = usePathname()
   const isHomepage = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
@@ -77,11 +80,11 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerClass}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-18 lg:h-24">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <div
-                className={`flex items-center gap-3 transition-colors duration-300 ${!scrolled && isHomepage ? 'text-white' : 'text-[#2C2C2C]'}`}
+                className="flex items-center gap-3 transition-colors duration-300"
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}
               >
                 {/* Logo icon */}
@@ -92,14 +95,46 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
                 />
                 {/* Desktop: side by side with divider */}
                 <div className="hidden sm:flex items-center gap-3">
-                  <span className="text-xl lg:text-2xl font-light tracking-[0.2em]">SLYNN</span>
-                  <span className="w-px h-5 lg:h-6 bg-[#D4AF37] opacity-80" />
-                  <span className="text-xl lg:text-2xl font-light tracking-[0.2em]">WELLNESS</span>
+                  <span
+                    className="text-2xl lg:text-3xl tracking-[0.08em] font-medium"
+                    style={{
+                      background: 'linear-gradient(180deg, #F7EBCF 0%, #DEC27D 42%, #B78A3E 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >SLYNN</span>
+                  <span className="w-px h-5 lg:h-6" style={{ background: '#DFC27F', opacity: 0.7 }} />
+                  <span
+                    className="text-2xl lg:text-3xl tracking-[0.08em] font-medium"
+                    style={{
+                      background: 'linear-gradient(180deg, #F7EBCF 0%, #DEC27D 42%, #B78A3E 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >WELLNESS</span>
                 </div>
                 {/* Mobile: stacked */}
                 <div className="flex sm:hidden flex-col items-start leading-none">
-                  <span className="text-base font-light tracking-[0.2em]">SLYNN</span>
-                  <span className="text-base font-light tracking-[0.2em]">WELLNESS</span>
+                  <span
+                    className="text-base tracking-[0.08em] font-medium"
+                    style={{
+                      background: 'linear-gradient(180deg, #F7EBCF 0%, #DEC27D 42%, #B78A3E 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >SLYNN</span>
+                  <span
+                    className="text-base tracking-[0.08em] font-medium"
+                    style={{
+                      background: 'linear-gradient(180deg, #F7EBCF 0%, #DEC27D 42%, #B78A3E 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >WELLNESS</span>
                 </div>
               </div>
             </Link>
@@ -116,9 +151,12 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
                   <Link
                     href={item.href}
                     className={`flex items-center px-3 py-2 text-xs font-medium tracking-wider uppercase transition-colors duration-200 ${
-                      !scrolled && isHomepage ? 'text-white/90 hover:text-white' : 'text-[#2C2C2C] hover:text-[#D4AF37]'
+                      !scrolled && isHomepage ? 'hover:text-[#F6E7BF]' : 'text-[#2C2C2C] hover:text-[#DFC27F]'
                     }`}
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    style={{
+                      fontFamily: 'Montserrat, sans-serif',
+                      color: !scrolled && isHomepage ? 'rgba(243,237,227,0.9)' : undefined,
+                    }}
                   >
                     {item.label}
                     {item.dropdown && (
@@ -176,6 +214,9 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
         onClose={() => setMobileOpen(false)}
         navItems={navItems}
         bookingUrl={bookingUrl}
+        address={address}
+        phone={phone}
+        email={email}
       />
     </>
   )

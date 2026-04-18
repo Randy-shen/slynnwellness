@@ -24,7 +24,13 @@ export default async function PublicLayout({
 
   return (
     <>
-      <Header bookingUrl={settings.booking_url} navServices={navServices} />
+      <Header
+        bookingUrl={settings.booking_url}
+        navServices={navServices}
+        address={`${settings.address}, ${settings.city}, ${settings.state} ${settings.zip}`}
+        phone={settings.phone}
+        email={settings.email}
+      />
       <main className="flex-1">{children}</main>
       <Footer />
       <NewsletterPopup

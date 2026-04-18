@@ -4,9 +4,9 @@ import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
-  title: 'HydraFacial | Slynn Wellness',
+  title: 'HYDRAFACIAL | Slynn Wellness',
   description:
-    'HydraFacial at Slynn Wellness in Pasadena, CA. The world\'s leading hydradermabrasion treatment — cleanse, extract, and hydrate for an instant visible glow with zero downtime.',
+    'HYDRAFACIAL at Slynn Wellness in Pasadena, CA. The world\'s leading hydradermabrasion treatment — cleanse, extract, and hydrate for an instant visible glow with zero downtime.',
 }
 
 const benefits = [
@@ -56,12 +56,12 @@ const timeline = [
   {
     step: 'Step 01',
     title: 'Consultation',
-    description: 'Skin assessment to determine your ideal HydraFacial level and any targeted boosters for your specific concerns.',
+    description: 'Skin assessment to determine your ideal HYDRAFACIAL level and any targeted boosters for your specific concerns.',
   },
   {
     step: 'Step 02',
     title: 'Treatment',
-    description: 'Relaxing 30–45 minute treatment using the HydraFacial device with customized serums.',
+    description: 'Relaxing 30–45 minute treatment using the HYDRAFACIAL device with customized serums.',
   },
   {
     step: 'Step 03',
@@ -77,23 +77,23 @@ const timeline = [
 
 const faqs = [
   {
-    q: 'How often should I get a HydraFacial?',
+    q: 'How often should I get a HYDRAFACIAL?',
     a: 'Monthly treatments are ideal for maintaining results. Many clients notice a significant cumulative improvement with consistent sessions.',
   },
   {
     q: 'Is there any downtime?',
-    a: 'No. HydraFacial has zero downtime. Your skin may appear slightly flushed immediately after, but you can apply makeup and resume all activities right away.',
+    a: 'No. HYDRAFACIAL has zero downtime. Your skin may appear slightly flushed immediately after, but you can apply makeup and resume all activities right away.',
   },
   {
-    q: 'Is HydraFacial suitable for sensitive skin?',
-    a: 'Yes. HydraFacial is gentle enough for sensitive skin types and can be customized to avoid any irritating ingredients.',
+    q: 'Is HYDRAFACIAL suitable for sensitive skin?',
+    a: 'Yes. HYDRAFACIAL is gentle enough for sensitive skin types and can be customized to avoid any irritating ingredients.',
   },
   {
     q: 'What is the difference between Signature, Deluxe, and Platinum?',
     a: 'Signature is the core treatment. Deluxe adds a targeted booster serum. Platinum adds lymphatic drainage and LED light therapy for the most comprehensive result.',
   },
   {
-    q: 'Can HydraFacial be combined with other treatments?',
+    q: 'Can HYDRAFACIAL be combined with other treatments?',
     a: 'Yes — it pairs beautifully with Botox, fillers, and chemical peels (with appropriate timing). Your provider will advise on the best sequence.',
   },
   {
@@ -102,7 +102,7 @@ const faqs = [
   },
 ]
 
-export default async function HydraFacialPage() {
+export default async function HYDRAFACIALPage() {
   const settings = await getSiteSettings()
 
   const cardStyle = {
@@ -153,14 +153,14 @@ export default async function HydraFacialPage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                HydraFacial
+                HYDRAFACIAL
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                The world&apos;s leading hydradermabrasion treatment — HydraFacial simultaneously cleanses, exfoliates, extracts, and infuses your skin with nourishing serums for an instant, visible glow with zero downtime.
+                The world&apos;s leading hydradermabrasion treatment — HYDRAFACIAL simultaneously cleanses, exfoliates, extracts, and infuses your skin with nourishing serums for an instant, visible glow with zero downtime.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -216,7 +216,7 @@ export default async function HydraFacialPage() {
                   Cleanse · Extract · Hydrate
                 </span>
                 <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  HydraFacial
+                  HYDRAFACIAL
                 </span>
               </div>
 
@@ -302,7 +302,7 @@ export default async function HydraFacialPage() {
               >
                 <img
                   src={url}
-                  alt={`HydraFacial result ${i + 1}`}
+                  alt={`HYDRAFACIAL result ${i + 1}`}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
@@ -319,15 +319,15 @@ export default async function HydraFacialPage() {
               Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              HydraFacial is more than a facial — it&apos;s a complete skin health treatment backed by clinical results.
+              HYDRAFACIAL is more than a facial — it&apos;s a complete skin health treatment backed by clinical results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
-                title: 'What is HydraFacial?',
-                body: 'HydraFacial uses patented Vortex-Fusion® technology to deliver a multi-step treatment in a single session. Unlike traditional facials, it simultaneously cleanses, exfoliates, extracts impurities, and infuses the skin with targeted serums — all without irritation or downtime. It\'s one of the most performed aesthetic treatments worldwide, trusted by dermatologists and skin care professionals.',
+                title: 'What is HYDRAFACIAL?',
+                body: 'HYDRAFACIAL uses patented Vortex-Fusion® technology to deliver a multi-step treatment in a single session. Unlike traditional facials, it simultaneously cleanses, exfoliates, extracts impurities, and infuses the skin with targeted serums — all without irritation or downtime. It\'s one of the most performed aesthetic treatments worldwide, trusted by dermatologists and skin care professionals.',
                 pills: [
                   { label: 'Vortex-Fusion®', value: 'Patented delivery technology' },
                   { label: 'No Downtime', value: 'Return to activities immediately' },
@@ -344,9 +344,9 @@ export default async function HydraFacialPage() {
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
                     <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
@@ -378,7 +378,7 @@ export default async function HydraFacialPage() {
               {
                 tag: '01',
                 title: 'Signature',
-                description: 'The core HydraFacial experience. Deep cleansing, gentle exfoliation, painless extraction, and intense hydration in one streamlined treatment.',
+                description: 'The core HYDRAFACIAL experience. Deep cleansing, gentle exfoliation, painless extraction, and intense hydration in one streamlined treatment.',
               },
               {
                 tag: '02',
@@ -388,7 +388,7 @@ export default async function HydraFacialPage() {
               {
                 tag: '03',
                 title: 'Platinum',
-                description: 'The ultimate HydraFacial. Full Deluxe treatment enhanced with lymphatic drainage to reduce puffiness and LED light therapy for collagen support.',
+                description: 'The ultimate HYDRAFACIAL. Full Deluxe treatment enhanced with lymphatic drainage to reduce puffiness and LED light therapy for collagen support.',
               },
               {
                 tag: '04',
@@ -435,10 +435,10 @@ export default async function HydraFacialPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              What HydraFacial Can Do For You
+              What HYDRAFACIAL Can Do For You
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              HydraFacial is one of the most versatile and beloved aesthetic treatments for all skin types.
+              HYDRAFACIAL is one of the most versatile and beloved aesthetic treatments for all skin types.
             </p>
           </div>
 
@@ -466,7 +466,7 @@ export default async function HydraFacialPage() {
                 Ready for Your Best Skin?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                A consultation helps us understand your skin goals, choose the right HydraFacial level, and customize the perfect serum boosters for your unique concerns.
+                A consultation helps us understand your skin goals, choose the right HYDRAFACIAL level, and customize the perfect serum boosters for your unique concerns.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -530,10 +530,10 @@ export default async function HydraFacialPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book Your HydraFacial
+                Book Your HYDRAFACIAL
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness offers all three levels of HydraFacial treatment in a serene, luxury environment. Book your consultation and let our skin care experts customize the perfect treatment for your skin.
+                Slynn Wellness offers all three levels of HYDRAFACIAL treatment in a serene, luxury environment. Book your consultation and let our skin care experts customize the perfect treatment for your skin.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

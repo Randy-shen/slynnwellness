@@ -5,9 +5,9 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
 
 export const metadata: Metadata = {
-  title: 'Restylane | Slynn Wellness',
+  title: 'RESTYLANE | Slynn Wellness',
   description:
-    'Restore volume, define contours, and enhance your natural beauty with Restylane hyaluronic acid fillers at Slynn Wellness in Pasadena, CA.',
+    'Restore volume, define contours, and enhance your natural beauty with RESTYLANE hyaluronic acid fillers at Slynn Wellness in Pasadena, CA.',
 }
 
 const treatmentAreas = [
@@ -57,17 +57,17 @@ const timeline = [
   {
     step: 'Step 01',
     title: 'Consultation',
-    description: 'We evaluate your facial anatomy, skin quality, and aesthetic goals to determine the right Restylane product and treatment plan for you.',
+    description: 'We evaluate your facial anatomy, skin quality, and aesthetic goals to determine the right RESTYLANE product and treatment plan for you.',
   },
   {
     step: 'Step 02',
     title: 'Preparation',
-    description: 'The treatment area is cleansed and a topical numbing cream may be applied for comfort. Restylane products also contain lidocaine for added ease.',
+    description: 'The treatment area is cleansed and a topical numbing cream may be applied for comfort. RESTYLANE products also contain lidocaine for added ease.',
   },
   {
     step: 'Step 03',
     title: 'Treatment',
-    description: 'Your provider carefully injects Restylane using precise technique to sculpt, volumize, and enhance your natural features with a balanced approach.',
+    description: 'Your provider carefully injects RESTYLANE using precise technique to sculpt, volumize, and enhance your natural features with a balanced approach.',
   },
   {
     step: 'Step 04',
@@ -78,47 +78,47 @@ const timeline = [
 
 const faqs = [
   {
-    q: 'How long do Restylane results last?',
+    q: 'How long do RESTYLANE results last?',
     a: 'Results typically last 6 to 18 months depending on the area treated, the product used, and individual metabolism. Lip fillers generally last 6–12 months, while cheek and facial fillers can last up to 12–18 months.',
   },
   {
-    q: 'Is Restylane safe?',
-    a: 'Yes. Restylane is FDA-approved and made from hyaluronic acid — a substance naturally found in the body. It has an extensive safety record when administered by trained medical professionals.',
+    q: 'Is RESTYLANE safe?',
+    a: 'Yes. RESTYLANE is FDA-approved and made from hyaluronic acid — a substance naturally found in the body. It has an extensive safety record when administered by trained medical professionals.',
   },
   {
     q: 'Does the treatment hurt?',
-    a: 'Most patients experience minimal discomfort. Restylane products contain lidocaine, a local anesthetic, to improve comfort during treatment. A topical numbing cream can also be applied beforehand.',
+    a: 'Most patients experience minimal discomfort. RESTYLANE products contain lidocaine, a local anesthetic, to improve comfort during treatment. A topical numbing cream can also be applied beforehand.',
   },
   {
     q: 'Is there downtime after treatment?',
     a: 'Downtime is minimal. Some swelling, redness, or bruising at the injection sites is normal and typically resolves within a few days. Most clients return to regular activities the same day.',
   },
   {
-    q: 'Can Restylane be reversed?',
-    a: 'Yes — hyaluronic acid fillers like Restylane can be dissolved using an enzyme called hyaluronidase if needed. This is one of the key safety advantages of HA-based fillers.',
+    q: 'Can RESTYLANE be reversed?',
+    a: 'Yes — hyaluronic acid fillers like RESTYLANE can be dissolved using an enzyme called hyaluronidase if needed. This is one of the key safety advantages of HA-based fillers.',
   },
   {
-    q: 'How is Restylane different from other fillers?',
-    a: 'Restylane is a family of hyaluronic acid fillers each designed for specific areas and purposes — from fine lip definition to deep cheek volumization. Your provider will select the right product for your treatment goals.',
+    q: 'How is RESTYLANE different from other fillers?',
+    a: 'RESTYLANE is a family of hyaluronic acid fillers each designed for specific areas and purposes — from fine lip definition to deep cheek volumization. Your provider will select the right product for your treatment goals.',
   },
 ]
 
 const restylaneProducts = [
-  { name: 'Restylane-L', use: 'Moderate facial wrinkles and folds' },
-  { name: 'Restylane Kysse', use: 'Lip augmentation and lip lines' },
-  { name: 'Restylane Contour', use: 'Cheek augmentation and contouring' },
-  { name: 'Restylane Lyft', use: 'Cheeks, midface, and hands' },
-  { name: 'Restylane Defyne', use: 'Deep laugh lines and chin' },
-  { name: 'Restylane Refyne', use: 'Moderate laugh lines, natural movement' },
+  { name: 'RESTYLANE-L', use: 'Moderate facial wrinkles and folds' },
+  { name: 'RESTYLANE Kysse', use: 'Lip augmentation and lip lines' },
+  { name: 'RESTYLANE Contour', use: 'Cheek augmentation and contouring' },
+  { name: 'RESTYLANE Lyft', use: 'Cheeks, midface, and hands' },
+  { name: 'RESTYLANE Defyne', use: 'Deep laugh lines and chin' },
+  { name: 'RESTYLANE Refyne', use: 'Moderate laugh lines, natural movement' },
 ]
 
-export default async function RestylaneFillerPage() {
+export default async function RESTYLANEFillerPage() {
   const [settings, service] = await Promise.all([
     getSiteSettings(),
     getServiceBySlug('dermal-fillers'),
   ])
 
-  const description = 'Restylane is a hyaluronic acid filler collection that helps restore volume, smooth facial lines, and enhance natural contours for refreshed, natural-looking results.'
+  const description = 'RESTYLANE is a hyaluronic acid filler collection that helps restore volume, smooth facial lines, and enhance natural contours for refreshed, natural-looking results.'
 
   const cardStyle = {
     background: 'rgba(255,250,245,0.85)',
@@ -168,7 +168,7 @@ export default async function RestylaneFillerPage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                Restylane
+                RESTYLANE
               </h1>
 
               <p
@@ -310,7 +310,7 @@ export default async function RestylaneFillerPage() {
               <div key={i} className="rounded-3xl overflow-hidden" style={cardStyle}>
                 <img
                   src={url}
-                  alt={`Restylane result ${i + 1}`}
+                  alt={`RESTYLANE result ${i + 1}`}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
@@ -327,33 +327,33 @@ export default async function RestylaneFillerPage() {
               Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Restylane is a hyaluronic acid filler collection that helps restore volume, smooth facial lines, and enhance natural contours for refreshed, natural-looking results.
+              RESTYLANE is a hyaluronic acid filler collection that helps restore volume, smooth facial lines, and enhance natural contours for refreshed, natural-looking results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
-                title: 'What is Restylane?',
-                body: "Restylane is a family of FDA-approved hyaluronic acid (HA) dermal fillers that restore volume, smooth lines, and enhance facial contours. Because hyaluronic acid is naturally found in the body, Restylane integrates beautifully with your tissue for soft, natural-feeling results. Each product in the Restylane family is specifically formulated for different areas and treatment goals.",
+                title: 'What is RESTYLANE?',
+                body: "Dermal fillers are injection treatments used to diminish wrinkles, restore fullness, and make subtle facial changes. Hyaluronic acid (HA) is a naturally occurring substance in your skin that provides hydration, fullness, and elasticity — but it diminishes as we age, causing volume loss and the appearance of wrinkles and folds. RESTYLANE uses clear gel formulations of HA and was the original non-animal stabilized HA filler, designed to be closest to the body's own hyaluronic acid with minimal crosslinking. It was the first HA filler approved by the US FDA and has now been used in over 65 million treatments worldwide.",
                 pills: [
-                  { label: 'Natural', value: 'Hyaluronic acid based' },
-                  { label: 'Precise', value: 'Area-specific formulas' },
-                  { label: 'Safe', value: 'FDA approved & reversible' },
+                  { label: '#1 FDA Approved', value: 'Original HA filler in the US' },
+                  { label: '65M+ Worldwide', value: 'Trusted globally' },
+                  { label: 'Reversible', value: 'Dissolvable if needed' },
                 ],
               },
               {
-                title: 'The Restylane family',
-                body: "Unlike a one-size-fits-all approach, the Restylane family offers specialized products engineered for specific facial zones — from delicate lip enhancement to deep cheek volumization. Your provider selects the right formula based on your anatomy, skin quality, and desired outcome.",
-                pills: restylaneProducts.slice(0, 3).map(p => ({ label: p.name.replace('Restylane ', ''), value: p.use })),
+                title: 'The RESTYLANE family',
+                body: "Unlike a one-size-fits-all approach, the RESTYLANE family offers specialized products engineered for specific facial zones — from delicate lip enhancement to deep cheek volumization. Your provider selects the right formula based on your anatomy, skin quality, and desired outcome.",
+                pills: restylaneProducts.slice(0, 3).map(p => ({ label: p.name.replace('RESTYLANE ', ''), value: p.use })),
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
-                    <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
+                    <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)', height: '90px' }}>
                       <strong className="block mb-1.5" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem' }}>{pill.label}</strong>
                       <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{pill.value}</span>
                     </div>
@@ -373,7 +373,7 @@ export default async function RestylaneFillerPage() {
               Treatment areas
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Restylane can address multiple areas of the face in a single visit or as part of a staged treatment plan.
+              RESTYLANE can address multiple areas of the face in a single visit or as part of a staged treatment plan.
             </p>
           </div>
 
@@ -397,7 +397,7 @@ export default async function RestylaneFillerPage() {
               What to expect
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              From consultation to glowing results — here is what your Restylane experience looks like at Slynn Wellness.
+              From consultation to glowing results — here is what your RESTYLANE experience looks like at Slynn Wellness.
             </p>
           </div>
 
@@ -422,7 +422,7 @@ export default async function RestylaneFillerPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', margin: '0 0 12px' }}>
-                Not sure which Restylane treatment is right for you?
+                Not sure which RESTYLANE treatment is right for you?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
                 A consultation helps us assess your facial anatomy, understand your goals, and recommend the right product and treatment plan — so your results look natural, balanced, and beautifully yours.
@@ -489,7 +489,7 @@ export default async function RestylaneFillerPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book your Restylane consultation
+                Book your RESTYLANE consultation
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
                 Slynn Wellness offers a refined, welcoming environment for aesthetic care in Pasadena. Book your consultation and receive a personalized filler recommendation tailored to your goals.

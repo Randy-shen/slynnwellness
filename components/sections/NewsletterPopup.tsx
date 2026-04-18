@@ -102,7 +102,7 @@ export default function NewsletterPopup({
               />
 
               {/* Content */}
-              <div className="px-8 py-7">
+              <div className="px-5 py-6 sm:px-8 sm:py-7">
                 {status === 'success' ? (
                   <div className="text-center py-4">
                     <p
@@ -118,7 +118,7 @@ export default function NewsletterPopup({
                 ) : (
                   <>
                     <h2
-                      className="text-3xl font-light text-[#2C2C2C] text-center mb-2"
+                      className="text-2xl sm:text-3xl font-light text-[#2C2C2C] text-center mb-2"
                       style={{ fontFamily: 'Cormorant Garamond, serif' }}
                     >
                       {headline}

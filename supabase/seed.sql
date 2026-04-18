@@ -55,7 +55,7 @@ insert into services (slug, name, category, short_description, full_description,
   'Replenish essential nutrients directly into your bloodstream for optimal wellness.',
   'Our customized IV vitamin drips deliver essential vitamins, minerals, and antioxidants directly into your bloodstream for 100% absorption. Unlike oral supplements, IV therapy bypasses the digestive system, ensuring your body receives every nutrient.',
   array['Instant nutrient absorption', 'Boosts energy levels', 'Strengthens immunity', 'Hydration'],
-  'Starting at $150/session',
+  'Starting at $185/session',
   1,
   true
 ),
@@ -155,49 +155,49 @@ insert into iv_therapies (name, purpose, ingredients, infusion_time, is_special,
   'Basic Wellness',
   'Replenish, rehydrate, and restore. Our foundational drip delivers essential fluids and vitamins to combat fatigue, dehydration, and the demands of everyday life.',
   array['B-Complex', 'Magnesium 500mg–1g', 'Vitamin C 500mg–2g', 'Normal Saline 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 1, true
+  '45–60 min', false, null, 'Starting at $185/session', 1, true
 ),
 (
   'Energy & Metabolism',
   'Ignite your energy and sharpen your focus. This power-packed drip fuels your metabolism, enhances mental clarity, and supports sustained vitality throughout your day.',
   array['L-Carnitine 500mg', 'Taurine 500mg', 'Vitamin B12 1000mcg', 'B-Complex', 'Alpha Lipoic Acid 300–600mg', 'Normal Saline 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 2, true
+  '45–60 min', false, null, 'Starting at $185/session', 2, true
 ),
 (
   'Immunity Shield',
   'Fortify your body''s natural defenses. Whether fighting off illness, recovering from travel, or bouncing back from fatigue, this drip provides powerful immune support when you need it most.',
   array['Vitamin C 2–5g', 'Zinc 5–10mg', 'B-Complex', 'Vitamin B12 1000mcg', 'Normal Saline 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 3, true
+  '45–60 min', false, null, 'Starting at $185/session', 3, true
 ),
 (
   'Recovery & Refresh',
   'Bounce back fast. Our rapid recovery drip restores hydration, calms nausea, and flushes toxins — leaving you feeling refreshed and renewed.',
   array['Ondansetron 4mg', 'Magnesium 1g', 'B-Complex', 'Glutathione 600mg Push', 'Normal Saline 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 4, true
+  '45–60 min', false, null, 'Starting at $185/session', 4, true
 ),
 (
   'Athletic Performance',
   'Train harder. Recover faster. Engineered for peak performance, this drip replenishes amino acids and electrolytes to accelerate muscle recovery and reduce downtime.',
   array['Amino Blend (Arginine · Glutamine · Lysine · Proline)', 'Magnesium 1g', 'B-Complex', 'Normal Saline / Lactated Ringer''s 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 5, true
+  '45–60 min', false, null, 'Starting at $185/session', 5, true
 ),
 (
   'Slim & Sculpt',
   'Support your weight loss journey from the inside out. This targeted drip enhances fat metabolism, supports liver detoxification, and complements your wellness and fitness goals.',
   array['MIC Blend (Methionine · Inositol · Choline)', 'Vitamin B12 1000mcg', 'L-Carnitine 500–1000mg', 'Normal Saline 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 6, true
+  '45–60 min', false, null, 'Starting at $185/session', 6, true
 ),
 (
   'Beauty & Glow',
   'Radiate from within. This luxurious skin-brightening drip delivers a potent blend of antioxidants and collagen-supporting nutrients for luminous, healthy skin.',
   array['Vitamin C 2g', 'Glutathione 1200mg IV Push', 'Biotin 2mg', 'Normal Saline 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 7, true
+  '45–60 min', false, null, 'Starting at $185/session', 7, true
 ),
 (
   'Detox & Cleanse',
   'Reset and renew at the cellular level. This powerful antioxidant drip neutralizes free radicals, supports liver function, and helps your body restore its natural balance.',
   array['Glutathione 600–1200mg IV Push', 'Vitamin C 1–2g', 'B-Complex', 'Normal Saline 500mL–1L'],
-  '45–60 min', false, null, 'Starting at $150/session', 8, true
+  '45–60 min', false, null, 'Starting at $185/session', 8, true
 ),
 (
   'NAD+ Infusion',

@@ -2,9 +2,16 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
+import ImageCarousel from '@/components/sections/ImageCarousel'
+
+const carouselImages = [
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinvive-product.png', alt: 'SKINVIVE product' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skin-2.png', alt: 'SKINVIVE treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinvive-1.png', alt: 'SKINVIVE results' },
+]
 
 export const metadata: Metadata = {
-  title: 'Skinvive | Slynn Wellness',
+  title: 'SKINVIVE | Slynn Wellness',
   description:
     'JUVÉDERM SKINVIVE™ by Allergan — an FDA-approved intradermal microdroplet HA treatment that improves skin hydration, smoothness, and natural glow at Slynn Wellness in Pasadena, CA.',
 }
@@ -13,7 +20,7 @@ const treatmentAreas = [
   {
     tag: '01',
     title: 'Cheeks',
-    description: 'FDA-approved primary treatment area. Skinvive microdroplets improve skin texture, hydration, and radiance in the cheeks with clinically proven results.',
+    description: 'FDA-approved primary treatment area. SKINVIVE microdroplets improve skin texture, hydration, and radiance in the cheeks with clinically proven results.',
   },
   {
     tag: '02',
@@ -46,7 +53,7 @@ const timeline = [
   {
     step: 'Step 01',
     title: 'Consultation',
-    description: 'A thorough skin assessment reviews your hydration levels, texture concerns, and candidacy. We discuss treatment area planning and what you can expect from your Skinvive results.',
+    description: 'A thorough skin assessment reviews your hydration levels, texture concerns, and candidacy. We discuss treatment area planning and what you can expect from your SKINVIVE results.',
   },
   {
     step: 'Step 02',
@@ -67,12 +74,12 @@ const timeline = [
 
 const faqs = [
   {
-    q: 'How is Skinvive different from fillers?',
-    a: 'Skinvive is an intradermal treatment — the microdroplets of hyaluronic acid are injected into the skin itself, not beneath it. Traditional fillers are placed subdermally to add volume or lift. Skinvive does not add volume or change facial structure at all. Its sole focus is improving skin quality: hydration, smoothness, and glow.',
+    q: 'How is SKINVIVE different from fillers?',
+    a: 'SKINVIVE is an intradermal treatment — the microdroplets of hyaluronic acid are injected into the skin itself, not beneath it. Traditional fillers are placed subdermally to add volume or lift. SKINVIVE does not add volume or change facial structure at all. Its sole focus is improving skin quality: hydration, smoothness, and glow.',
   },
   {
     q: 'How long do results last?',
-    a: 'Results from Skinvive last approximately 6 months. After completing the initial two-session protocol, touch-up sessions are recommended to maintain your improved skin hydration and smoothness.',
+    a: 'Results from SKINVIVE last approximately 6 months. After completing the initial two-session protocol, touch-up sessions are recommended to maintain your improved skin hydration and smoothness.',
   },
   {
     q: 'How many sessions do I need?',
@@ -83,16 +90,16 @@ const faqs = [
     a: 'Downtime is minimal. Small micro-bumps at the injection sites are expected and resolve within 1–3 days. Most clients feel comfortable returning to normal activities the same day as their treatment.',
   },
   {
-    q: 'Can Skinvive be combined with other treatments?',
-    a: 'Yes — Skinvive stacks beautifully with other treatments. It pairs especially well with Botox, dermal fillers, and facials. Because it works in the skin rather than beneath it, it complements volumizing and muscle-relaxing treatments without interference.',
+    q: 'Can SKINVIVE be combined with other treatments?',
+    a: 'Yes — SKINVIVE stacks beautifully with other treatments. It pairs especially well with Botox, dermal fillers, and facials. Because it works in the skin rather than beneath it, it complements volumizing and muscle-relaxing treatments without interference.',
   },
   {
-    q: 'Who is a good candidate for Skinvive?',
-    a: 'Skinvive is ideal for anyone wanting improved skin quality, hydration, smoothness, or a natural glow — without adding volume or altering their facial structure. It is a great option for those who feel their skin looks dull, dry, or rough despite good skincare.',
+    q: 'Who is a good candidate for SKINVIVE?',
+    a: 'SKINVIVE is ideal for anyone wanting improved skin quality, hydration, smoothness, or a natural glow — without adding volume or altering their facial structure. It is a great option for those who feel their skin looks dull, dry, or rough despite good skincare.',
   },
 ]
 
-export default async function SkinvivePage() {
+export default async function SKINVIVEPage() {
   const settings = await getSiteSettings()
 
   const cardStyle = {
@@ -143,14 +150,14 @@ export default async function SkinvivePage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                Skinvive
+                SKINVIVE
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                Skinvive is an FDA-approved intradermal microdroplet treatment that improves skin hydration, smoothness, and natural glow — without adding volume or altering facial structure.
+                SKINVIVE is an FDA-approved intradermal microdroplet treatment that improves skin hydration, smoothness, and natural glow — without adding volume or altering facial structure.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -191,23 +198,9 @@ export default async function SkinvivePage() {
               className="lg:col-span-2 rounded-3xl p-6 flex flex-col gap-5"
               style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,248,242,0.90))', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 20px 60px rgba(90,66,44,0.10)' }}
             >
-              {/* Portrait */}
-              <div
-                className="rounded-2xl flex-1 flex items-end p-4 relative overflow-hidden"
-                style={{
-                  minHeight: '220px',
-                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinvive-product.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)', borderRadius: 'inherit' }} />
-                <span
-                  className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase"
-                  style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}
-                >
-                  Hydration · Glow · Smoothness
-                </span>
+              {/* Carousel */}
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '0' }}>
+                <ImageCarousel images={carouselImages} autoPlayInterval={3500} fillHeight />
               </div>
 
               <div className="flex flex-col gap-3">
@@ -240,11 +233,17 @@ export default async function SkinvivePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[null, null, null].map((_, i) => (
+            {[
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinvive-1.jpg',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinvive-2.jpg',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinvive-3.jpg',
+            ].map((url, i) => (
               <div key={i} className="rounded-3xl overflow-hidden" style={cardStyle}>
-                <div style={{ background: 'linear-gradient(135deg, #1A1A2E 0%, #2D2D44 40%, #7B6FA0 70%, #D4AF37 100%)', height: '220px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>Photo coming soon</p>
-                </div>
+                <img
+                  src={url}
+                  alt={`SKINVIVE result ${i + 1}`}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
               </div>
             ))}
           </div>
@@ -259,15 +258,15 @@ export default async function SkinvivePage() {
               Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Skinvive works in the skin, not beneath it — improving quality, hydration, and glow without adding volume or changing your facial structure.
+              SKINVIVE works in the skin, not beneath it — improving quality, hydration, and glow without adding volume or changing your facial structure.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
-                title: 'What is Skinvive?',
-                body: "JUVÉDERM SKINVIVE™ by Allergan is an FDA-approved intradermal microdroplet hyaluronic acid (HA) treatment. Unlike traditional fillers, Skinvive is not designed to add volume or lift — it works by injecting tiny microdroplets of HA directly into the skin itself. This improves the skin's intrinsic hydration, softness, and radiance from within. It is FDA-approved for improving cheek skin smoothness, with results lasting approximately 6 months.",
+                title: 'What is SKINVIVE?',
+                body: "JUVÉDERM SKINVIVE™ by Allergan is an FDA-approved intradermal microdroplet hyaluronic acid (HA) treatment. Unlike traditional fillers, SKINVIVE is not designed to add volume or lift — it works by injecting tiny microdroplets of HA directly into the skin itself. This improves the skin's intrinsic hydration, softness, and radiance from within. It is FDA-approved for improving cheek skin smoothness, with results lasting approximately 6 months.",
                 pills: [
                   { label: 'Hydrates', value: 'Improves skin moisture from within' },
                   { label: 'Smooths', value: 'Refines skin texture and feel' },
@@ -276,7 +275,7 @@ export default async function SkinvivePage() {
               },
               {
                 title: 'How is it different from fillers?',
-                body: "Traditional fillers are placed beneath the skin to add volume, lift, or structural support. Skinvive is placed intradermally — within the skin itself — and has no volumizing effect whatsoever. It focuses entirely on skin quality. This makes it a uniquely complementary treatment: it stacks beautifully with Botox, fillers, and facials, addressing the one thing those treatments cannot — the quality of the skin itself.",
+                body: "Traditional fillers are placed beneath the skin to add volume, lift, or structural support. SKINVIVE is placed intradermally — within the skin itself — and has no volumizing effect whatsoever. It focuses entirely on skin quality. This makes it a uniquely complementary treatment: it stacks beautifully with Botox, fillers, and facials, addressing the one thing those treatments cannot — the quality of the skin itself.",
                 pills: [
                   { label: 'Intradermal', value: 'In the skin, not beneath it' },
                   { label: 'Glow', value: 'Skin quality, not volume' },
@@ -284,9 +283,9 @@ export default async function SkinvivePage() {
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
                     <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
@@ -309,7 +308,7 @@ export default async function SkinvivePage() {
               Treatment areas
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Skinvive can address multiple areas focused on skin quality and hydration — not volume or structure.
+              SKINVIVE can address multiple areas focused on skin quality and hydration — not volume or structure.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -332,7 +331,7 @@ export default async function SkinvivePage() {
               What to expect
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Skinvive is a quick, low-downtime treatment — here is what your experience looks like at Slynn Wellness.
+              SKINVIVE is a quick, low-downtime treatment — here is what your experience looks like at Slynn Wellness.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -359,7 +358,7 @@ export default async function SkinvivePage() {
                 Ready to experience skin that glows from within?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                A consultation lets us assess your skin quality, discuss your goals, and create a personalized Skinvive plan — so you can move forward with confidence.
+                A consultation lets us assess your skin quality, discuss your goals, and create a personalized SKINVIVE plan — so you can move forward with confidence.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -408,10 +407,10 @@ export default async function SkinvivePage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book your Skinvive consultation
+                Book your SKINVIVE consultation
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness offers a refined, welcoming environment for aesthetic care in Pasadena. Book your consultation and receive a personalized Skinvive treatment plan tailored to your skin quality goals and lifestyle.
+                Slynn Wellness offers a refined, welcoming environment for aesthetic care in Pasadena. Book your consultation and receive a personalized SKINVIVE treatment plan tailored to your skin quality goals and lifestyle.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

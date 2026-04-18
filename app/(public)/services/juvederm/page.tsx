@@ -4,9 +4,9 @@ import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
-  title: 'Juvederm | Slynn Wellness',
+  title: 'JUVEDERM | Slynn Wellness',
   description:
-    'Enhance lips, restore facial volume, and smooth deep lines with Juvederm hyaluronic acid fillers at Slynn Wellness in Pasadena, CA.',
+    'Enhance lips, restore facial volume, and smooth deep lines with JUVEDERM hyaluronic acid fillers at Slynn Wellness in Pasadena, CA.',
 }
 
 const treatmentAreas = [
@@ -56,17 +56,17 @@ const timeline = [
   {
     step: 'Step 01',
     title: 'Consultation',
-    description: 'We assess your facial structure, skin quality, and aesthetic goals to determine the right Juvederm product and personalized treatment plan.',
+    description: 'We assess your facial structure, skin quality, and aesthetic goals to determine the right JUVEDERM product and personalized treatment plan.',
   },
   {
     step: 'Step 02',
     title: 'Preparation',
-    description: 'The treatment area is cleansed and a topical numbing cream may be applied. Juvederm products contain lidocaine for added comfort during treatment.',
+    description: 'The treatment area is cleansed and a topical numbing cream may be applied. JUVEDERM products contain lidocaine for added comfort during treatment.',
   },
   {
     step: 'Step 03',
     title: 'Treatment',
-    description: 'Your provider carefully injects Juvederm using precise technique to add volume, smooth lines, and enhance your features naturally.',
+    description: 'Your provider carefully injects JUVEDERM using precise technique to add volume, smooth lines, and enhance your features naturally.',
   },
   {
     step: 'Step 04',
@@ -77,41 +77,41 @@ const timeline = [
 
 const faqs = [
   {
-    q: 'How long do Juvederm results last?',
-    a: 'Results typically last 9 to 24 months depending on the product used, the area treated, and individual factors. Juvederm Voluma for cheeks can last up to 2 years, while lip fillers generally last 9–12 months.',
+    q: 'How long do JUVEDERM results last?',
+    a: 'Results typically last 9 to 24 months depending on the product used, the area treated, and individual factors. JUVEDERM Voluma for cheeks can last up to 2 years, while lip fillers generally last 9–12 months.',
   },
   {
-    q: 'Is Juvederm safe?',
-    a: 'Yes. Juvederm is FDA-approved and made from hyaluronic acid — a substance naturally found in the body. It has an extensive safety record when administered by trained medical professionals.',
+    q: 'Is JUVEDERM safe?',
+    a: 'Yes. JUVEDERM is FDA-approved and made from hyaluronic acid — a substance naturally found in the body. It has an extensive safety record when administered by trained medical professionals.',
   },
   {
-    q: 'How is Juvederm different from Restylane?',
-    a: 'Both are hyaluronic acid filler families, but they differ in formulation and texture. Juvederm tends to have a smoother, more cohesive gel that works well for lips and soft tissue areas, while the choice between the two depends on the treatment area and your provider\'s recommendation.',
+    q: 'How is JUVEDERM different from Restylane?',
+    a: 'Both are hyaluronic acid filler families, but they differ in formulation and texture. JUVEDERM tends to have a smoother, more cohesive gel that works well for lips and soft tissue areas, while the choice between the two depends on the treatment area and your provider\'s recommendation.',
   },
   {
     q: 'Does the treatment hurt?',
-    a: 'Most patients experience minimal discomfort. All Juvederm products contain lidocaine, a local anesthetic, to improve comfort during treatment. A topical numbing cream can also be applied beforehand.',
+    a: 'Most patients experience minimal discomfort. All JUVEDERM products contain lidocaine, a local anesthetic, to improve comfort during treatment. A topical numbing cream can also be applied beforehand.',
   },
   {
     q: 'Is there downtime after treatment?',
     a: 'Downtime is minimal. Some swelling, redness, or bruising at the injection sites is normal and typically resolves within a few days. Most clients return to regular activities the same day.',
   },
   {
-    q: 'Can Juvederm be reversed?',
-    a: 'Yes — hyaluronic acid fillers like Juvederm can be dissolved using an enzyme called hyaluronidase if needed. This is one of the key safety advantages of HA-based fillers.',
+    q: 'Can JUVEDERM be reversed?',
+    a: 'Yes — hyaluronic acid fillers like JUVEDERM can be dissolved using an enzyme called hyaluronidase if needed. This is one of the key safety advantages of HA-based fillers.',
   },
 ]
 
 const juvedermProducts = [
-  { name: 'Juvederm Ultra XC', use: 'Lip augmentation and perioral lines' },
-  { name: 'Juvederm Volbella XC', use: 'Subtle lip enhancement and fine lines' },
-  { name: 'Juvederm Vollure XC', use: 'Moderate to severe facial folds' },
-  { name: 'Juvederm Voluma XC', use: 'Cheek augmentation and midface volume' },
-  { name: 'Juvederm Volux XC', use: 'Jawline and chin definition' },
-  { name: 'Juvederm Ultra Plus XC', use: 'Deep folds and volume restoration' },
+  { name: 'JUVEDERM Ultra XC', use: 'Lip augmentation and perioral lines' },
+  { name: 'JUVEDERM Volbella XC', use: 'Subtle lip enhancement and fine lines' },
+  { name: 'JUVEDERM Vollure XC', use: 'Moderate to severe facial folds' },
+  { name: 'JUVEDERM Voluma XC', use: 'Cheek augmentation and midface volume' },
+  { name: 'JUVEDERM Volux XC', use: 'Jawline and chin definition' },
+  { name: 'JUVEDERM Ultra Plus XC', use: 'Deep folds and volume restoration' },
 ]
 
-export default async function JuvedermPage() {
+export default async function JUVEDERMPage() {
   const settings = await getSiteSettings()
 
   const cardStyle = {
@@ -162,14 +162,14 @@ export default async function JuvedermPage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                Juvederm
+                JUVEDERM
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                Juvederm is a premium hyaluronic acid filler collection designed to smooth lines, restore facial volume, and enhance natural contours — delivering immediate, long-lasting, natural-looking results.
+                JUVEDERM is a premium hyaluronic acid filler collection designed to smooth lines, restore facial volume, and enhance natural contours — delivering immediate, long-lasting, natural-looking results.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -215,15 +215,12 @@ export default async function JuvedermPage() {
                 className="rounded-2xl flex-1 flex items-end p-4 relative overflow-hidden"
                 style={{
                   minHeight: '220px',
-                  background: `
-                    radial-gradient(ellipse at 20% 20%, rgba(255,255,255,0.18) 0%, transparent 50%),
-                    radial-gradient(ellipse at 80% 80%, rgba(212,175,55,0.22) 0%, transparent 45%),
-                    radial-gradient(ellipse at 60% 10%, rgba(255,220,160,0.15) 0%, transparent 40%),
-                    linear-gradient(135deg, #2C1F0E 0%, #4A3218 25%, #6B4A28 50%, #8B6535 70%, #C49A50 85%, #D4AF37 100%)
-                  `,
+                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/juvederm-1.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'repeating-linear-gradient(105deg, transparent 0px, transparent 18px, rgba(255,255,255,0.025) 18px, rgba(255,255,255,0.025) 19px)', borderRadius: 'inherit' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%)', borderRadius: 'inherit' }} />
                 <span
                   className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase"
                   style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}
@@ -297,11 +294,17 @@ export default async function JuvedermPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[1, 2, 3].map((i) => (
+            {[
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/juvederm-bf-&-af-1.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/juvederm-bf-&-af-2.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/juvederm-bf-&-af-3.png',
+            ].map((url, i) => (
               <div key={i} className="rounded-3xl overflow-hidden" style={cardStyle}>
-                <div style={{ background: 'linear-gradient(135deg, #2C1F0E 0%, #4A3218 40%, #8B6535 70%, #D4AF37 100%)', height: '220px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>Photo coming soon</p>
-                </div>
+                <img
+                  src={url}
+                  alt={`JUVEDERM result ${i + 1}`}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
+                />
               </div>
             ))}
           </div>
@@ -316,15 +319,15 @@ export default async function JuvedermPage() {
               Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Juvederm is a premium hyaluronic acid filler collection that delivers immediate, long-lasting results across multiple facial areas.
+              JUVEDERM is a premium hyaluronic acid filler collection that delivers immediate, long-lasting results across multiple facial areas.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
-                title: 'What is Juvederm?',
-                body: "Juvederm is a family of FDA-approved hyaluronic acid (HA) dermal fillers developed by Allergan. Known for its smooth, cohesive gel formulation, Juvederm integrates naturally with facial tissue to deliver soft, long-lasting results. Each product in the family is specifically engineered for different treatment areas and aesthetic goals.",
+                title: 'What is JUVEDERM?',
+                body: "JUVEDERM is a family of FDA-approved hyaluronic acid (HA) dermal fillers developed by Allergan. Known for its smooth, cohesive gel formulation, JUVEDERM integrates naturally with facial tissue to deliver soft, long-lasting results. Each product in the family is specifically engineered for different treatment areas and aesthetic goals.",
                 pills: [
                   { label: 'Smooth', value: 'Cohesive gel formulation' },
                   { label: 'Lasting', value: 'Up to 24 months' },
@@ -332,14 +335,14 @@ export default async function JuvedermPage() {
                 ],
               },
               {
-                title: 'The Juvederm collection',
-                body: "The Juvederm collection offers specialized products for each area of the face — from subtle lip enhancement to deep cheek volumization and jawline definition. Your provider selects the right formula based on your anatomy, skin quality, and the results you want to achieve.",
-                pills: juvedermProducts.slice(0, 3).map(p => ({ label: p.name.replace('Juvederm ', ''), value: p.use })),
+                title: 'The JUVEDERM collection',
+                body: "The JUVEDERM collection offers specialized products for each area of the face — from subtle lip enhancement to deep cheek volumization and jawline definition. Your provider selects the right formula based on your anatomy, skin quality, and the results you want to achieve.",
+                pills: juvedermProducts.slice(0, 3).map(p => ({ label: p.name.replace('JUVEDERM ', ''), value: p.use })),
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
                     <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
@@ -354,6 +357,58 @@ export default async function JuvedermPage() {
         </div>
       </section>
 
+      {/* The JUVEDERM Collection */}
+      <section className="py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
+            <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
+              The JUVEDERM Collection
+            </h2>
+            <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
+              JUVÉDERM® is the #1 chosen dermal filler collection in the US, with 6 unique fillers designed for 10 specific areas of the face.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {[
+              {
+                name: 'JUVÉDERM® VOLUMA® XC',
+                desc: 'For deep injection in the cheek area to correct age-related volume loss, for augmentation of the chin region to improve the chin profile, and for augmentation of the temple region to improve moderate to severe temple hollowing in adults over 21.',
+              },
+              {
+                name: 'JUVÉDERM® VOLUX® XC',
+                desc: 'For deep injection to improve moderate to severe loss of jawline definition in adults over the age of 21.',
+              },
+              {
+                name: 'JUVÉDERM® VOLLURE® XC, Ultra Plus XC & Ultra XC',
+                desc: 'For injection into the facial tissue for the correction of moderate to severe facial wrinkles and folds, such as nasolabial folds. JUVÉDERM® Ultra XC is also for injection into the lips and perioral area for lip augmentation in adults over 21.',
+              },
+              {
+                name: 'JUVÉDERM® VOLBELLA® XC',
+                desc: 'For injection into the lips for lip augmentation and correction of perioral lines, and for injection into the undereye hollows to improve the appearance of undereye hollows in adults over the age of 21.',
+              },
+            ].map((product) => (
+              <div
+                key={product.name}
+                className="rounded-2xl p-6"
+                style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}
+              >
+                <h3 className="font-medium mb-3" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem', color: '#D4AF37', margin: '0 0 10px' }}>
+                  {product.name}
+                </h3>
+                <p className="text-xs leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
+                  {product.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xs mt-4" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
+            * Based on the number of units sold in the US in 2023.
+          </p>
+        </div>
+      </section>
+
       {/* Treatment Areas */}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -362,7 +417,7 @@ export default async function JuvedermPage() {
               Treatment areas
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Juvederm can address multiple facial areas in a single visit or as part of a staged treatment plan.
+              JUVEDERM can address multiple facial areas in a single visit or as part of a staged treatment plan.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -385,7 +440,7 @@ export default async function JuvedermPage() {
               What to expect
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              From consultation to glowing results — here is what your Juvederm experience looks like at Slynn Wellness.
+              From consultation to glowing results — here is what your JUVEDERM experience looks like at Slynn Wellness.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -409,7 +464,7 @@ export default async function JuvedermPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', margin: '0 0 12px' }}>
-                Not sure which Juvederm treatment is right for you?
+                Not sure which JUVEDERM treatment is right for you?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
                 A consultation helps us assess your facial anatomy, understand your goals, and recommend the right product and treatment plan — so your results look natural, balanced, and beautifully yours.
@@ -461,10 +516,10 @@ export default async function JuvedermPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book your Juvederm consultation
+                Book your JUVEDERM consultation
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness offers a refined, welcoming environment for aesthetic care in Pasadena. Book your consultation and receive a personalized Juvederm treatment recommendation tailored to your goals.
+                Slynn Wellness offers a refined, welcoming environment for aesthetic care in Pasadena. Book your consultation and receive a personalized JUVEDERM treatment recommendation tailored to your goals.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

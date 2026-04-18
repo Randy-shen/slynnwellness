@@ -5,17 +5,17 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 
 const carouselImages = [
-  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-skin-booster.png', alt: 'Rejuran Skin Booster' },
-  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-healing-essense-description.png', alt: 'Rejuran Healing Essence' },
-  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-human-pic.png', alt: 'Rejuran Treatment' },
-  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-customer-product-line.png', alt: 'Rejuran Product Line' },
-  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-healing-essense.png', alt: 'Rejuran Healing Essence' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-skin-booster.png', alt: 'REJURAN Skin Booster' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-healing-essense-description.png', alt: 'REJURAN Healing Essence' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-human-pic.png', alt: 'REJURAN Treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-customer-product-line.png', alt: 'REJURAN Product Line' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-healing-essense.png', alt: 'REJURAN Healing Essence' },
 ]
 
 export const metadata: Metadata = {
-  title: 'Rejuran PDRN Skin Biorevitalization | Slynn Wellness',
+  title: 'REJURAN PDRN Skin Biorevitalization | Slynn Wellness',
   description:
-    'Rejuran (PDRN therapy) at Slynn Wellness in Pasadena, CA. An advanced injectable skin biorevitalizer that harnesses the regenerative power of PDRN to improve texture, reduce fine lines, and restore a healthy, resilient skin foundation from within.',
+    'REJURAN (PDRN therapy) at Slynn Wellness in Pasadena, CA. An advanced injectable skin biorevitalizer that harnesses the regenerative power of PDRN to improve texture, reduce fine lines, and restore a healthy, resilient skin foundation from within.',
 }
 
 const concerns = [
@@ -65,7 +65,7 @@ const timeline = [
   {
     step: 'Step 03',
     title: 'Treatment',
-    description: 'Rejuran is administered via a series of micro-injections across the treatment area. Small papules are normal and resolve within 24 hours.',
+    description: 'REJURAN is administered via a series of micro-injections across the treatment area. Small papules are normal and resolve within 24 hours.',
   },
   {
     step: 'Step 04',
@@ -84,24 +84,24 @@ const faqs = [
     a: 'Minimal. Small micro-papules at injection sites are normal and typically resolve within 24 hours. Most clients return to regular activities the same day.',
   },
   {
-    q: 'Is Rejuran safe?',
+    q: 'Is REJURAN safe?',
     a: 'Yes. PDRN has been extensively studied and used clinically for decades. The formulation is purified and biocompatible with human tissue.',
   },
   {
-    q: 'How is Rejuran different from PRP?',
-    a: 'Both use biological regenerative mechanisms, but Rejuran uses purified PDRN from salmon DNA, while PRP uses your own blood\'s growth factors. Both stimulate collagen; Rejuran specifically targets skin quality and barrier repair.',
+    q: 'How is REJURAN different from PRP?',
+    a: 'Both use biological regenerative mechanisms, but REJURAN uses purified PDRN from salmon DNA, while PRP uses your own blood\'s growth factors. Both stimulate collagen; REJURAN specifically targets skin quality and barrier repair.',
   },
   {
     q: 'When will I see results?',
     a: 'Gradual improvement is visible over 2–4 weeks after each session. Most clients notice significant changes after completing their full series of treatments.',
   },
   {
-    q: 'Can Rejuran be combined with other treatments?',
-    a: 'Yes — Rejuran pairs excellently with Botox, fillers, and Skinvive. Your provider will design a comprehensive treatment plan tailored to your goals.',
+    q: 'Can REJURAN be combined with other treatments?',
+    a: 'Yes — REJURAN pairs excellently with Botox, fillers, and Skinvive. Your provider will design a comprehensive treatment plan tailored to your goals.',
   },
 ]
 
-export default async function RejuranPage() {
+export default async function REJURANPage() {
   const settings = await getSiteSettings()
 
   const cardStyle = {
@@ -152,14 +152,14 @@ export default async function RejuranPage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                Rejuran
+                REJURAN
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                Rejuran is an advanced skin biorevitalizer that harnesses the regenerative power of PDRN to stimulate your skin&apos;s natural repair mechanisms — improving texture, reducing fine lines, and restoring a healthy, resilient skin foundation from within.
+                REJURAN is an advanced skin biorevitalizer that harnesses the regenerative power of PDRN to stimulate your skin&apos;s natural repair mechanisms — improving texture, reducing fine lines, and restoring a healthy, resilient skin foundation from within.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -274,7 +274,7 @@ export default async function RejuranPage() {
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · Rejuran PDRN Treatment
+                    Patient {i} · REJURAN PDRN Treatment
                   </p>
                 </div>
               </div>
@@ -291,15 +291,15 @@ export default async function RejuranPage() {
               Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Rejuran works at a biological level to restore the skin&apos;s own regenerative capacity.
+              REJURAN works at a biological level to restore the skin&apos;s own regenerative capacity.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
-                title: 'What is Rejuran?',
-                body: 'Rejuran is an injectable skin biorevitalizer containing PDRN (Polydeoxyribonucleotide) — a polynucleotide complex derived from purified salmon DNA. PDRN has a molecular structure highly compatible with human tissue, allowing it to activate the skin\'s A2A receptors and trigger a natural regenerative response. Unlike fillers, Rejuran does not add volume — it works by stimulating your skin\'s own fibroblasts to produce collagen and repair damaged tissue.',
+                title: 'What is REJURAN?',
+                body: 'REJURAN is an injectable skin biorevitalizer containing PDRN (Polydeoxyribonucleotide) — a polynucleotide complex derived from purified salmon DNA. PDRN has a molecular structure highly compatible with human tissue, allowing it to activate the skin\'s A2A receptors and trigger a natural regenerative response. Unlike fillers, REJURAN does not add volume — it works by stimulating your skin\'s own fibroblasts to produce collagen and repair damaged tissue.',
                 pills: [
                   { label: 'PDRN Technology', value: 'Polynucleotide complex' },
                   { label: 'Biostimulation', value: 'A2A receptor activation' },
@@ -308,20 +308,20 @@ export default async function RejuranPage() {
               },
               {
                 title: 'How is it different from fillers?',
-                body: 'Rejuran works fundamentally differently from hyaluronic acid fillers. Fillers physically add volume beneath the skin. Rejuran stimulates your skin\'s own biology to regenerate from within — improving the quality, strength, and resilience of the skin itself. This makes it an excellent foundational treatment for clients who want better skin health rather than structural changes.',
+                body: 'REJURAN works fundamentally differently from hyaluronic acid fillers. Fillers physically add volume beneath the skin. REJURAN stimulates your skin\'s own biology to regenerate from within — improving the quality, strength, and resilience of the skin itself. This makes it an excellent foundational treatment for clients who want better skin health rather than structural changes.',
                 pills: [
                   { label: 'Skin Quality', value: 'Texture and resilience' },
                   { label: 'Natural Repair', value: 'Your biology at work' },
-                  { label: 'Complements Fillers', value: 'Ideal foundational layer' },
+                  { label: 'Stackable', value: 'Ideal foundational layer' },
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
-                    <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
+                    <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)', height: '90px' }}>
                       <strong className="block mb-1.5" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem' }}>{pill.label}</strong>
                       <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{pill.value}</span>
                     </div>
@@ -333,12 +333,12 @@ export default async function RejuranPage() {
         </div>
       </section>
 
-      {/* What Rejuran Can Improve */}
+      {/* What REJURAN Can Improve */}
       <section id="concerns" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 mb-8">
             <h2 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', margin: 0 }}>
-              What Rejuran Can Improve
+              What REJURAN Can Improve
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
               PDRN&apos;s regenerative mechanisms address a wide range of skin quality concerns from the inside out.
@@ -365,7 +365,7 @@ export default async function RejuranPage() {
               Your Treatment Experience
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              From consultation to gradual transformation — here is what your Rejuran session looks like at Slynn Wellness.
+              From consultation to gradual transformation — here is what your REJURAN session looks like at Slynn Wellness.
             </p>
           </div>
 
@@ -389,7 +389,7 @@ export default async function RejuranPage() {
               Why This Treatment?
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Rejuran offers a biologically intelligent approach to skin renewal that complements your full aesthetic treatment plan.
+              REJURAN offers a biologically intelligent approach to skin renewal that complements your full aesthetic treatment plan.
             </p>
           </div>
 
@@ -403,7 +403,7 @@ export default async function RejuranPage() {
               {
                 tag: 'Natural',
                 title: 'Works With Your Biology',
-                description: 'Rejuran does not introduce foreign volume. It activates your skin\'s own repair pathways, making results look and feel completely natural.',
+                description: 'REJURAN does not introduce foreign volume. It activates your skin\'s own repair pathways, making results look and feel completely natural.',
               },
               {
                 tag: 'Foundation',
@@ -433,7 +433,7 @@ export default async function RejuranPage() {
                 Ready to Regenerate Your Skin?
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                A consultation with our team helps us design the right Rejuran protocol for your skin concerns and goals.
+                A consultation with our team helps us design the right REJURAN protocol for your skin concerns and goals.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -497,10 +497,10 @@ export default async function RejuranPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book Your Rejuran Consultation
+                Book Your REJURAN Consultation
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness is proud to offer Rejuran PDRN treatments in Pasadena. Let our team create a personalized protocol to help you achieve healthier, more resilient, beautifully renewed skin.
+                Slynn Wellness is proud to offer REJURAN PDRN treatments in Pasadena. Let our team create a personalized protocol to help you achieve healthier, more resilient, beautifully renewed skin.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

@@ -45,7 +45,7 @@ export default function ServiceCategories({ bookingUrl, servicesByCategory }: Se
     <section
       id="services"
       style={{
-        padding: '96px 0',
+        padding: 'clamp(48px, 8vw, 96px) 0',
         background: 'linear-gradient(180deg, #FDF8F3 0%, #F5EDE3 50%, #FDF8F3 100%)',
       }}
     >
@@ -68,7 +68,7 @@ export default function ServiceCategories({ bookingUrl, servicesByCategory }: Se
         </motion.div>
 
         {/* Cards Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))', gap: '24px' }}>
           {allCategories.map((cat, index) => (
             <motion.div
               key={cat.title}

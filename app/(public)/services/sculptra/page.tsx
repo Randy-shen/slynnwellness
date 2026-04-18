@@ -4,9 +4,9 @@ import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
-  title: 'Sculptra | Slynn Wellness',
+  title: 'SCULPTRA | Slynn Wellness',
   description:
-    'Gradually restore facial volume and stimulate your own collagen production with Sculptra PLLA bio-stimulator treatments at Slynn Wellness in Pasadena, CA.',
+    'Gradually restore facial volume and stimulate your own collagen production with SCULPTRA PLLA bio-stimulator treatments at Slynn Wellness in Pasadena, CA.',
 }
 
 const treatmentAreas = [
@@ -61,7 +61,7 @@ const timeline = [
   {
     step: 'Step 02',
     title: 'Treatment',
-    description: 'Diluted Sculptra is injected strategically into targeted areas. Your provider explains the massage protocol — an important step for even distribution and optimal results.',
+    description: 'Diluted SCULPTRA is injected strategically into targeted areas. Your provider explains the massage protocol — an important step for even distribution and optimal results.',
   },
   {
     step: 'Step 03',
@@ -77,8 +77,8 @@ const timeline = [
 
 const faqs = [
   {
-    q: 'How is Sculptra different from fillers?',
-    a: 'Sculptra is a collagen bio-stimulator, not a filler. Traditional fillers like Juvederm add physical volume immediately using hyaluronic acid. Sculptra works differently — it triggers your body to produce its own collagen over time, creating gradual, natural-looking volume that develops over months rather than days.',
+    q: 'How is SCULPTRA different from fillers?',
+    a: 'SCULPTRA is a collagen bio-stimulator, not a filler. Traditional fillers like Juvederm add physical volume immediately using hyaluronic acid. SCULPTRA works differently — it triggers your body to produce its own collagen over time, creating gradual, natural-looking volume that develops over months rather than days.',
   },
   {
     q: 'How many sessions do I need?',
@@ -86,23 +86,23 @@ const faqs = [
   },
   {
     q: 'When will I see results?',
-    a: 'Sculptra results are gradual by design. You may notice subtle improvement in the weeks following each session, but the full effect typically develops over 3–6 months as your body continues to build collagen. This slow progression is what gives Sculptra its natural-looking outcome.',
+    a: 'SCULPTRA results are gradual by design. You may notice subtle improvement in the weeks following each session, but the full effect typically develops over 3–6 months as your body continues to build collagen. This slow progression is what gives SCULPTRA its natural-looking outcome.',
   },
   {
     q: 'How long do results last?',
-    a: 'Sculptra results can last 2 years or more with a proper treatment series. Because the improvement comes from your own collagen — not a foreign substance filling space — the results tend to be longer-lasting than most hyaluronic acid fillers.',
+    a: 'SCULPTRA results can last 2 years or more with a proper treatment series. Because the improvement comes from your own collagen — not a foreign substance filling space — the results tend to be longer-lasting than most hyaluronic acid fillers.',
   },
   {
-    q: 'Can Sculptra be reversed?',
-    a: 'No — unlike hyaluronic acid fillers, Sculptra cannot be dissolved or reversed. Because it works by stimulating your own collagen production, there is no enzyme available to neutralize the results. This makes choosing an experienced, qualified provider especially important.',
+    q: 'Can SCULPTRA be reversed?',
+    a: 'No — unlike hyaluronic acid fillers, SCULPTRA cannot be dissolved or reversed. Because it works by stimulating your own collagen production, there is no enzyme available to neutralize the results. This makes choosing an experienced, qualified provider especially important.',
   },
   {
-    q: 'Who is a good candidate for Sculptra?',
-    a: 'Sculptra is ideal for adults experiencing facial volume loss, hollowing in the temples or cheeks, skin laxity, or deep folds who are looking for gradual, long-lasting improvement. It is not recommended for those seeking immediate results, lip augmentation, or a single-session correction.',
+    q: 'Who is a good candidate for SCULPTRA?',
+    a: 'SCULPTRA is ideal for adults experiencing facial volume loss, hollowing in the temples or cheeks, skin laxity, or deep folds who are looking for gradual, long-lasting improvement. It is not recommended for those seeking immediate results, lip augmentation, or a single-session correction.',
   },
 ]
 
-export default async function SculptraPage() {
+export default async function SCULPTRAPage() {
   const settings = await getSiteSettings()
 
   const cardStyle = {
@@ -153,14 +153,14 @@ export default async function SculptraPage() {
                 className="font-light mb-4 leading-tight"
                 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.6rem)', letterSpacing: '-0.01em' }}
               >
-                Sculptra
+                SCULPTRA
               </h1>
 
               <p
                 className="text-sm leading-relaxed mb-8 max-w-xl"
                 style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}
               >
-                Sculptra is a poly-L-lactic acid (PLLA) bio-stimulator that gradually restores facial volume by stimulating your body&apos;s own collagen production for natural, long-lasting rejuvenation.
+                SCULPTRA is a poly-L-lactic acid (PLLA) bio-stimulator that gradually restores facial volume by stimulating your body&apos;s own collagen production for natural, long-lasting rejuvenation.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-10">
@@ -252,14 +252,14 @@ export default async function SculptraPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/sculptra-before-after2.png',
-              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/sculptra-before-after-3.png',
-              null,
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/scalptra-bf-&-af-1.png',
+              'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/scalptra-bf-&-af.png',
             ].map((url, i) => (
               <div key={i} className="rounded-3xl overflow-hidden" style={cardStyle}>
                 {url ? (
                   <img
                     src={url}
-                    alt={`Sculptra result ${i + 1}`}
+                    alt={`SCULPTRA result ${i + 1}`}
                     style={{ width: '100%', height: 'auto', display: 'block' }}
                   />
                 ) : (
@@ -281,15 +281,15 @@ export default async function SculptraPage() {
               Overview
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Sculptra is a bio-stimulator, not a filler — it works with your body to rebuild collagen gradually for results that look and feel natural.
+              SCULPTRA is a bio-stimulator, not a filler — it works with your body to rebuild collagen gradually for results that look and feel natural.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
-                title: 'What is Sculptra?',
-                body: "Sculptra is an FDA-approved injectable made from poly-L-lactic acid (PLLA), a biocompatible synthetic material that has been used in medicine for decades. Unlike hyaluronic acid fillers that add volume directly, Sculptra works as a collagen bio-stimulator — it triggers your body's own fibroblasts to produce new collagen over time. The result is a gradual, natural restoration of facial volume that develops over 3–6 months.",
+                title: 'What is SCULPTRA?',
+                body: "SCULPTRA is an FDA-approved injectable made from poly-L-lactic acid (PLLA), a biocompatible synthetic material that has been used in medicine for decades. Unlike hyaluronic acid fillers that add volume directly, SCULPTRA works as a collagen bio-stimulator — it triggers your body's own fibroblasts to produce new collagen over time. The result is a gradual, natural restoration of facial volume that develops over 3–6 months.",
                 pills: [
                   { label: 'Stimulates', value: 'Your own collagen production' },
                   { label: 'Gradual', value: 'Results over 3–6 months' },
@@ -298,7 +298,7 @@ export default async function SculptraPage() {
               },
               {
                 title: 'Why choose a bio-stimulator?',
-                body: "Think of Sculptra as building a collagen bank over time rather than making an immediate deposit. Because the improvement comes from your own tissue rather than a foreign substance, results look and feel remarkably natural. The series approach — typically 2–3 sessions — allows your provider to refine and optimize results progressively. For those who value subtle, long-lasting rejuvenation over instant transformation, Sculptra offers a compelling alternative to traditional fillers.",
+                body: "Think of SCULPTRA as building a collagen bank over time rather than making an immediate deposit. Because the improvement comes from your own tissue rather than a foreign substance, results look and feel remarkably natural. The series approach — typically 2–3 sessions — allows your provider to refine and optimize results progressively. For those who value subtle, long-lasting rejuvenation over instant transformation, SCULPTRA offers a compelling alternative to traditional fillers.",
                 pills: [
                   { label: 'Natural', value: 'Your own collagen, not filler' },
                   { label: '2+ Years', value: 'Lasting results' },
@@ -306,9 +306,9 @@ export default async function SculptraPage() {
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
                     <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
@@ -331,7 +331,7 @@ export default async function SculptraPage() {
               Treatment areas
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Sculptra can address multiple areas of facial volume loss as part of a comprehensive, staged treatment plan.
+              SCULPTRA can address multiple areas of facial volume loss as part of a comprehensive, staged treatment plan.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -354,7 +354,7 @@ export default async function SculptraPage() {
               What to expect
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Sculptra is a journey, not a quick fix — here is what your treatment experience looks like at Slynn Wellness.
+              SCULPTRA is a journey, not a quick fix — here is what your treatment experience looks like at Slynn Wellness.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -430,10 +430,10 @@ export default async function SculptraPage() {
           >
             <div>
               <h3 className="mb-3 font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', margin: '0 0 12px' }}>
-                Book your Sculptra consultation
+                Book your SCULPTRA consultation
               </h3>
               <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-                Slynn Wellness offers a refined, welcoming environment for aesthetic care in Pasadena. Book your consultation and receive a personalized Sculptra treatment plan tailored to your facial anatomy and long-term goals.
+                Slynn Wellness offers a refined, welcoming environment for aesthetic care in Pasadena. Book your consultation and receive a personalized SCULPTRA treatment plan tailored to your facial anatomy and long-term goals.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">

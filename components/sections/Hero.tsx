@@ -57,7 +57,7 @@ export default function Hero({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-6xl sm:text-7xl lg:text-8xl font-light tracking-[0.15em] text-white mb-4"
+          className="text-5xl sm:text-6xl lg:text-8xl font-light tracking-[0.15em] text-white mb-4"
           style={{ fontFamily: 'Cormorant Garamond, serif' }}
         >
           SLYNN WELLNESS
@@ -81,7 +81,7 @@ export default function Hero({
         >
           <Link
             href="/#services"
-            className="px-8 py-3.5 border border-white text-white text-xs font-medium tracking-wider uppercase hover:bg-white hover:text-[#2C2C2C] transition-all duration-300 min-w-[180px] text-center"
+            className="px-8 py-3.5 border border-white text-white text-xs font-medium tracking-wider uppercase hover:bg-white hover:text-[#2C2C2C] transition-all duration-300 w-full sm:min-w-[180px] sm:w-auto text-center"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Explore Services
@@ -90,7 +90,7 @@ export default function Hero({
             href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3.5 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-all duration-300 min-w-[180px] text-center"
+            className="px-8 py-3.5 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-all duration-300 w-full sm:min-w-[180px] sm:w-auto text-center"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Book Appointment

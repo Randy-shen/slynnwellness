@@ -250,41 +250,65 @@ export default async function NadInfusionPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
-            {[
-              { dose: '250mg', label: 'Minimum', price: '$250' },
-              { dose: '500mg', label: 'Standard', price: '$500' },
-              { dose: 'Per mg', label: 'Rate', price: '$1/mg' },
-            ].map((tier) => (
-              <div key={tier.dose} className="rounded-3xl p-8 text-center" style={cardStyle}>
-                <span
-                  className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4"
-                  style={tagStyle}
-                >
-                  {tier.label}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+            {/* Single Session */}
+            <div className="rounded-2xl p-6" style={cardStyle}>
+              <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-4" style={tagStyle}>
+                Single Session
+              </span>
+              <div className="flex items-baseline gap-2 mb-4">
+                <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.2rem', fontWeight: 300, color: '#2C2C2C' }}>$500</span>
+                <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: '#7a6f66' }}>/ session</span>
+              </div>
+              <div className="w-full h-px mb-4" style={{ background: 'rgba(233,221,209,0.9)' }} />
+              <div className="space-y-2">
+                {[
+                  { dose: '250mg (minimum)', price: '$250' },
+                  { dose: '500mg', price: '$500' },
+                  { dose: 'Custom dose', price: '$1/mg' },
+                ].map((item) => (
+                  <div key={item.dose} className="flex justify-between items-center">
+                    <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.78rem', color: '#7a6f66' }}>{item.dose}</span>
+                    <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem', color: '#2C2C2C' }}>{item.price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Prepay 3 Sessions */}
+            <div className="rounded-2xl p-6" style={{ ...cardStyle, background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.25)' }}>
+              <div className="flex items-center justify-between mb-4">
+                <span className="inline-block px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase" style={tagStyle}>
+                  Prepay 3 Sessions
                 </span>
-                <div
-                  className="mb-2"
-                  style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 300 }}
-                >
-                  {tier.dose}
+                <span className="text-xs font-semibold px-2 py-1 rounded-full" style={{ background: 'rgba(212,175,55,0.15)', color: '#D4AF37', fontFamily: 'Montserrat, sans-serif' }}>
+                  Best Value
+                </span>
+              </div>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.2rem', fontWeight: 300, color: '#D4AF37' }}>$349</span>
+                <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', color: '#7a6f66' }}>/ session</span>
+              </div>
+              <p className="text-xs mb-4" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A', margin: '4px 0 16px' }}>
+                500mg per session · Prepay 3 sessions
+              </p>
+              <div className="w-full h-px mb-4" style={{ background: 'rgba(212,175,55,0.2)' }} />
+              <div className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.78rem', color: '#7a6f66' }}>Total (3 sessions)</span>
+                  <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem', color: '#2C2C2C' }}>$1,047</span>
                 </div>
-                <div
-                  className="font-semibold"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '1.1rem', color: '#8B6340' }}
-                >
-                  {tier.price}
+                <div className="flex justify-between items-center">
+                  <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.78rem', color: '#7a6f66' }}>You save</span>
+                  <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem', color: '#D4AF37', fontWeight: 600 }}>$453</span>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
 
-          <div
-            className="rounded-2xl px-6 py-4"
-            style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}
-          >
+          <div className="rounded-2xl px-6 py-4" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
             <p className="text-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Most first-time clients start with 250mg. Your provider will recommend the optimal dose based on your health goals.
+              Most first-time clients start with 250mg. Prepay pricing of $349/session applies to 500mg sessions only. Your provider will recommend the optimal dose and frequency based on your health goals.
             </p>
           </div>
         </div>
@@ -302,7 +326,7 @@ export default async function NadInfusionPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
                 title: 'What is NAD+?',
@@ -323,9 +347,9 @@ export default async function NadInfusionPage() {
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
                 <div className="grid grid-cols-3 gap-3">
                   {card.pills.map((pill) => (
                     <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>

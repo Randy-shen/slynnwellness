@@ -3,6 +3,20 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
+import ImageCarousel from '@/components/sections/ImageCarousel'
+
+const overviewImages = [
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-matrix-pro.png', alt: 'Candela Matrix Pro machine' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-sublime.png', alt: 'Candela Sublime treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-sublative.png', alt: 'Candela Sublative treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-matrix.png', alt: 'Candela Matrix Pro' },
+]
+
+const beforeAfterImages = [
+  'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-matrix-bf%26af-1.png',
+  'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-matrix-bf%26af-2.png',
+  'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-matrix-bf%26af-3.png',
+]
 
 export const metadata: Metadata = {
   title: 'Candela Matrix Pro | Slynn Wellness',
@@ -208,23 +222,9 @@ export default async function MicroneedlingPage() {
               className="lg:col-span-2 rounded-3xl p-6 flex flex-col gap-5"
               style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,248,242,0.90))', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 20px 60px rgba(90,66,44,0.10)' }}
             >
-              {/* Portrait */}
-              <div
-                className="rounded-2xl flex-1 flex flex-col justify-between p-4 relative overflow-hidden"
-                style={{
-                  minHeight: '220px',
-                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela_microneedling.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 40%, rgba(0,0,0,0.30) 100%)', borderRadius: 'inherit' }} />
-                <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  Collagen · Texture · Tightness
-                </span>
-                <span className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase self-start" style={{ background: 'rgba(255,255,255,0.82)', backdropFilter: 'blur(10px)', color: '#8B6340', fontFamily: 'Montserrat, sans-serif', border: '1px solid rgba(233,221,209,0.8)' }}>
-                  Candela Matrix Pro
-                </span>
+              {/* Carousel */}
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '0' }}>
+                <ImageCarousel images={overviewImages} autoPlayInterval={3500} fillHeight />
               </div>
 
               <div className="flex flex-col gap-3">
@@ -293,7 +293,7 @@ export default async function MicroneedlingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {[1, 2, 3].map((i) => (
+            {beforeAfterImages.map((src, i) => (
               <div
                 key={i}
                 className="rounded-3xl overflow-hidden"
@@ -307,9 +307,12 @@ export default async function MicroneedlingPage() {
                   className="relative"
                   style={{
                     height: '280px',
-                    background: 'linear-gradient(145deg, #1A100A 0%, #35200F 30%, #8B5E30 65%, #C4956A 100%)',
+                    backgroundImage: `url(${src})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                   }}
                 >
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 40%, rgba(0,0,0,0.22) 100%)' }} />
                   <span
                     className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
                     style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
@@ -323,15 +326,10 @@ export default async function MicroneedlingPage() {
                     After
                   </span>
                   <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-xs tracking-widest uppercase" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(255,255,255,0.5)' }}>
-                      Photo coming soon
-                    </p>
-                  </div>
                 </div>
                 <div className="p-4">
                   <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
-                    Patient {i} · Candela Matrix Pro
+                    Patient {i + 1} · Candela Matrix Pro
                   </p>
                 </div>
               </div>
@@ -351,7 +349,7 @@ export default async function MicroneedlingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {[
               {
                 title: 'What is Candela Matrix Pro?',
@@ -372,12 +370,12 @@ export default async function MicroneedlingPage() {
                 ],
               },
             ].map((card) => (
-              <div key={card.title} className="rounded-3xl p-8" style={cardStyle}>
+              <div key={card.title} className="rounded-3xl p-8 flex flex-col" style={cardStyle}>
                 <h3 className="mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', fontWeight: 400, margin: '0 0 12px' }}>{card.title}</h3>
-                <p className="text-sm leading-relaxed mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
-                <div className="grid grid-cols-3 gap-3">
+                <p className="text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{card.body}</p>
+                <div className="grid grid-cols-3 gap-3 items-stretch">
                   {card.pills.map((pill) => (
-                    <div key={pill.label} className="p-4 rounded-2xl" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
+                    <div key={pill.label} className="p-4 rounded-2xl flex flex-col" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)', height: '90px' }}>
                       <strong className="block mb-1.5" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1rem' }}>{pill.label}</strong>
                       <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{pill.value}</span>
                     </div>

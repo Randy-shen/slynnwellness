@@ -21,7 +21,7 @@ export const placeholderIVTherapies: IVTherapy[] = [
     ingredients: ['B-Complex', 'Magnesium 500mg–1g', 'Vitamin C 500mg–2g', 'Normal Saline 500mL–1L'],
     infusion_time: '45–60 min',
     is_special: false,
-    price: 'Starting at $150/session',
+    price: 'Starting at $185/session',
     display_order: 1,
     is_visible: true,
   },
