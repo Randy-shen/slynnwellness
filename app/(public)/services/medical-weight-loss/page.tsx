@@ -311,7 +311,7 @@ export default async function MedicalWeightLossPage() {
 
             {/* CTA */}
             <a
-              href={settings.booking_url}
+              href="/book"
               target="_blank"
               rel="noopener noreferrer"
               style={{ ...ctaButtonStyle, fontSize: '0.7rem', padding: '0.95rem 2.5rem' }}
@@ -666,7 +666,7 @@ export default async function MedicalWeightLossPage() {
 
                 {/* CTA */}
                 <a
-                  href={settings.booking_url}
+                  href="/book"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ ...ctaButtonStyle, width: '100%', boxSizing: 'border-box' as const }}
@@ -844,7 +844,7 @@ export default async function MedicalWeightLossPage() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <a
-                href={settings.booking_url}
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={ctaButtonStyle}

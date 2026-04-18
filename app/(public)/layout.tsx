@@ -25,7 +25,7 @@ export default async function PublicLayout({
   return (
     <>
       <Header
-        bookingUrl={settings.booking_url}
+        bookingUrl="/book"
         navServices={navServices}
         address={`${settings.address}, ${settings.city}, ${settings.state} ${settings.zip}`}
         phone={settings.phone}

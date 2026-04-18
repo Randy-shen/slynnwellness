@@ -168,7 +168,7 @@ export default async function BotoxXeominPage() {
 
               <div className="flex flex-wrap gap-4 mb-10">
                 <a
-                  href={settings.booking_url}
+                  href="/book"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5"
@@ -304,7 +304,7 @@ export default async function BotoxXeominPage() {
                     </div>
                   ))}
                 </div>
-                <a href={settings.booking_url} target="_blank" rel="noopener noreferrer" className="block w-full text-center px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5" style={{ background: 'linear-gradient(135deg, #D4AF37 0%, #C6A050 100%)', fontFamily: 'Montserrat, sans-serif' }}>
+                <a href="/book" className="block w-full text-center px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5" style={{ background: 'linear-gradient(135deg, #D4AF37 0%, #C6A050 100%)', fontFamily: 'Montserrat, sans-serif' }}>
                   Book Now
                 </a>
               </div>
@@ -589,7 +589,7 @@ export default async function BotoxXeominPage() {
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href={settings.booking_url}
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5"
@@ -704,7 +704,7 @@ export default async function BotoxXeominPage() {
             </div>
             <div className="flex flex-wrap gap-4">
               <a
-                href={settings.booking_url}
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5"

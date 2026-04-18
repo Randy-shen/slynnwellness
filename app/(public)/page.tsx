@@ -24,9 +24,9 @@ export default async function HomePage() {
         videoUrl={settings.hero_video_url}
         posterUrl={settings.hero_poster_url}
         tagline={settings.hero_tagline}
-        bookingUrl={settings.booking_url}
+        bookingUrl="/book"
       />
-      <ServiceCategories bookingUrl={settings.booking_url} servicesByCategory={servicesByCategory} />
+      <ServiceCategories bookingUrl="/book" servicesByCategory={servicesByCategory} />
       <WhyUs />
       <Testimonials />
       <LocationPreview settings={settings} />

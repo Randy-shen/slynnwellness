@@ -81,7 +81,7 @@ export default async function MedicalAestheticPage() {
             Book a complimentary consultation with one of our expert providers.
           </p>
           <a
-            href={settings.booking_url}
+            href="/book"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"

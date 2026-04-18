@@ -88,8 +88,6 @@ export default function Hero({
           </Link>
           <a
             href={bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="px-8 py-3.5 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-all duration-300 w-full sm:min-w-[180px] sm:w-auto text-center"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >

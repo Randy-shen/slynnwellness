@@ -124,8 +124,6 @@ export default function MobileNav({ isOpen, onClose, navItems, bookingUrl, addre
             <div className="px-6 py-6 border-t border-[#F0E8DF]">
               <a
                 href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="block w-full py-4 bg-[#D4AF37] text-white text-center font-medium tracking-wider uppercase mb-6"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}
               >

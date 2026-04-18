@@ -136,7 +136,8 @@ export default async function Footer() {
                 { label: 'Procare Membership', href: '/membership' },
                 { label: 'Shop', href: '/shop' },
                 { label: 'Contact Us', href: '/contact' },
-                { label: 'Book Appointment', href: settings.booking_url },
+                { label: 'Book Appointment', href: '/book' },
+                { label: 'Cancellation Policy', href: '/policies' },
                 { label: 'Privacy Policy', href: '/privacy' },
                 { label: 'Terms of Service', href: '/terms' },
               ].map((item) => (
@@ -202,6 +203,9 @@ export default async function Footer() {
             © {new Date().getFullYear()} {settings.business_name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
+            <Link href="/policies" className="text-xs text-[#B8A99A] hover:text-[#D4AF37] transition-colors">
+              Cancellation Policy
+            </Link>
             <Link href="/privacy" className="text-xs text-[#B8A99A] hover:text-[#D4AF37] transition-colors">
               Privacy Policy
             </Link>

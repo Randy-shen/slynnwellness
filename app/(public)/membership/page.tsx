@@ -204,7 +204,7 @@ export default async function MembershipPage() {
                 </div>
 
                 <a
-                  href={settings.booking_url}
+                  href="/book"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full py-3 text-center text-xs font-medium tracking-wider uppercase transition-colors ${
@@ -277,7 +277,7 @@ export default async function MembershipPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={settings.booking_url}
+              href="/book"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"

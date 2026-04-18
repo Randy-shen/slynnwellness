@@ -187,8 +187,6 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
             <div className="hidden lg:flex items-center">
               <a
                 href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="px-5 py-2 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors duration-200"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}
               >

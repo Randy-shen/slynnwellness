@@ -190,7 +190,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 Pricing may vary based on individual treatment plans. A consultation is required before booking.
               </p>
               <a
-                href={settings.booking_url}
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full py-3 bg-[#D4AF37] text-white text-center text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"
@@ -272,7 +272,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               Book your appointment today and take the first step toward your best self.
             </p>
             <a
-              href={settings.booking_url}
+              href="/book"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-white text-[#2C2C2C] text-xs font-medium tracking-wider uppercase hover:bg-[#F7E7CE] transition-colors"

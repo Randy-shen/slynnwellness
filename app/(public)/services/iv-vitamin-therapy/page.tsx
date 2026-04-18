@@ -202,7 +202,7 @@ export default async function IVVitaminTherapyPage() {
                   </p>
                 )}
                 <a
-                  href={settings.booking_url}
+                  href="/book"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3 text-center text-xs font-medium tracking-wider uppercase transition-colors bg-[#D4AF37] text-white hover:bg-[#B8960A]"
@@ -246,7 +246,7 @@ export default async function IVVitaminTherapyPage() {
               the right drip for your goals and wellness needs.
             </p>
             <a
-              href={settings.booking_url}
+              href="/book"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-12 py-4 bg-white text-[#2C2C2C] text-xs font-medium tracking-wider uppercase hover:bg-[#F7E7CE] transition-colors"

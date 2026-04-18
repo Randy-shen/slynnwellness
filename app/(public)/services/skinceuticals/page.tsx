@@ -173,7 +173,7 @@ export default async function SKINCEUTICALSPage() {
 
               <div className="flex flex-wrap gap-4 mb-10">
                 <a
-                  href={settings.booking_url}
+                  href="/book"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5"
@@ -449,7 +449,7 @@ export default async function SKINCEUTICALSPage() {
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href={settings.booking_url}
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full text-center px-7 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5"
@@ -516,7 +516,7 @@ export default async function SKINCEUTICALSPage() {
             </div>
             <div className="flex flex-wrap gap-4">
               <a
-                href={settings.booking_url}
+                href="/book"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase text-white transition-all hover:-translate-y-0.5"
