@@ -3,6 +3,15 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
+import ImageCarousel from '@/components/sections/ImageCarousel'
+
+const carouselImages = [
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/botox.png', alt: 'Botox treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/botox-2.png', alt: 'Botox results' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/botox-3.png', alt: 'Botox & Xeomin' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/xeomin-2.png', alt: 'Xeomin treatment' },
+  { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/xeomin-1.png', alt: 'Xeomin results' },
+]
 
 export const metadata: Metadata = {
   title: 'Botox & Xeomin | Slynn Wellness',
@@ -226,29 +235,9 @@ export default async function BotoxXeominPage() {
                 boxShadow: '0 20px 60px rgba(90,66,44,0.10)',
               }}
             >
-              {/* Portrait */}
-              <div
-                className="rounded-2xl flex-1 flex items-end p-4 relative overflow-hidden"
-                style={{
-                  minHeight: '220px',
-                  backgroundImage: 'url(https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/botox-xeomin.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%)', borderRadius: 'inherit' }} />
-                <span
-                  className="relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase"
-                  style={{
-                    background: 'rgba(255,255,255,0.82)',
-                    backdropFilter: 'blur(10px)',
-                    color: '#8B6340',
-                    fontFamily: 'Montserrat, sans-serif',
-                    border: '1px solid rgba(233,221,209,0.8)',
-                  }}
-                >
-                  Natural, refined results
-                </span>
+              {/* Carousel */}
+              <div className="rounded-2xl overflow-hidden" style={{ flex: '1 1 0', minHeight: '0' }}>
+                <ImageCarousel images={carouselImages} autoPlayInterval={3500} fillHeight />
               </div>
 
               {/* Quick facts */}

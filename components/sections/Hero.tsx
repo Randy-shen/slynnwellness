@@ -34,7 +34,7 @@ export default function Hero({
       </video>
 
       {/* Animated Gradient Fallback (visible when no video) */}
-      <div className="hero-gradient absolute inset-0 w-full h-full" />
+      {!videoUrl && <div className="hero-gradient absolute inset-0 w-full h-full" />}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40" />

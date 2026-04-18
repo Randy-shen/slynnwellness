@@ -39,17 +39,17 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
     { label: 'Home', href: '/' },
     {
       label: 'Medical Aesthetic',
-      href: '/medical-aesthetic',
+      href: '#',
       dropdown: navServices.medical,
     },
     {
       label: 'Wellness',
-      href: '/wellness',
+      href: '#',
       dropdown: navServices.wellness,
     },
     {
       label: 'Skin & Scalp Care',
-      href: '/skin-scalp-care',
+      href: '#',
       dropdown: navServices.skin,
     },
     { label: 'Procare Membership', href: '/membership' },
@@ -84,6 +84,12 @@ export default function Header({ bookingUrl, navServices }: HeaderProps) {
                 className={`flex items-center gap-3 transition-colors duration-300 ${!scrolled && isHomepage ? 'text-white' : 'text-[#2C2C2C]'}`}
                 style={{ fontFamily: 'Cormorant Garamond, serif' }}
               >
+                {/* Logo icon */}
+                <img
+                  src="https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/logo.png"
+                  alt="Slynn Wellness"
+                  className="w-14 h-14 lg:w-16 lg:h-16 object-contain flex-shrink-0"
+                />
                 {/* Desktop: side by side with divider */}
                 <div className="hidden sm:flex items-center gap-3">
                   <span className="text-xl lg:text-2xl font-light tracking-[0.2em]">SLYNN</span>

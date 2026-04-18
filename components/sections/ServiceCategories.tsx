@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 interface ServicesByCategory {
   medical: string[]
@@ -14,103 +13,114 @@ interface ServiceCategoriesProps {
   servicesByCategory: ServicesByCategory
 }
 
+const categories = [
+  {
+    title: 'Medical Aesthetic',
+    kicker: 'Injectables & Fillers',
+    gradient: 'linear-gradient(135deg, #3D2B1F 0%, #6B4A2A 35%, #C49A6C 70%, #E8D5B8 100%)',
+    description: 'Transform your appearance with expert injectable treatments that deliver natural, beautiful results.',
+  },
+  {
+    title: 'Wellness',
+    kicker: 'IV Therapy & Weight Loss',
+    gradient: 'linear-gradient(135deg, #2C1F0E 0%, #5C3D1E 35%, #B8865A 70%, #E8D0B0 100%)',
+    description: 'Optimize your health from within through physician-supervised wellness and longevity programs.',
+  },
+  {
+    title: 'Skin & Scalp Care',
+    kicker: 'Facials & Treatments',
+    gradient: 'linear-gradient(135deg, #352010 0%, #6B4520 35%, #C4956A 70%, #EAD8C0 100%)',
+    description: 'Reveal your most radiant skin with advanced clinical treatments tailored to your unique needs.',
+  },
+]
+
 export default function ServiceCategories({ bookingUrl, servicesByCategory }: ServiceCategoriesProps) {
-  const categories = [
-    {
-      title: 'Medical Aesthetic',
-      href: '/medical-aesthetic',
-      gradient: 'linear-gradient(160deg, #4A3520 0%, #6B4E32 50%, #D4AF37 100%)',
-      services: servicesByCategory.medical,
-      description: 'Transform your appearance with expert injectable treatments that deliver natural, beautiful results.',
-    },
-    {
-      title: 'Wellness',
-      href: '/wellness',
-      gradient: 'linear-gradient(160deg, #3D2E18 0%, #6B4E2A 50%, #B8915A 100%)',
-      services: servicesByCategory.wellness,
-      description: 'Optimize your health from within through physician-supervised wellness and longevity programs.',
-    },
-    {
-      title: 'Skin & Scalp Care',
-      href: '/skin-scalp-care',
-      gradient: 'linear-gradient(160deg, #352515 0%, #5C3D20 50%, #C4956A 100%)',
-      services: servicesByCategory.skin,
-      description: 'Reveal your most radiant skin with advanced clinical treatments tailored to your unique needs.',
-    },
+  const allCategories = [
+    { ...categories[0], services: servicesByCategory.medical },
+    { ...categories[1], services: servicesByCategory.wellness },
+    { ...categories[2], services: servicesByCategory.skin },
   ]
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-[#FFFAF5]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="services"
+      style={{
+        padding: '96px 0',
+        background: 'linear-gradient(180deg, #FDF8F3 0%, #F5EDE3 50%, #FDF8F3 100%)',
+      }}
+    >
+      <div style={{ width: 'min(calc(100% - 32px), 1220px)', margin: '0 auto' }}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          style={{ textAlign: 'center', marginBottom: '56px' }}
         >
-          <p className="text-xs font-medium tracking-[0.3em] uppercase text-[#D4AF37] mb-3"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.75rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#bca98a', marginBottom: '12px', fontWeight: 600 }}>
             Our Services
           </p>
-          <h2 className="text-4xl lg:text-5xl font-light text-[#2C2C2C]"
-            style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 3vw, 3rem)', fontWeight: 400, color: '#2f2b28', margin: '0 0 16px' }}>
             Curated for Your Wellness
           </h2>
-          <div className="mt-4 w-16 h-px bg-[#D4AF37] mx-auto" />
+          <div style={{ width: '48px', height: '1px', background: '#bca98a', margin: '0 auto' }} />
         </motion.div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {categories.map((cat, index) => (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+          {allCategories.map((cat, index) => (
             <motion.div
               key={cat.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group relative bg-white rounded-sm overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 border border-transparent hover:border-[#D4AF37]/30"
+              style={{
+                background: 'rgba(255,250,242,0.90)',
+                border: '1px solid rgba(212,175,55,0.15)',
+                borderRadius: '28px',
+                boxShadow: '0 24px 60px rgba(139,99,64,0.10)',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
             >
-              {/* Image Placeholder */}
+              {/* Image/Gradient area */}
               <div
-                className="h-52 w-full relative"
-                style={{ background: cat.gradient }}
+                style={{
+                  height: '200px',
+                  background: cat.gradient,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                  position: 'relative',
+                }}
               >
-                <div className="h-full flex flex-col items-center justify-center gap-2">
-                  <h3
-                    className="text-2xl font-light text-white tracking-[0.15em]"
-                    style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                  >
-                    {cat.title}
-                  </h3>
-                  <div className="w-8 h-px bg-[#D4AF37] opacity-70" />
-                </div>
+                <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
+                  {cat.kicker}
+                </p>
+                <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', fontWeight: 400, color: 'white', margin: 0, letterSpacing: '0.05em' }}>
+                  {cat.title}
+                </h3>
+                <div style={{ width: '32px', height: '1px', background: 'rgba(255,255,255,0.6)' }} />
               </div>
 
-              {/* Card Content */}
-              <div className="p-6">
-                <Link href={cat.href}>
-                  <h3
-                    className="text-2xl font-light text-[#2C2C2C] mb-2 group-hover:text-[#D4AF37] transition-colors"
-                    style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                  >
-                    {cat.title}
-                  </h3>
-                </Link>
-                <p className="text-sm text-[#8B7355] mb-4 leading-relaxed"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              {/* Content */}
+              <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.88rem', color: '#5a534d', lineHeight: 1.7, marginBottom: '20px' }}>
                   {cat.description}
                 </p>
 
-                <ul className="space-y-1.5 mb-6">
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
                   {cat.services.map((service) => (
                     <li
                       key={service}
-                      className="flex items-center gap-2 text-xs text-[#B8A99A]"
-                      style={{ fontFamily: 'Montserrat, sans-serif' }}
+                      style={{ display: 'flex', alignItems: 'center', gap: '10px', fontFamily: 'Montserrat, sans-serif', fontSize: '0.82rem', color: '#7a6f66' }}
                     >
-                      <span className="w-1 h-1 rounded-full bg-[#D4AF37] flex-shrink-0" />
+                      <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'linear-gradient(135deg, #cbbba0, #bca98a)', flexShrink: 0 }} />
                       {service}
                     </li>
                   ))}
@@ -120,8 +130,21 @@ export default function ServiceCategories({ bookingUrl, servicesByCategory }: Se
                   href={bookingUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-6 py-2.5 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  style={{
+                    display: 'inline-block',
+                    padding: '12px 24px',
+                    borderRadius: '999px',
+                    background: 'linear-gradient(135deg, #cbbba0 0%, #bca98a 100%)',
+                    color: '#2f2b28',
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
+                    boxShadow: '0 8px 20px rgba(188,169,138,0.30)',
+                    alignSelf: 'flex-start',
+                  }}
                 >
                   Book Now
                 </a>

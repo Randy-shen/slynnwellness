@@ -110,20 +110,6 @@ export default async function Footer() {
               Services
             </h4>
             <ul className="space-y-2">
-              {[
-                { label: 'Medical Aesthetic', href: '/medical-aesthetic' },
-                { label: 'Wellness', href: '/wellness' },
-                { label: 'Skin & Scalp Care', href: '/skin-scalp-care' },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-[#B8A99A] hover:text-[#D4AF37] transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
               {featuredServices.map((service) => (
                 <li key={service.slug}>
                   <Link
@@ -148,7 +134,6 @@ export default async function Footer() {
             <ul className="space-y-2">
               {[
                 { label: 'Procare Membership', href: '/membership' },
-                { label: 'Price List', href: '/price-list' },
                 { label: 'Shop', href: '/shop' },
                 { label: 'Contact Us', href: '/contact' },
                 { label: 'Book Appointment', href: settings.booking_url },
