@@ -34,6 +34,7 @@ export default function ImageCarousel({ images, autoPlayInterval = 4000, fillHei
         background: 'rgba(255,250,245,0.85)',
         border: '1px solid rgba(233,221,209,0.9)',
         boxShadow: '0 20px 60px rgba(90,66,44,0.10)',
+        ...(fillHeight && { minHeight: '320px' }),
       }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
