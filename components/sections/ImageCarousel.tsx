@@ -39,7 +39,7 @@ export default function ImageCarousel({ images, autoPlayInterval = 4000, fillHei
       onMouseLeave={() => setPaused(false)}
     >
       {/* Images */}
-      <div className="relative" style={fillHeight ? { flex: 1, minHeight: 0 } : { aspectRatio: '16/7' }}>
+      <div className="relative" style={fillHeight ? { flex: 1, minHeight: '280px' } : { aspectRatio: '16/7' }}>
         {images.map((image, i) => (
           <div
             key={i}
