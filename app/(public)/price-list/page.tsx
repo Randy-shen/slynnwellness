@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: 'Price List',
   description:
     'View our complete price list for all medical aesthetic, wellness, and skin & scalp care treatments at Slynn Wellness in Pasadena, CA.',
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 const categories = ['medical-aesthetic', 'wellness', 'skin-scalp-care'] as const
