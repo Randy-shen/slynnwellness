@@ -59,6 +59,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.slynnwellness.com",
   },
+  verification: {
+    google: "9B7M5ZGwEAaeSYr_Xeh6vJCBfpqaJqvohc4_tIs7Xj0",
+  },
   robots: {
     index: true,
     follow: true,
