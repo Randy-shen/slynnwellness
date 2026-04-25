@@ -41,7 +41,7 @@ export default function ServiceSchema({
     serviceType: name,
     url: pageUrl,
     provider: {
-      '@type': 'MedicalSpa',
+      '@type': 'Organization',
       '@id': `${SITE_URL}/#medicalspa`,
       name: 'Slynn Wellness',
       url: SITE_URL,
@@ -58,7 +58,9 @@ export default function ServiceSchema({
   }
 
   if (image) serviceSchema.image = image
-  if (priceRange) serviceSchema.priceRange = priceRange
+  // priceRange intentionally not added to Service — it's a LocalBusiness property only.
+  // Suppress unused-prop warning while keeping API stable for callers.
+  void priceRange
 
   const faqSchema =
     faqs && faqs.length > 0
