@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "MedicalSpa",
+  "@type": ["LocalBusiness", "MedicalSpa"],
   "@id": "https://www.slynnwellness.com/#medicalspa",
   name: "Slynn Wellness",
   legalName: "Slynn Wellness",
@@ -116,13 +116,13 @@ const jsonLd = {
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
+      opens: "10:00",
+      closes: "17:00",
     },
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Saturday"],
-      opens: "10:00",
+      opens: "11:00",
       closes: "17:00",
     },
   ],
