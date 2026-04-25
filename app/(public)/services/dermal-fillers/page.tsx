@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
 import ImageCarousel from '@/components/sections/ImageCarousel'
@@ -146,6 +147,15 @@ export default async function RESTYLANEFillerPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="dermal-fillers"
+        name="RESTYLANE Dermal Fillers"
+        description="Restore volume, define contours, and enhance your natural beauty with RESTYLANE hyaluronic acid dermal fillers at Slynn Wellness in Pasadena, CA. FDA-approved HA fillers tailored to lips, cheeks, jawline, under eyes, and more."
+        category="Medical Aesthetic"
+        faqs={faqs}
+        priceRange="$$$"
+        image="https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/restylane-4.png"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

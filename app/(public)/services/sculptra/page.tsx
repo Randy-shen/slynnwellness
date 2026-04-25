@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -123,6 +124,14 @@ export default async function SCULPTRAPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="sculptra"
+        name="SCULPTRA Bio-Stimulator"
+        description="Gradually restore facial volume and stimulate your own collagen production with SCULPTRA poly-L-lactic acid bio-stimulator treatments at Slynn Wellness in Pasadena, CA."
+        category="Medical Aesthetic"
+        faqs={faqs}
+        priceRange="$$$$"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

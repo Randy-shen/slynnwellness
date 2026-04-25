@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -181,6 +182,14 @@ export default async function MedicalWeightLossPage() {
         fontFamily: 'Montserrat, sans-serif',
       }}
     >
+      <ServiceSchema
+        slug="medical-weight-loss"
+        name="Medical Weight Loss"
+        description="Achieve sustainable weight loss with FDA-cleared GLP-1 medications — Semaglutide and Tirzepatide — under physician supervision at Slynn Wellness in Pasadena, CA. Personalized programs serving Pasadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area."
+        category="Wellness"
+        faqs={faqs}
+        priceRange="$$$"
+      />
 
       {/* ══════════════════════════════════════════════════════════════════════
           SPANNING WRAPPER — Hero + GLP-1 explainer share the model photo

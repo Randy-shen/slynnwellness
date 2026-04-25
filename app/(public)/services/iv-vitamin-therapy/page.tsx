@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getIVTherapies, IVTherapy } from '@/lib/supabase/iv-therapies'
 
@@ -24,6 +25,13 @@ export default async function IVVitaminTherapyPage() {
 
   return (
     <div style={{ backgroundColor: '#FFFAF5', color: '#2C2C2C' }}>
+      <ServiceSchema
+        slug="iv-vitamin-therapy"
+        name="IV Vitamin Therapy"
+        description="Customized IV vitamin drips at Slynn Wellness in Pasadena, CA. Essential vitamins, minerals, and antioxidants delivered directly into your bloodstream for 100% absorption — energy, hydration, immunity, recovery, and more."
+        category="Wellness"
+        priceRange="$$"
+      />
       {/* Hero */}
       <div
         className="relative pt-16"
