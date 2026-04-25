@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 
@@ -131,6 +132,15 @@ export default async function SKINCEUTICALSPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="skinceuticals"
+        name="SKINCEUTICALS Advanced Facial"
+        description="SKINCEUTICALS Advanced Facial at Slynn Wellness in Pasadena, CA. Medical-grade, science-backed skincare treatment delivering targeted correction, deep hydration, and a luminous, healthy glow."
+        category="Skin & Scalp Care"
+        faqs={faqs}
+        priceRange="$$"
+        image="https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinceuticals-1.png"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

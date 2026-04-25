@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -123,6 +124,14 @@ export default async function AntiAgingFacialPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="anti-aging-facial"
+        name="Anti-Aging Facial"
+        description="Anti-Aging Facial at Slynn Wellness in Pasadena, CA. A targeted, results-driven facial designed to visibly reduce the signs of aging — restoring firmness, smoothing fine lines, and revealing a refreshed, youthful radiance."
+        category="Skin & Scalp Care"
+        faqs={faqs}
+        priceRange="$$"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

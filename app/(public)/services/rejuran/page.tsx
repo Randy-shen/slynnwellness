@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 
@@ -122,6 +123,15 @@ export default async function REJURANPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="rejuran"
+        name="REJURAN PDRN Skin Biorevitalization"
+        description="REJURAN PDRN therapy at Slynn Wellness in Pasadena, CA. An advanced injectable skin biorevitalizer that harnesses the regenerative power of PDRN to improve texture, reduce fine lines, and restore a healthy, resilient skin foundation from within."
+        category="Skin & Scalp Care"
+        faqs={faqs}
+        priceRange="$$$"
+        image="https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/rejuran-skin-booster.png"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

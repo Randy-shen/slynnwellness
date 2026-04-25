@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -123,6 +124,14 @@ export default async function NadInfusionPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="nad-infusion"
+        name="NAD+ Infusion Therapy"
+        description="Replenish declining NAD+ levels with physician-supervised IV infusions at Slynn Wellness in Pasadena, CA. Restore cellular energy, sharpen mental clarity, and support healthy aging from within."
+        category="Wellness"
+        faqs={faqs}
+        priceRange="$$$"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

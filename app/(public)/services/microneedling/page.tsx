@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
 import ImageCarousel from '@/components/sections/ImageCarousel'
@@ -144,6 +145,15 @@ export default async function MicroneedlingPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="microneedling"
+        name="Candela Matrix Pro RF Microneedling"
+        description="Lift, tighten, and renew your skin with Candela Matrix Pro RF microneedling at Slynn Wellness in Pasadena, CA. Collagen-focused skin renewal for texture, laxity, fine lines, and acne scars."
+        category="Skin & Scalp Care"
+        faqs={faqs}
+        priceRange="$$$"
+        image="https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/candela-matrix-pro.png"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -123,6 +124,14 @@ export default async function HYDRAFACIALPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="hydrafacial"
+        name="HYDRAFACIAL"
+        description="HYDRAFACIAL at Slynn Wellness in Pasadena, CA. The world's leading hydradermabrasion treatment — cleanse, extract, and hydrate for an instant visible glow with zero downtime. Serving Pasadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area."
+        category="Skin & Scalp Care"
+        faqs={faqs}
+        priceRange="$$"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

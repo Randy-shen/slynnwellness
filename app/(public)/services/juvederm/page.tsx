@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -132,6 +133,14 @@ export default async function JUVEDERMPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="juvederm"
+        name="JUVEDERM Dermal Fillers"
+        description="Enhance lips, restore facial volume, and smooth deep lines with JUVEDERM hyaluronic acid dermal fillers at Slynn Wellness in Pasadena, CA. FDA-approved fillers from the Allergan family of products."
+        category="Medical Aesthetic"
+        faqs={faqs}
+        priceRange="$$$"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

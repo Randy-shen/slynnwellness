@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
 import ImageCarousel from '@/components/sections/ImageCarousel'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 
 const carouselImages = [
   { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/botox.png', alt: 'Botox treatment' },
@@ -112,6 +113,15 @@ export default async function BotoxXeominPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="botox-dysport"
+        name="Botox & Xeomin"
+        description={`${description} Slynn Wellness offers natural-looking Botox and Xeomin wrinkle-relaxer treatments in Pasadena, CA — precision dosing tailored to your facial anatomy and goals.`}
+        category="Medical Aesthetic"
+        faqs={faqs}
+        priceRange="$$"
+        image="https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/botox.png"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">

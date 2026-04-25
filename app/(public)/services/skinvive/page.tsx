@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 
@@ -120,6 +121,15 @@ export default async function SKINVIVEPage() {
       minHeight: '100vh',
       color: '#2C2C2C',
     }}>
+      <ServiceSchema
+        slug="skinvive"
+        name="JUVÉDERM SKINVIVE"
+        description="JUVÉDERM SKINVIVE™ by Allergan at Slynn Wellness in Pasadena, CA — an FDA-approved intradermal microdroplet hyaluronic acid treatment that improves skin hydration, smoothness, and natural glow."
+        category="Skin & Scalp Care"
+        faqs={faqs}
+        priceRange="$$$"
+        image="https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/skinvive-product.png"
+      />
 
       {/* Hero */}
       <div className="pt-20 pb-10">
