@@ -15,9 +15,96 @@ const carouselImages = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Botox & Xeomin | Slynn Wellness',
+  title: 'Botox & Xeomin Wrinkle Relaxers in Pasadena, CA',
   description:
-    'Smooth frown lines, forehead lines, and crow\'s feet with Botox & Xeomin at Slynn Wellness in Pasadena, CA. Natural-looking results tailored to your goals.',
+    'Botox & Xeomin neuromodulator injections at Slynn Wellness in Pasadena, CA. Smooth frown lines, forehead wrinkles, and crow\'s feet with precision RN dosing. Serving Pasadena, Altadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area.',
+  keywords: [
+    // Brand + city core
+    'Botox Pasadena',
+    'Xeomin Pasadena',
+    'best Botox Pasadena',
+    'top Botox Pasadena',
+    'Botox near me Pasadena',
+    'Botox medical spa Pasadena',
+    'Botox injector Pasadena',
+    'Botox RN Pasadena',
+    'Botox specialist Pasadena',
+    // Pricing intent
+    'Botox cost Pasadena',
+    'Botox price Pasadena',
+    'Xeomin cost Pasadena',
+    'Botox specials Pasadena',
+    'first time Botox Pasadena',
+    'Botox consultation Pasadena',
+    // Treatment philosophy
+    'preventative Botox',
+    'baby Botox Pasadena',
+    'natural Botox results',
+    // Generic terms
+    'wrinkle relaxer Pasadena',
+    'neuromodulator Pasadena',
+    'anti-aging injection Pasadena',
+    'anti-wrinkle treatment Pasadena',
+    // Treatment areas
+    'forehead lines Botox',
+    'frown lines Botox',
+    'glabellar lines Botox',
+    '11 lines Botox',
+    'crow\'s feet Botox',
+    'bunny lines Botox',
+    'gummy smile Botox',
+    'lip flip Botox Pasadena',
+    'masseter Botox Pasadena',
+    'jawline slimming Botox',
+    'Botox brow lift',
+    'Botox lower face',
+    'platysmal bands Botox',
+    'neck band Botox',
+    // Medical / off-label
+    'TMJ Botox Pasadena',
+    'hyperhidrosis Botox',
+    'Botox underarm sweating',
+    'migraine Botox',
+    // Xeomin-specific
+    'best Xeomin Pasadena',
+    'Xeomin near me',
+    'Xeomin injector Pasadena',
+    'Xeomin medical spa',
+    'pure neurotoxin Xeomin',
+    'protein-free Botox alternative',
+    'Xeomin forehead',
+    'Xeomin frown lines',
+    // Brand comparison
+    'Botox vs Xeomin',
+    'Xeomin alternative to Botox',
+    'Allergan Botox',
+    'Merz Xeomin',
+    // Nearby cities (within ~10 miles)
+    'Botox Altadena',
+    'Botox South Pasadena',
+    'Botox San Marino',
+    'Botox Arcadia',
+    'Botox Sierra Madre',
+    'Botox Monrovia',
+    'Botox Temple City',
+    'Botox San Gabriel',
+    'Botox Alhambra',
+    'Botox La Cañada',
+    'Botox La Cañada Flintridge',
+    'Botox La Canada',
+    'Botox La Canada Flintridge',
+    'Botox Flintridge',
+    'Botox Glendale',
+    'Botox Burbank',
+    'Botox Eagle Rock',
+    'Botox Highland Park',
+    'Botox East Los Angeles',
+    'Botox San Gabriel Valley',
+    'Botox Los Angeles',
+    // Brand
+    'Slynn Wellness Botox',
+    'luxury medical spa Pasadena',
+  ],
 }
 
 const treatmentAreas = [

@@ -12,9 +12,83 @@ const carouselImages = [
 ]
 
 export const metadata: Metadata = {
-  title: 'SKINVIVE | Slynn Wellness',
+  title: 'Juvederm Skinvive Microdroplet HA Treatment in Pasadena, CA',
   description:
-    'JUVÉDERM SKINVIVE™ by Allergan — an FDA-approved intradermal microdroplet HA treatment that improves skin hydration, smoothness, and natural glow at Slynn Wellness in Pasadena, CA.',
+    'Juvederm Skinvive™ by Allergan at Slynn Wellness in Pasadena, CA — FDA-approved intradermal HA microdroplet skin booster for improved hydration, smoothness, and natural glow. Serving Pasadena, Altadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area.',
+  keywords: [
+    // Brand + city
+    'Skinvive Pasadena',
+    'Juvederm Skinvive Pasadena',
+    'best Skinvive Pasadena',
+    'Skinvive near me',
+    'Skinvive medical spa Pasadena',
+    'Skinvive injector Pasadena',
+    'Skinvive RN Pasadena',
+    'Allergan Skinvive Pasadena',
+    // Pricing
+    'Skinvive cost Pasadena',
+    'Skinvive price Pasadena',
+    'Skinvive per session',
+    'Skinvive 2 session protocol',
+    'Skinvive package Pasadena',
+    // Generic / category terms
+    'skin booster Pasadena',
+    'HA skin booster Pasadena',
+    'hyaluronic acid skin booster',
+    'microdroplet HA Pasadena',
+    'intradermal HA Pasadena',
+    'glow injection Pasadena',
+    'skin hydration injection',
+    'skin quality treatment',
+    'natural glow treatment',
+    'hydration injection Pasadena',
+    'glass skin treatment',
+    'k-beauty skin treatment',
+    'profhilo alternative',
+    'bio-remodeling alternative',
+    // Treatment areas
+    'cheek Skinvive',
+    'face Skinvive',
+    'neck Skinvive',
+    'décolletage Skinvive',
+    'under eye Skinvive',
+    'jawline Skinvive',
+    // Skin concerns
+    'dehydrated skin treatment Pasadena',
+    'dull skin treatment Pasadena',
+    'crepey skin treatment',
+    'rough skin texture treatment',
+    'fine lines treatment',
+    'mature skin treatment',
+    // Comparison
+    'Skinvive vs filler',
+    'Skinvive vs Juvederm',
+    'Skinvive vs Profhilo',
+    'Skinvive vs Rejuran',
+    // Nearby cities
+    'Skinvive Altadena',
+    'Skinvive South Pasadena',
+    'Skinvive San Marino',
+    'Skinvive Arcadia',
+    'Skinvive Sierra Madre',
+    'Skinvive Monrovia',
+    'Skinvive Temple City',
+    'Skinvive San Gabriel',
+    'Skinvive Alhambra',
+    'Skinvive La Cañada',
+    'Skinvive La Cañada Flintridge',
+    'Skinvive La Canada',
+    'Skinvive Flintridge',
+    'Skinvive Glendale',
+    'Skinvive Burbank',
+    'Skinvive Eagle Rock',
+    'Skinvive Highland Park',
+    'Skinvive San Gabriel Valley',
+    'Skinvive Los Angeles',
+    // Brand
+    'Slynn Wellness Skinvive',
+    'luxury medical spa Pasadena',
+  ],
 }
 
 const treatmentAreas = [

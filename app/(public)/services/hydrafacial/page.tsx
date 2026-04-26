@@ -5,9 +5,90 @@ import ServiceSchema from '@/components/seo/ServiceSchema'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
-  title: 'HYDRAFACIAL | Slynn Wellness',
+  title: 'HydraFacial Treatments in Pasadena, CA',
   description:
-    'HYDRAFACIAL at Slynn Wellness in Pasadena, CA. The world\'s leading hydradermabrasion treatment — cleanse, extract, and hydrate for an instant visible glow with zero downtime.',
+    'HydraFacial at Slynn Wellness in Pasadena, CA. The world\'s leading hydradermabrasion treatment — cleanse, extract, and hydrate for an instant visible glow with zero downtime. Serving Pasadena, Altadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area.',
+  keywords: [
+    // Brand + city
+    'HydraFacial Pasadena',
+    'best HydraFacial Pasadena',
+    'HydraFacial near me',
+    'HydraFacial medical spa Pasadena',
+    'HydraFacial spa Pasadena',
+    'HydraFacial RN Pasadena',
+    // Pricing intent
+    'HydraFacial cost Pasadena',
+    'HydraFacial price Pasadena',
+    'HydraFacial specials Pasadena',
+    'HydraFacial deals Pasadena',
+    // Treatment level / variations
+    'HydraFacial Signature Pasadena',
+    'HydraFacial Deluxe',
+    'HydraFacial Platinum',
+    'HydraFacial Syndeo',
+    'HydraFacial Keravive scalp',
+    'HydraFacial booster',
+    'HydraFacial perk lip eye',
+    'lymphatic drainage HydraFacial',
+    'LED therapy HydraFacial',
+    // Generic terms
+    'hydradermabrasion Pasadena',
+    'medical-grade facial Pasadena',
+    'medical facial Pasadena',
+    'hydrating facial Pasadena',
+    'glow facial Pasadena',
+    'glass skin facial',
+    'red carpet facial',
+    'hydration facial Pasadena',
+    'pre-event facial Pasadena',
+    // Skin concerns
+    'facial for dry skin Pasadena',
+    'facial for oily skin',
+    'facial for acne Pasadena',
+    'facial for blackheads',
+    'facial for dullness',
+    'facial for fine lines',
+    'facial for hyperpigmentation',
+    'facial for sensitive skin',
+    'facial for acne scars',
+    // Treatment specifics
+    'pore cleansing facial',
+    'skin extraction facial',
+    'antioxidant facial',
+    'vortex extraction',
+    'deep cleansing facial',
+    'monthly facial Pasadena',
+    'wedding facial Pasadena',
+    'bridal facial Pasadena',
+    // Demographics
+    'teen facial Pasadena',
+    'mens facial Pasadena',
+    'first facial Pasadena',
+    // Nearby cities (with full + short forms)
+    'HydraFacial Altadena',
+    'HydraFacial South Pasadena',
+    'HydraFacial San Marino',
+    'HydraFacial Arcadia',
+    'HydraFacial Sierra Madre',
+    'HydraFacial Monrovia',
+    'HydraFacial Temple City',
+    'HydraFacial San Gabriel',
+    'HydraFacial Alhambra',
+    'HydraFacial La Cañada',
+    'HydraFacial La Cañada Flintridge',
+    'HydraFacial La Canada',
+    'HydraFacial La Canada Flintridge',
+    'HydraFacial Flintridge',
+    'HydraFacial Glendale',
+    'HydraFacial Burbank',
+    'HydraFacial Eagle Rock',
+    'HydraFacial Highland Park',
+    'HydraFacial San Gabriel Valley',
+    'HydraFacial Los Angeles',
+    // Brand
+    'Slynn Wellness HydraFacial',
+    'luxury medical spa Pasadena',
+  ],
 }
 
 const benefits = [

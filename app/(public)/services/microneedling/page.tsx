@@ -20,9 +20,90 @@ const beforeAfterImages = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Candela Matrix Pro | Slynn Wellness',
+  title: 'Candela Matrix Pro RF Microneedling in Pasadena, CA',
   description:
-    'Lift, tighten, and renew your skin with Candela Matrix Pro at Slynn Wellness in Pasadena, CA. Collagen-focused skin renewal for texture, laxity, and fine lines.',
+    'Candela Matrix Pro RF microneedling at Slynn Wellness in Pasadena, CA. Tighten skin, smooth fine lines, refine texture, and treat acne scars. Serving Pasadena, Altadena, San Marino, Arcadia, Glendale, La Cañada Flintridge, and the greater Los Angeles area.',
+  keywords: [
+    // Brand + technology
+    'Candela Matrix Pro Pasadena',
+    'Matrix Pro microneedling Pasadena',
+    'Candela microneedling Pasadena',
+    'best microneedling Pasadena',
+    'microneedling near me',
+    'microneedling medical spa Pasadena',
+    // Generic terms
+    'RF microneedling Pasadena',
+    'radiofrequency microneedling Pasadena',
+    'collagen induction therapy',
+    'skin tightening Pasadena',
+    'non-surgical skin tightening',
+    'microneedling with RF',
+    // Pricing
+    'microneedling cost Pasadena',
+    'microneedling price Pasadena',
+    'RF microneedling cost',
+    'Candela Matrix Pro cost',
+    'microneedling package Pasadena',
+    'microneedling specials Pasadena',
+    // Treatment levels
+    'Candela Sublime',
+    'Candela Sublative',
+    'Sublime laser Pasadena',
+    'Sublative laser Pasadena',
+    // Skin concerns
+    'acne scar treatment Pasadena',
+    'acne scars Pasadena',
+    'scar revision Pasadena',
+    'stretch marks treatment',
+    'fine lines treatment Pasadena',
+    'wrinkle reduction Pasadena',
+    'pore minimizer Pasadena',
+    'enlarged pores treatment',
+    'rough skin texture',
+    'skin laxity treatment',
+    'sagging skin Pasadena',
+    'jawline tightening',
+    'neck tightening non-surgical',
+    'skin renewal Pasadena',
+    'skin rejuvenation Pasadena',
+    'hyperpigmentation treatment',
+    'sun damage treatment',
+    'mature skin treatment',
+    // Procedure category
+    'collagen stimulation Pasadena',
+    'non-invasive face treatment',
+    'aesthetic treatment Pasadena',
+    'pre-wedding skin treatment',
+    'photoaging treatment',
+    // Technology comparison
+    'Morpheus8 alternative',
+    'Vivace alternative',
+    'Secret RF alternative',
+    'Genius RF alternative',
+    // Nearby cities
+    'microneedling Altadena',
+    'microneedling South Pasadena',
+    'microneedling San Marino',
+    'microneedling Arcadia',
+    'microneedling Sierra Madre',
+    'microneedling Monrovia',
+    'microneedling Temple City',
+    'microneedling San Gabriel',
+    'microneedling Alhambra',
+    'microneedling La Cañada',
+    'microneedling La Cañada Flintridge',
+    'microneedling La Canada',
+    'microneedling Flintridge',
+    'microneedling Glendale',
+    'microneedling Burbank',
+    'microneedling Eagle Rock',
+    'microneedling Highland Park',
+    'microneedling San Gabriel Valley',
+    'microneedling Los Angeles',
+    // Brand
+    'Slynn Wellness microneedling',
+    'luxury medical spa Pasadena',
+  ],
 }
 
 const benefits = [
