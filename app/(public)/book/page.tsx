@@ -5,7 +5,7 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 import BookingConsent from '@/components/sections/BookingConsent'
 
 export const metadata: Metadata = {
-  title: 'Book an Appointment | Slynn Wellness',
+  title: 'Book an Appointment',
   description: 'Book your appointment at Slynn Wellness in Pasadena, CA. Please review and agree to our cancellation policy before proceeding.',
 }
 

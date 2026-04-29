@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createPublicReadClient } from '@/lib/supabase/public'
 import { SiteSettings, defaultSettings } from '@/lib/supabase/settings-types'
 
 export type { SiteSettings }
@@ -6,7 +6,7 @@ export { defaultSettings }
 
 export async function getSiteSettings(): Promise<SiteSettings> {
   try {
-    const supabase = await createClient()
+    const supabase = createPublicReadClient()
     const { data, error } = await supabase
       .from('site_settings')
       .select('*')

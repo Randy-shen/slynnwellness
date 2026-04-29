@@ -1,4 +1,4 @@
-import { createClient } from '@/lib/supabase/server'
+import { createPublicReadClient } from '@/lib/supabase/public'
 
 export interface IVTherapy {
   id: string
@@ -110,7 +110,7 @@ export const placeholderIVTherapies: IVTherapy[] = [
 
 export async function getIVTherapies(): Promise<IVTherapy[]> {
   try {
-    const supabase = await createClient()
+    const supabase = createPublicReadClient()
     const { data, error } = await supabase
       .from('iv_therapies')
       .select('*')
