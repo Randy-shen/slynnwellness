@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
-  title: 'Cancellation Policy | Slynn Wellness',
+  title: 'Cancellation Policy',
   description:
     'Appointment and cancellation policy for Slynn Wellness in Pasadena, CA. Please review our 48-hour cancellation requirement before booking.',
 }

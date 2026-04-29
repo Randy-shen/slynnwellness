@@ -4,6 +4,12 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import NewsletterPopup from '@/components/sections/NewsletterPopup'
 
+// Revalidate the cached HTML hourly. Public pages have no per-user data, so
+// they can be served from CDN/edge cache. This makes Googlebot crawl
+// aggressively (cache-control: public) instead of treating every request as
+// dynamic per-user content.
+export const revalidate = 3600
+
 export default async function PublicLayout({
   children,
 }: {
