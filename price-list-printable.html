@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slynn Wellness — Price List</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDF8F3;
+    --gold: #D4AF37;
+    --gold-soft: #E5C76B;
+    --charcoal: #2C2C2C;
+    --brown: #8B7355;
+    --warm-gray: #7a6f66;
+    --line: #E8DDD0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 16px; }
+
+  body {
+    font-family: 'Montserrat', -apple-system, sans-serif;
+    color: var(--charcoal);
+    background: white;
+    line-height: 1.5;
+    padding: 0;
+  }
+
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.6in 0.7in;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 14px;
+    margin-bottom: 18px;
+  }
+
+  .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .wordmark .divider {
+    display: inline-block;
+    width: 1px;
+    height: 22px;
+    background: var(--gold);
+    margin: 0 12px;
+    vertical-align: middle;
+    opacity: 0.7;
+  }
+
+  .tagline {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--brown);
+    font-weight: 500;
+  }
+
+  .doc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    margin: 12px 0 4px;
+    letter-spacing: 0.04em;
+  }
+
+  .effective-date {
+    text-align: center;
+    font-size: 10px;
+    color: var(--warm-gray);
+    margin-bottom: 22px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Category */
+  .category {
+    margin-bottom: 36px;
+  }
+
+  .category-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--charcoal);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 6px;
+    margin-bottom: 18px;
+    letter-spacing: 0.05em;
+  }
+
+  /* Service block */
+  .service {
+    margin-bottom: 22px;
+    page-break-inside: avoid;
+  }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+
+  .service-subtitle {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  th {
+    background: rgba(212,175,55,0.08);
+    color: var(--brown);
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  td.price {
+    text-align: right;
+    font-weight: 600;
+    color: var(--charcoal);
+    white-space: nowrap;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+  }
+
+  td.price.highlight {
+    color: var(--gold);
+  }
+
+  td.label {
+    font-weight: 500;
+  }
+
+  td.note {
+    font-size: 11px;
+    color: var(--warm-gray);
+    font-style: italic;
+  }
+
+  /* Inline price (for simple one-line services) */
+  .single-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .single-price .label {
+    font-size: 13px;
+    color: var(--charcoal);
+  }
+
+  .single-price .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--gold);
+  }
+
+  /* Footnote */
+  .footnote {
+    font-size: 11px;
+    color: var(--warm-gray);
+    font-style: italic;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    padding-top: 18px;
+    border-top: 2px solid var(--gold);
+    text-align: center;
+    font-size: 11px;
+    color: var(--warm-gray);
+    line-height: 1.7;
+  }
+
+  .footer strong {
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+
+  .footer .gold {
+    color: var(--gold);
+  }
+
+  /* Print optimizations */
+  @media print {
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+
+    body {
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .page {
+      padding: 0;
+      max-width: 100%;
+    }
+
+    .service {
+      page-break-inside: avoid;
+    }
+
+    .category-title {
+      page-break-after: avoid;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    .no-print {
+      display: none;
+    }
+  }
+
+  /* Two-column layout for compact services */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* Three-column layout for very compact services */
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+
+  /* Four-column layout for ultra-compact services */
+  .four-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media print {
+    .two-col, .three-col, .four-col {
+      gap: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="wordmark">SLYNN<span class="divider"></span>WELLNESS</div>
+    <div class="tagline">Luxury Medical Spa · Pasadena, CA</div>
+  </div>
+
+  <h1 class="doc-title">Service Price List</h1>
+  <div class="effective-date">Effective May 2026 · Subject to change</div>
+
+  <!-- ========================================================== -->
+  <!-- MEDICAL AESTHETIC -->
+  <!-- ========================================================== -->
+  <div class="category">
+    <h2 class="category-title">Medical Aesthetic — Injectables</h2>
+
+    <!-- Botox & Xeomin -->
+    <div class="service">
+      <div class="service-name">Botox &amp; Xeomin</div>
+      <div class="service-subtitle">Wrinkle Relaxers · Per Unit</div>
+      <table>
+        <thead>
+          <tr><th>Product</th><th>Per Unit</th><th>30 Units</th><th>40 Units</th><th>50 Units</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">Botox</td>
+            <td class="price">$11</td>
+            <td class="price">$300</td>
+            <td class="price">$360</td>
+            <td class="price">$400</td>
+          </tr>
+          <tr>
+            <td class="label">Xeomin</td>
+            <td class="price">$9</td>
+            <td class="price">$255</td>
+            <td class="price">$320</td>
+            <td class="price">$375</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Restylane -->
+    <div class="service">
+      <div class="service-name">Restylane Dermal Filler</div>
+      <div class="service-subtitle">Hyaluronic Acid · Per Area</div>
+      <table>
+        <tbody>
+          <tr>
+            <td class="label">Lips</td>
+            <td class="note">Per area</td>
+            <td class="price highlight">$299</td>
+          </tr>
+          <tr>
+            <td class="label">Face (other areas)</td>
+            <td class="note">Per area</td>
+            <td class="price highlight">$299 – $799</td>
+          </tr>
+          <tr>
+            <td class="label">Cheeks</td>
+            <td class="note">Per area</td>
+            <td class="price highlight">$599 – $999</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Juvederm -->
+    <div class="service">
+      <div class="service-name">Juvederm Dermal Filler</div>
+      <div class="service-subtitle">Hyaluronic Acid · Per Area</div>
+      <table>
+        <tbody>
+          <tr>
+            <td class="label">Lips</td>
+            <td class="note">Per area</td>
+            <td class="price highlight">$399</td>
+          </tr>
+          <tr>
+            <td class="label">Face (other areas)</td>
+            <td class="note">Per area</td>
+            <td class="price highlight">$399 – $899</td>
+          </tr>
+          <tr>
+            <td class="label">Cheeks</td>
+            <td class="note">Per area</td>
+            <td class="price highlight">$699 – $1,299</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Sculptra + Skinvive (Medical Aesthetic injectables) -->
+    <div class="two-col">
+      <div class="service">
+        <div class="service-name">Sculptra</div>
+        <div class="service-subtitle">Collagen Bio-Stimulator</div>
+        <div class="single-price">
+          <span class="label">Per vial</span>
+          <span class="value">Starting at $850</span>
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-name">Skinvive</div>
+        <div class="service-subtitle">Microdroplet HA Skin Booster</div>
+        <div class="single-price">
+          <span class="label">Per session</span>
+          <span class="value">Starting at $599</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- SKIN & SCALP CARE -->
+  <!-- ========================================================== -->
+  <div class="category">
+    <h2 class="category-title">Skin &amp; Scalp Care</h2>
+
+    <!-- HydraFacial -->
+    <div class="service">
+      <div class="service-name">HydraFacial</div>
+      <div class="service-subtitle">Hydradermabrasion · Three Levels</div>
+      <table>
+        <thead>
+          <tr><th>Tier</th><th>Single Session</th><th>3-Session Package</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">Signature</td>
+            <td class="price">$189</td>
+            <td class="price highlight">$499</td>
+          </tr>
+          <tr>
+            <td class="label">Deluxe</td>
+            <td class="price">$229</td>
+            <td class="price highlight">$599</td>
+          </tr>
+          <tr>
+            <td class="label">Platinum</td>
+            <td class="price">$299</td>
+            <td class="price highlight">$799</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Candela Matrix Pro -->
+    <div class="service">
+      <div class="service-name">Candela Matrix Pro Microneedling</div>
+      <div class="service-subtitle">RF Microneedling · Three Treatments</div>
+      <table>
+        <thead>
+          <tr><th>Treatment</th><th>Single Session</th><th>3-Session Package</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">Sublime</td>
+            <td class="price">$278</td>
+            <td class="price highlight">$799</td>
+          </tr>
+          <tr>
+            <td class="label">Sublative</td>
+            <td class="price">$569</td>
+            <td class="price highlight">$1,499</td>
+          </tr>
+          <tr>
+            <td class="label">Matrix Pro RF Microneedling</td>
+            <td class="price">$699</td>
+            <td class="price highlight">$1,780</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Skin Boosters & Facials & Scalp (single-row table) -->
+    <div class="service">
+      <div class="service-name">Skin Boosters, Facials &amp; Scalp Treatments</div>
+      <div class="service-subtitle">Per Session</div>
+      <table>
+        <thead>
+          <tr><th>Treatment</th><th>Type</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">Rejuran</td>
+            <td class="note">PDRN Skin Biorevitalization</td>
+            <td class="price highlight">$400</td>
+          </tr>
+          <tr>
+            <td class="label">SkinCeuticals Advanced Facial</td>
+            <td class="note">Medical-Grade Facial</td>
+            <td class="price highlight">$159</td>
+          </tr>
+          <tr>
+            <td class="label">Anti-Aging Facial</td>
+            <td class="note">Targeted Anti-Aging Treatment</td>
+            <td class="price highlight">$175</td>
+          </tr>
+          <tr>
+            <td class="label">Scalp Relaxation Treatment</td>
+            <td class="note">Therapeutic Scalp Care</td>
+            <td class="price highlight">$99</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- WELLNESS -->
+  <!-- ========================================================== -->
+  <div class="category page-break">
+    <h2 class="category-title">Wellness — IV Therapy &amp; More</h2>
+
+    <!-- NAD+ -->
+    <div class="service">
+      <div class="service-name">NAD+ Infusion</div>
+      <div class="service-subtitle">Cellular Energy &amp; Longevity</div>
+      <table>
+        <thead>
+          <tr><th>Dose</th><th>Single (Non-Member)</th><th>Prepay 3-Session (Member)</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">250mg (minimum)</td>
+            <td class="price">$250</td>
+            <td class="note">—</td>
+          </tr>
+          <tr>
+            <td class="label">500mg</td>
+            <td class="price">$500</td>
+            <td class="price highlight">$349/session<br><span class="note">$1,047 total · save $453</span></td>
+          </tr>
+          <tr>
+            <td class="label">Custom dose</td>
+            <td class="price">$1/mg</td>
+            <td class="note">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- IV Therapy -->
+    <div class="service">
+      <div class="service-name">IV Vitamin Therapy</div>
+      <div class="service-subtitle">Customized Drips · 9 Formulas Available</div>
+      <div class="single-price">
+        <span class="label">Basic Wellness</span>
+        <span class="value">Starting at $185</span>
+      </div>
+      <div class="footnote">Energy &amp; Metabolism, Immunity Shield, Recovery &amp; Refresh, Athletic Performance, Slim &amp; Sculpt, Beauty &amp; Glow, Detox &amp; Cleanse, NAD+ — pricing varies. Please confirm with provider.</div>
+    </div>
+
+    <!-- Medical Weight Loss -->
+    <div class="service">
+      <div class="service-name">Medical Weight Loss · GLP-1 Programs</div>
+      <div class="service-subtitle">Physician-Supervised · Semaglutide &amp; Tirzepatide</div>
+      <table>
+        <thead>
+          <tr><th>Plan</th><th>Semaglutide</th><th>Tirzepatide</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">One-Time</td>
+            <td class="price">From $79</td>
+            <td class="price">From $99</td>
+          </tr>
+          <tr>
+            <td class="label">4 Weeks</td>
+            <td class="price">From $189</td>
+            <td class="price">From $249</td>
+          </tr>
+          <tr>
+            <td class="label">12 Weeks</td>
+            <td class="price highlight">From $559</td>
+            <td class="price highlight">From $729</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="footnote">Pricing reflects medication costs. Initial consultation and ongoing physician supervision included.</div>
+    </div>
+  </div>
+
+  <!-- ========================================================== -->
+  <!-- FOOTER -->
+  <!-- ========================================================== -->
+  <div class="footer">
+    <strong>SLYNN WELLNESS</strong> · 903 E Del Mar Blvd, Pasadena, CA 91106<br>
+    <span class="gold">(626) 421-6955</span> · info@slynnwellness.com · www.slynnwellness.com<br>
+    <em>Mon–Fri 10am–5pm · Sat 11am–5pm · Sun closed</em><br>
+    <br>
+    <strong>Cancellation Policy:</strong> 48-hour notice required · Late cancellation $50 · No-show $75
+  </div>
+
+</div>
+
+</body>
+</html>

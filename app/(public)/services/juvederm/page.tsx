@@ -363,7 +363,7 @@ export default async function JUVEDERMPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { area: 'Lips', price: '$399', note: 'Per area' },
+              { area: 'Lips', price: '$459', note: 'Per area' },
               { area: 'Face', price: '$399 – $899', note: 'Per area' },
               { area: 'Cheeks', price: '$699 – $1,299', note: 'Per area' },
             ].map((item) => (

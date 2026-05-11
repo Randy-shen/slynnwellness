@@ -94,19 +94,6 @@ export const placeholderServices: Service[] = [
     is_visible: true,
   },
   {
-    id: '7',
-    slug: 'hormone-replacement-therapy',
-    name: 'Hormone Replacement Therapy',
-    category: 'wellness',
-    short_description: 'Restore hormonal balance for improved energy, mood, and vitality.',
-    full_description: 'Our hormone optimization program addresses imbalances that affect quality of life for both men and women. We begin with comprehensive hormone panel testing to identify deficiencies or excesses, then create a personalized replacement protocol. Treatments may include bioidentical hormones delivered via creams, pellets, injections, or oral medications. Regular monitoring ensures optimal levels are maintained throughout therapy.',
-    benefits: ['Improved energy', 'Better sleep quality', 'Enhanced mood', 'Increased libido'],
-    price: 'Consultation required',
-    image_url: null,
-    display_order: 3,
-    is_visible: true,
-  },
-  {
     id: '8',
     slug: 'vitamin-injections',
     name: 'Vitamin Injections',
@@ -116,7 +103,7 @@ export const placeholderServices: Service[] = [
     benefits: ['Fast absorption', 'Energy boost', 'Metabolism support', 'Quick treatment'],
     price: 'Starting at $35/injection',
     image_url: null,
-    display_order: 4,
+    display_order: 3,
     is_visible: true,
   },
   // Skin & Scalp Care (5 services)

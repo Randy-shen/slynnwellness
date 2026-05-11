@@ -23,7 +23,6 @@ const fallbackServiceOptions = [
   'Kybella',
   'IV Vitamin Therapy',
   'Medical Weight Loss',
-  'Hormone Replacement Therapy',
   'Vitamin Injections',
   'HydraFacial',
   'Microneedling',
