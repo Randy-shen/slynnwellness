@@ -7,7 +7,7 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 export const metadata: Metadata = {
   title: 'IV Therapy & Wellness Services in Pasadena, CA',
   description:
-    'IV vitamin therapy, NAD+ infusions, medical weight loss (Semaglutide & Tirzepatide), hormone replacement, and vitamin injections at Slynn Wellness in Pasadena, CA. Serving Pasadena, Altadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area.',
+    'IV vitamin therapy, NAD+ infusions, medical weight loss (Semaglutide & Tirzepatide), and vitamin injections at Slynn Wellness in Pasadena, CA. Serving Pasadena, Altadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area.',
   keywords: [
     'wellness Pasadena',
     'wellness clinic Pasadena',
@@ -25,10 +25,6 @@ export const metadata: Metadata = {
     'Semaglutide Pasadena',
     'Tirzepatide Pasadena',
     'Ozempic alternative Pasadena',
-    'hormone replacement therapy Pasadena',
-    'HRT Pasadena',
-    'BHRT Pasadena',
-    'bioidentical hormones Pasadena',
     'vitamin injections Pasadena',
     'B12 injection Pasadena',
     'lipotropic injection Pasadena',
