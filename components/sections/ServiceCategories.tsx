@@ -1,11 +1,17 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
+
+interface ServiceLink {
+  name: string
+  slug: string
+}
 
 interface ServicesByCategory {
-  medical: string[]
-  wellness: string[]
-  skin: string[]
+  medical: ServiceLink[]
+  wellness: ServiceLink[]
+  skin: ServiceLink[]
 }
 
 interface ServiceCategoriesProps {
@@ -116,12 +122,15 @@ export default function ServiceCategories({ bookingUrl, servicesByCategory }: Se
 
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
                   {cat.services.map((service) => (
-                    <li
-                      key={service}
-                      style={{ display: 'flex', alignItems: 'center', gap: '10px', fontFamily: 'Montserrat, sans-serif', fontSize: '0.82rem', color: '#7a6f66' }}
-                    >
+                    <li key={service.slug} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'linear-gradient(135deg, #cbbba0, #bca98a)', flexShrink: 0 }} />
-                      {service}
+                      <Link
+                        href={`/services/${service.slug}`}
+                        style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.82rem', color: '#7a6f66', textDecoration: 'none', transition: 'color 0.2s' }}
+                        className="hover:!text-[#D4AF37]"
+                      >
+                        {service.name}
+                      </Link>
                     </li>
                   ))}
                 </ul>
