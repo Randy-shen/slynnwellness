@@ -18,9 +18,9 @@ export default async function HomePage() {
   ])
 
   const servicesByCategory = {
-    medical: allServices.filter(s => s.category === 'medical-aesthetic' && s.is_visible).slice(0, 4).map(s => s.name),
-    wellness: allServices.filter(s => s.category === 'wellness' && s.is_visible).slice(0, 4).map(s => s.name),
-    skin: allServices.filter(s => s.category === 'skin-scalp-care' && s.is_visible).slice(0, 4).map(s => s.name),
+    medical: allServices.filter(s => s.category === 'medical-aesthetic' && s.is_visible).slice(0, 4).map(s => ({ name: s.name, slug: s.slug })),
+    wellness: allServices.filter(s => s.category === 'wellness' && s.is_visible).slice(0, 4).map(s => ({ name: s.name, slug: s.slug })),
+    skin: allServices.filter(s => s.category === 'skin-scalp-care' && s.is_visible).slice(0, 4).map(s => ({ name: s.name, slug: s.slug })),
   }
 
   return (
