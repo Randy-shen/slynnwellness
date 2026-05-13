@@ -56,9 +56,6 @@ export const metadata: Metadata = {
       "https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/logo.png",
     ],
   },
-  alternates: {
-    canonical: "https://www.slynnwellness.com",
-  },
   verification: {
     google: "9B7M5ZGwEAaeSYr_Xeh6vJCBfpqaJqvohc4_tIs7Xj0",
   },

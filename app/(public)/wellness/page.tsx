@@ -63,6 +63,7 @@ export const metadata: Metadata = {
     'wellness Los Angeles',
     'Slynn Wellness',
   ],
+  alternates: { canonical: '/wellness' },
 }
 
 export default async function WellnessPage() {

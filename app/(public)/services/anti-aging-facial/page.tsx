@@ -91,6 +91,7 @@ export const metadata: Metadata = {
     'Slynn Wellness anti-aging facial',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/anti-aging-facial' },
 }
 
 const concerns = [

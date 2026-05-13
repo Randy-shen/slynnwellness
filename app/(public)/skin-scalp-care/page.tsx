@@ -77,6 +77,7 @@ export const metadata: Metadata = {
     'skin care Los Angeles',
     'Slynn Wellness',
   ],
+  alternates: { canonical: '/skin-scalp-care' },
 }
 
 export default async function SkinScalpCarePage() {

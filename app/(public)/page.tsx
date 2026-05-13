@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServices } from '@/lib/supabase/admin'
 import Hero from '@/components/sections/Hero'
@@ -5,6 +6,10 @@ import ServiceCategories from '@/components/sections/ServiceCategories'
 import WhyUs from '@/components/sections/WhyUs'
 import Testimonials from '@/components/sections/Testimonials'
 import LocationPreview from '@/components/sections/LocationPreview'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 
 export default async function HomePage() {
   const [settings, allServices] = await Promise.all([

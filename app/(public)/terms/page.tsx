@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of Service for Slynn Wellness — the terms and conditions governing use of our website and services.',
+  alternates: { canonical: '/terms' },
 }
 
 export default function TermsOfServicePage() {

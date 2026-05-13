@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Cancellation Policy',
   description:
     'Appointment and cancellation policy for Slynn Wellness in Pasadena, CA. Please review our 48-hour cancellation requirement before booking.',
+  alternates: { canonical: '/policies' },
 }
 
 export default async function PoliciesPage() {

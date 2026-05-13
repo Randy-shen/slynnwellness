@@ -97,6 +97,7 @@ export const metadata: Metadata = {
     'Slynn Wellness facial',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/skinceuticals' },
 }
 
 const concerns = [

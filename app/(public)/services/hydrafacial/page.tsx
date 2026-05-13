@@ -89,6 +89,7 @@ export const metadata: Metadata = {
     'Slynn Wellness HydraFacial',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/hydrafacial' },
 }
 
 const benefits = [

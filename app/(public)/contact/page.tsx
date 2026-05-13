@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description:
     'Get in touch with Slynn Wellness in Pasadena, CA. Book an appointment, ask questions, or find our location. We\'d love to hear from you.',
+  alternates: { canonical: '/contact' },
 }
 
 export default async function ContactPage() {

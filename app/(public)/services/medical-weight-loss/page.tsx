@@ -105,6 +105,7 @@ export const metadata: Metadata = {
     'Slynn Wellness weight loss',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/medical-weight-loss' },
 }
 
 // ─── Data ────────────────────────────────────────────────────────────────────

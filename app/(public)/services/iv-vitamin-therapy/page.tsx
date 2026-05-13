@@ -102,6 +102,7 @@ export const metadata: Metadata = {
     'Slynn Wellness IV therapy',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/iv-vitamin-therapy' },
 }
 
 // Strip dosage info — keep only ingredient name before any number/unit

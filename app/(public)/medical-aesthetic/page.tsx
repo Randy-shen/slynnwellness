@@ -60,6 +60,7 @@ export const metadata: Metadata = {
     'medical aesthetic Los Angeles',
     'Slynn Wellness',
   ],
+  alternates: { canonical: '/medical-aesthetic' },
 }
 
 export default async function MedicalAestheticPage() {
