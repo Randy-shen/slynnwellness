@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'ProCare Membership',
   description:
     'Join the Slynn Wellness ProCare Membership for exclusive benefits, priority booking, and savings on all treatments. Choose from Silver, Gold, or Platinum tiers.',
+  alternates: { canonical: '/membership' },
 }
 
 const tiers = [

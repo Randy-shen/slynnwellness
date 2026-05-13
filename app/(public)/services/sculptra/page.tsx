@@ -98,6 +98,7 @@ export const metadata: Metadata = {
     'Slynn Wellness Sculptra',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/sculptra' },
 }
 
 const treatmentAreas = [

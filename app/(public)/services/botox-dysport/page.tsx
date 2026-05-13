@@ -105,6 +105,7 @@ export const metadata: Metadata = {
     'Slynn Wellness Botox',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/botox-dysport' },
 }
 
 const treatmentAreas = [

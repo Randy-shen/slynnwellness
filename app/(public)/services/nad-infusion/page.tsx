@@ -87,6 +87,7 @@ export const metadata: Metadata = {
     'Slynn Wellness NAD',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/nad-infusion' },
 }
 
 const benefits = [

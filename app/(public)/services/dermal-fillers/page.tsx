@@ -104,6 +104,7 @@ export const metadata: Metadata = {
     'Slynn Wellness Restylane',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/dermal-fillers' },
 }
 
 const treatmentAreas = [

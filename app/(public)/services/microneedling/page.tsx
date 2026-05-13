@@ -104,6 +104,7 @@ export const metadata: Metadata = {
     'Slynn Wellness microneedling',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/microneedling' },
 }
 
 const benefits = [

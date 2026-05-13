@@ -102,6 +102,7 @@ export const metadata: Metadata = {
     'Slynn Wellness Juvederm',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/juvederm' },
 }
 
 const treatmentAreas = [

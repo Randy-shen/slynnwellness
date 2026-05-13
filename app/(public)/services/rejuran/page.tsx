@@ -97,6 +97,7 @@ export const metadata: Metadata = {
     'Slynn Wellness Rejuran',
     'luxury medical spa Pasadena',
   ],
+  alternates: { canonical: '/services/rejuran' },
 }
 
 const concerns = [
