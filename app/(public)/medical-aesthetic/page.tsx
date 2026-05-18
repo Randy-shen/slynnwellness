@@ -82,26 +82,26 @@ export default async function MedicalAestheticPage() {
       <div
         className="relative pt-16"
         style={{
-          background: 'linear-gradient(135deg, #F7E7CE 0%, #D4AF37 50%, #8B7355 100%)',
+          background: 'linear-gradient(135deg, #D4AF8B 0%, #E8D5B8 35%, #F0DDB8 70%, #F7E7CE 100%)',
         }}
       >
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <p
-            className="text-xs font-medium tracking-[0.3em] uppercase text-white/80 mb-3"
+            className="text-xs font-medium tracking-[0.3em] uppercase text-[#8B7355] mb-3"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Our Services
           </p>
           <h1
-            className="text-5xl lg:text-6xl font-light text-white mb-4"
+            className="text-5xl lg:text-6xl font-light text-[#2C2C2C] mb-4"
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
           >
             Medical Aesthetic
           </h1>
-          <div className="w-16 h-px bg-white/60 mx-auto mb-6" />
+          <div className="w-16 h-px bg-[#D4AF37]/70 mx-auto mb-6" />
           <p
-            className="max-w-2xl mx-auto text-white/80 text-sm leading-relaxed"
+            className="max-w-2xl mx-auto text-[#5A534D] text-sm leading-relaxed"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Transform your appearance with our expert medical aesthetic treatments.

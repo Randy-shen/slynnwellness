@@ -22,18 +22,21 @@ interface ServiceCategoriesProps {
 const categories = [
   {
     title: 'Medical Aesthetic',
+    href: '/medical-aesthetic',
     kicker: 'Injectables & Fillers',
     gradient: 'linear-gradient(135deg, #3D2B1F 0%, #6B4A2A 35%, #C49A6C 70%, #E8D5B8 100%)',
     description: 'Transform your appearance with expert injectable treatments that deliver natural, beautiful results.',
   },
   {
     title: 'Wellness',
+    href: '/wellness',
     kicker: 'IV Therapy & Weight Loss',
     gradient: 'linear-gradient(135deg, #2C1F0E 0%, #5C3D1E 35%, #B8865A 70%, #E8D0B0 100%)',
     description: 'Optimize your health from within through physician-supervised wellness and longevity programs.',
   },
   {
     title: 'Skin & Scalp Care',
+    href: '/skin-scalp-care',
     kicker: 'Facials & Treatments',
     gradient: 'linear-gradient(135deg, #352010 0%, #6B4520 35%, #C4956A 70%, #EAD8C0 100%)',
     description: 'Reveal your most radiant skin with advanced clinical treatments tailored to your unique needs.',
@@ -108,9 +111,14 @@ export default function ServiceCategories({ bookingUrl, servicesByCategory }: Se
                 <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
                   {cat.kicker}
                 </p>
-                <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', fontWeight: 400, color: 'white', margin: 0, letterSpacing: '0.05em' }}>
-                  {cat.title}
-                </h3>
+                <Link
+                  href={cat.href}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.8rem', fontWeight: 400, color: 'white', margin: 0, letterSpacing: '0.05em' }}>
+                    {cat.title}
+                  </h3>
+                </Link>
                 <div style={{ width: '32px', height: '1px', background: 'rgba(255,255,255,0.6)' }} />
               </div>
 
@@ -120,7 +128,7 @@ export default function ServiceCategories({ bookingUrl, servicesByCategory }: Se
                   {cat.description}
                 </p>
 
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
                   {cat.services.map((service) => (
                     <li key={service.slug} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'linear-gradient(135deg, #cbbba0, #bca98a)', flexShrink: 0 }} />
@@ -134,6 +142,23 @@ export default function ServiceCategories({ bookingUrl, servicesByCategory }: Se
                     </li>
                   ))}
                 </ul>
+
+                <Link
+                  href={cat.href}
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontSize: '0.78rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.08em',
+                    color: '#8b7355',
+                    textDecoration: 'none',
+                    marginBottom: '20px',
+                    alignSelf: 'flex-start',
+                  }}
+                  className="hover:!text-[#D4AF37]"
+                >
+                  View all {cat.title} →
+                </Link>
 
                 <a
                   href={bookingUrl}

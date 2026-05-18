@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const categoryGradients: Record<string, string> = {
-  'medical-aesthetic': 'linear-gradient(135deg, #F7E7CE 0%, #D4AF37 100%)',
-  'wellness': 'linear-gradient(135deg, #FDF8F3 0%, #F5E1DA 100%)',
-  'skin-scalp-care': 'linear-gradient(135deg, #F5E1DA 0%, #D4AF37 100%)',
+  'medical-aesthetic': 'linear-gradient(135deg, #D4AF8B 0%, #E8D5B8 35%, #F0DDB8 70%, #F7E7CE 100%)',
+  'wellness': 'linear-gradient(135deg, #C49B6E 0%, #DDC4A0 35%, #ECD8B5 70%, #FDF6E8 100%)',
+  'skin-scalp-care': 'linear-gradient(135deg, #D4AF8B 0%, #E0C9A5 35%, #EFD9BB 70%, #FDF2E5 100%)',
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
@@ -51,31 +51,31 @@ export default async function ServiceDetailPage({ params }: Props) {
     <>
       {/* Hero */}
       <div className="relative pt-16" style={{ background: gradient }}>
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <Link
             href={categoryPath}
-            className="inline-flex items-center gap-2 text-white/80 text-xs mb-6 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-[#5A534D] text-xs mb-6 hover:text-[#2C2C2C] transition-colors"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             <ArrowLeft className="h-4 w-4" />
             Back to {getCategoryLabel(service.category)}
           </Link>
           <p
-            className="text-xs font-medium tracking-[0.3em] uppercase text-white/70 mb-2"
+            className="text-xs font-medium tracking-[0.3em] uppercase text-[#8B7355] mb-2"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             {getCategoryLabel(service.category)}
           </p>
           <h1
-            className="text-5xl lg:text-6xl font-light text-white mb-4"
+            className="text-5xl lg:text-6xl font-light text-[#2C2C2C] mb-4"
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
           >
             {service.name}
           </h1>
           {service.price && (
             <p
-              className="text-white/80 text-sm"
+              className="text-[#5A534D] text-sm"
               style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
               {service.price}
@@ -261,22 +261,22 @@ export default async function ServiceDetailPage({ params }: Props) {
         style={{ background: gradient }}
       >
         <div className="relative">
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/10" />
           <div className="relative max-w-2xl mx-auto text-center px-4">
             <h2
-              className="text-3xl font-light text-white mb-4"
+              className="text-3xl font-light text-[#2C2C2C] mb-4"
               style={{ fontFamily: 'Cormorant Garamond, serif' }}
             >
               Ready to Experience {service.name}?
             </h2>
-            <p className="text-white/80 text-sm mb-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <p className="text-[#5A534D] text-sm mb-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
               Book your appointment today and take the first step toward your best self.
             </p>
             <a
               href="/book"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-4 bg-white text-[#2C2C2C] text-xs font-medium tracking-wider uppercase hover:bg-[#F7E7CE] transition-colors"
+              className="inline-block px-10 py-4 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors"
               style={{ fontFamily: 'Montserrat, sans-serif' }}
             >
               Book Your Appointment

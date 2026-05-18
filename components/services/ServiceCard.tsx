@@ -7,9 +7,9 @@ interface ServiceCardProps {
 }
 
 const categoryGradients: Record<string, string> = {
-  'medical-aesthetic': 'linear-gradient(135deg, #F7E7CE 0%, #D4AF37 100%)',
-  'wellness': 'linear-gradient(135deg, #FDF8F3 0%, #F5E1DA 100%)',
-  'skin-scalp-care': 'linear-gradient(135deg, #F5E1DA 0%, #D4AF37 100%)',
+  'medical-aesthetic': 'linear-gradient(135deg, #D4AF8B 0%, #E8D5B8 35%, #F0DDB8 70%, #F7E7CE 100%)',
+  'wellness': 'linear-gradient(135deg, #C49B6E 0%, #DDC4A0 35%, #ECD8B5 70%, #FDF6E8 100%)',
+  'skin-scalp-care': 'linear-gradient(135deg, #D4AF8B 0%, #E0C9A5 35%, #EFD9BB 70%, #FDF2E5 100%)',
 }
 
 export default function ServiceCard({ service }: ServiceCardProps) {
@@ -24,7 +24,7 @@ export default function ServiceCard({ service }: ServiceCardProps) {
       >
         <div className="absolute inset-0 flex items-end p-4">
           <span
-            className="text-white/70 text-xs font-medium tracking-wider uppercase"
+            className="text-[#3D2B1F]/75 text-xs font-medium tracking-wider uppercase"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             {getCategoryLabel(service.category)}
