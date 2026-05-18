@@ -85,26 +85,26 @@ export default async function WellnessPage() {
       <div
         className="relative pt-16"
         style={{
-          background: 'linear-gradient(135deg, #FDF8F3 0%, #F5E1DA 50%, #B8A99A 100%)',
+          background: 'linear-gradient(135deg, #C49B6E 0%, #DDC4A0 35%, #ECD8B5 70%, #FDF6E8 100%)',
         }}
       >
-        <div className="absolute inset-0 bg-black/15" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <p
-            className="text-xs font-medium tracking-[0.3em] uppercase text-white/80 mb-3"
+            className="text-xs font-medium tracking-[0.3em] uppercase text-[#8B7355] mb-3"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Our Services
           </p>
           <h1
-            className="text-5xl lg:text-6xl font-light text-white mb-4"
+            className="text-5xl lg:text-6xl font-light text-[#2C2C2C] mb-4"
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
           >
             Wellness
           </h1>
-          <div className="w-16 h-px bg-white/60 mx-auto mb-6" />
+          <div className="w-16 h-px bg-[#D4AF37]/70 mx-auto mb-6" />
           <p
-            className="max-w-2xl mx-auto text-white/90 text-sm leading-relaxed"
+            className="max-w-2xl mx-auto text-[#5A534D] text-sm leading-relaxed"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Optimize your health from within through our physician-supervised wellness

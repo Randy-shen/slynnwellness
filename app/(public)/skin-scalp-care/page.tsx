@@ -99,26 +99,26 @@ export default async function SkinScalpCarePage() {
       <div
         className="relative pt-16"
         style={{
-          background: 'linear-gradient(135deg, #F5E1DA 0%, #F7E7CE 50%, #D4AF37 100%)',
+          background: 'linear-gradient(135deg, #D4AF8B 0%, #E0C9A5 35%, #EFD9BB 70%, #FDF2E5 100%)',
         }}
       >
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <p
-            className="text-xs font-medium tracking-[0.3em] uppercase text-white/80 mb-3"
+            className="text-xs font-medium tracking-[0.3em] uppercase text-[#8B7355] mb-3"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Our Services
           </p>
           <h1
-            className="text-5xl lg:text-6xl font-light text-white mb-4"
+            className="text-5xl lg:text-6xl font-light text-[#2C2C2C] mb-4"
             style={{ fontFamily: 'Cormorant Garamond, serif' }}
           >
             Skin & Scalp Care
           </h1>
-          <div className="w-16 h-px bg-white/60 mx-auto mb-6" />
+          <div className="w-16 h-px bg-[#D4AF37]/70 mx-auto mb-6" />
           <p
-            className="max-w-2xl mx-auto text-white/90 text-sm leading-relaxed"
+            className="max-w-2xl mx-auto text-[#5A534D] text-sm leading-relaxed"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
             Reveal your most radiant skin with advanced clinical treatments tailored

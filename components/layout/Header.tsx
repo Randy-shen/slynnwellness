@@ -42,17 +42,17 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
     { label: 'Home', href: '/' },
     {
       label: 'Medical Aesthetic',
-      href: '#',
+      href: '/medical-aesthetic',
       dropdown: navServices.medical,
     },
     {
       label: 'Wellness',
-      href: '#',
+      href: '/wellness',
       dropdown: navServices.wellness,
     },
     {
       label: 'Skin & Scalp Care',
-      href: '#',
+      href: '/skin-scalp-care',
       dropdown: navServices.skin,
     },
     { label: 'Procare Membership', href: '/membership' },
@@ -167,6 +167,15 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
                   {/* Dropdown */}
                   {item.dropdown && activeDropdown === item.label && (
                     <div className="absolute top-full left-0 w-56 bg-[#FFFAF5] shadow-lg border border-[#F0E8DF] py-2 z-50">
+                      {item.href !== '#' && (
+                        <Link
+                          href={item.href}
+                          className="block px-4 py-2 text-xs font-medium text-[#D4AF37] hover:bg-[#F7E7CE] hover:text-[#B8960A] transition-colors border-b border-[#F0E8DF]"
+                          style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        >
+                          View all {item.label} →
+                        </Link>
+                      )}
                       {item.dropdown.map((subItem) => (
                         <Link
                           key={subItem.href}

@@ -90,6 +90,16 @@ export default function MobileNav({ isOpen, onClose, navItems, bookingUrl, addre
                             className="overflow-hidden"
                           >
                             <div className="pb-3 pl-4 space-y-2">
+                              {item.href !== '#' && (
+                                <Link
+                                  href={item.href}
+                                  onClick={onClose}
+                                  className="block py-2 text-sm font-medium text-[#D4AF37] hover:text-[#B8960A] transition-colors"
+                                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                                >
+                                  View all {item.label} →
+                                </Link>
+                              )}
                               {item.dropdown.map((subItem) => (
                                 <Link
                                   key={subItem.href}

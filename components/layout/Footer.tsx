@@ -45,7 +45,13 @@ export default async function Footer() {
     getServices(),
   ])
 
-  const featuredServices = services.filter(s => s.is_visible).slice(0, 6)
+  const visibleServices = services.filter(s => s.is_visible)
+
+  const serviceCategories = [
+    { label: 'Medical Aesthetic', href: '/medical-aesthetic' },
+    { label: 'Wellness', href: '/wellness' },
+    { label: 'Skin & Scalp Care', href: '/skin-scalp-care' },
+  ]
 
   return (
     <footer className="bg-[#2C2C2C] text-white">
@@ -109,8 +115,20 @@ export default async function Footer() {
             >
               Services
             </h4>
-            <ul className="space-y-2">
-              {featuredServices.map((service) => (
+            <ul className="space-y-2 mb-4">
+              {serviceCategories.map((cat) => (
+                <li key={cat.href}>
+                  <Link
+                    href={cat.href}
+                    className="text-sm text-white font-medium hover:text-[#D4AF37] transition-colors"
+                  >
+                    {cat.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="space-y-2 pt-4 border-t border-white/10">
+              {visibleServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
