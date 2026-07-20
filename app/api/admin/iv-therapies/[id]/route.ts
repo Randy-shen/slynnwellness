@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
 
 export async function GET(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -26,6 +27,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
       .select()
       .single()
     if (error) throw error
+    revalidatePath('/', 'layout')
     return NextResponse.json(data)
   } catch {
     return NextResponse.json({ error: 'Failed to update' }, { status: 500 })
@@ -38,6 +40,7 @@ export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ 
     const supabase = await createClient()
     const { error } = await supabase.from('iv_therapies').delete().eq('id', id)
     if (error) throw error
+    revalidatePath('/', 'layout')
     return NextResponse.json({ success: true })
   } catch {
     return NextResponse.json({ error: 'Failed to delete' }, { status: 500 })

@@ -64,6 +64,10 @@ export default async function BookPage() {
               Our treatments are performed by a licensed Registered Nurse scheduled exclusively for you.
             </p>
 
+            <p className="text-xs mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', lineHeight: 1.7 }}>
+              After you agree, you&apos;ll continue to our secure booking portal to choose your service, provider, date, and time.
+            </p>
+
             <BookingConsent bookingUrl={settings.booking_url} />
           </div>
 

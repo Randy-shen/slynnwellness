@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { createClient } from '@supabase/supabase-js'
 
 function getAdminClient() {
@@ -18,6 +19,7 @@ export async function POST(request: NextRequest) {
       .select()
       .single()
     if (error) throw error
+    revalidatePath('/', 'layout')
     return NextResponse.json(data)
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Failed to create service'

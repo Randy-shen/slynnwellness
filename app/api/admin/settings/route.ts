@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
 
 export async function GET() {
@@ -29,6 +30,12 @@ export async function PUT(request: NextRequest) {
       .single()
 
     if (error) throw error
+
+    // Settings render in the header/footer on every public page, so refresh
+    // the entire route tree's cache. Without this, edits take up to an hour
+    // (the ISR revalidate window) to appear on the live site.
+    revalidatePath('/', 'layout')
+
     return NextResponse.json(data)
   } catch {
     return NextResponse.json({ error: 'Failed to update settings' }, { status: 500 })
