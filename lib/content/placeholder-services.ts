@@ -22,7 +22,7 @@ export const placeholderServices: Service[] = [
     short_description: 'Smooth fine lines and wrinkles with precision neuromodulator treatments.',
     full_description: 'Our expert injectors use FDA-approved Botox and Dysport to relax facial muscles that cause dynamic wrinkles. These neuromodulator treatments are administered with precision to create natural-looking results that preserve your unique expressions while reducing the appearance of crow\'s feet, forehead lines, frown lines, and more. Each treatment is customized to your facial anatomy for optimal outcomes.',
     benefits: ['Reduces fine lines', 'Prevents new wrinkles', 'Natural-looking results', 'No downtime'],
-    price: 'Starting at $12/unit',
+    price: 'Starting at $13/unit',
     image_url: null,
     display_order: 1,
     is_visible: true,

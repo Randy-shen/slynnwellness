@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { createClient } from '@/lib/supabase/server'
 
 export async function GET(
@@ -43,6 +44,8 @@ export async function PUT(
 
     if (error) throw error
 
+    revalidatePath('/', 'layout')
+
     return NextResponse.json(data)
   } catch {
     return NextResponse.json({ error: 'Failed to update service' }, { status: 500 })
@@ -63,6 +66,8 @@ export async function DELETE(
       .eq('id', id)
 
     if (error) throw error
+
+    revalidatePath('/', 'layout')
 
     return NextResponse.json({ success: true })
   } catch {

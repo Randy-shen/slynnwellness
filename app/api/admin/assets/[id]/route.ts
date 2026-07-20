@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { revalidatePath } from 'next/cache'
 import { createClient } from '@supabase/supabase-js'
 
 function getAdminClient() {
@@ -33,6 +34,8 @@ export async function DELETE(
     // Delete DB record
     const { error: deleteError } = await supabase.from('assets').delete().eq('id', id)
     if (deleteError) throw deleteError
+
+    revalidatePath('/', 'layout')
 
     return NextResponse.json({ success: true })
   } catch {

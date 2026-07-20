@@ -186,13 +186,43 @@ const faqs = [
   },
 ]
 
+interface PriceRow {
+  label: string
+  perUnit?: string
+  total?: string
+  highlight?: boolean
+}
+
+const pricingProducts: { name: string; note?: string; rows: PriceRow[] }[] = [
+  {
+    name: 'Botox',
+    note: 'The more units you purchase, the lower your per-unit rate.',
+    rows: [
+      { label: 'Standard', perUnit: '$13 / unit' },
+      { label: '30 units', perUnit: '$12 / unit', total: '$360' },
+      { label: '40 units', perUnit: '$11 / unit', total: '$440' },
+      { label: '50 units', perUnit: '$10 / unit', total: '$500' },
+      { label: 'Members', perUnit: '$9 / unit', highlight: true },
+    ],
+  },
+  {
+    name: 'Xeomin',
+    rows: [
+      { label: 'Standard', perUnit: '$9 / unit' },
+      { label: '30 units', total: '$255' },
+      { label: '40 units', total: '$320' },
+      { label: '50 units', total: '$375' },
+    ],
+  },
+]
+
 export default async function BotoxXeominPage() {
   const [settings, service] = await Promise.all([
     getSiteSettings(),
     getServiceBySlug('botox-dysport'),
   ])
 
-  const price = service?.price || 'Starting at $12/unit'
+  const price = service?.price || 'Starting at $13/unit'
   const description = service?.short_description || 'Smooth fine lines and wrinkles with precision neuromodulator treatments.'
 
   return (
@@ -384,21 +414,40 @@ export default async function BotoxXeominPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { name: 'Botox', perUnit: '$11 / unit', tiers: [{ units: '30 units', price: '$300' }, { units: '40 units', price: '$360' }, { units: '50 units', price: '$400' }] },
-              { name: 'Xeomin', perUnit: '$9 / unit', tiers: [{ units: '30 units', price: '$255' }, { units: '40 units', price: '$320' }, { units: '50 units', price: '$375' }] },
-            ].map((product) => (
-              <div key={product.name} className="rounded-2xl p-5" style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}>
-                <div className="flex items-center justify-between mb-3">
+            {pricingProducts.map((product) => {
+              const hasTotals = product.rows.some((r) => r.perUnit && r.total)
+              return (
+              <div key={product.name} className="rounded-2xl p-5 flex flex-col" style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}>
+                <div className="flex items-center justify-between mb-1">
                   <h3 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.4rem', margin: 0 }}>{product.name}</h3>
-                  <span className="text-xs font-semibold" style={{ fontFamily: 'Montserrat, sans-serif', color: '#D4AF37' }}>{product.perUnit}</span>
                 </div>
+                {/* Always render this line (empty for products without a note) so both cards'
+                    headers are the same height and their pricing rows align across columns. */}
+                <p className="text-xs mb-3" style={{ fontFamily: 'Montserrat, sans-serif', color: '#9a8f86', margin: '0 0 12px', minHeight: '1.1em' }}>{product.note || ' '}</p>
                 <div className="w-full h-px mb-3" style={{ background: 'rgba(233,221,209,0.9)' }} />
-                <div className="grid grid-cols-3 gap-2 mb-3">
-                  {product.tiers.map((tier) => (
-                    <div key={tier.units} className="flex flex-col items-center py-2 px-1 rounded-xl text-center" style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}>
-                      <span className="text-xs mb-1" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>{tier.units}</span>
-                      <span className="font-semibold" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem', color: '#2C2C2C' }}>{tier.price}</span>
+                <div className="flex flex-col gap-2 mb-4 flex-grow">
+                  {product.rows.map((row) => (
+                    <div
+                      key={row.label}
+                      className="flex items-center justify-between py-2.5 px-4 rounded-xl"
+                      style={{
+                        background: row.highlight ? 'rgba(212,175,55,0.12)' : 'rgba(255,255,255,0.72)',
+                        border: row.highlight ? '1px solid rgba(212,175,55,0.4)' : '1px solid rgba(233,221,209,0.9)',
+                      }}
+                    >
+                      <span className="text-xs font-medium" style={{ fontFamily: 'Montserrat, sans-serif', color: row.highlight ? '#8B6340' : '#7a6f66' }}>
+                        {row.label}
+                      </span>
+                      <span className="flex items-baseline justify-end gap-3">
+                        <span className="font-semibold" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem', color: '#2C2C2C' }}>
+                          {row.perUnit || row.total}
+                        </span>
+                        {hasTotals && (
+                          <span className="text-xs text-right" style={{ fontFamily: 'Montserrat, sans-serif', color: '#9a8f86', minWidth: '2.75rem', display: 'inline-block' }}>
+                            {row.perUnit && row.total ? row.total : ''}
+                          </span>
+                        )}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -406,7 +455,8 @@ export default async function BotoxXeominPage() {
                   Book Now
                 </a>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
