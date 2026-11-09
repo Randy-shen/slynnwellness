@@ -202,16 +202,17 @@ const pricingProducts: { name: string; note?: string; rows: PriceRow[] }[] = [
       { label: '30 units', perUnit: '$12 / unit', total: '$360' },
       { label: '40 units', perUnit: '$11 / unit', total: '$440' },
       { label: '50 units', perUnit: '$10 / unit', total: '$500' },
-      { label: 'Members', perUnit: '$9 / unit', highlight: true },
+      { label: 'Members', perUnit: '$10 / unit', highlight: true },
     ],
   },
   {
     name: 'Xeomin',
     rows: [
-      { label: 'Standard', perUnit: '$9 / unit' },
-      { label: '30 units', total: '$255' },
-      { label: '40 units', total: '$320' },
-      { label: '50 units', total: '$375' },
+      { label: 'Standard', perUnit: '$12 / unit' },
+      { label: '30 units', perUnit: '$11 / unit', total: '$330' },
+      { label: '40 units', perUnit: '$10 / unit', total: '$400' },
+      { label: '50 units', perUnit: '$9 / unit', total: '$450' },
+      { label: 'Members', perUnit: '$9 / unit', highlight: true },
     ],
   },
 ]

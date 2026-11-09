@@ -23,9 +23,9 @@ export default async function PublicLayout({
   ])
 
   const navServices = {
-    medical: medicalServices.filter(s => s.is_visible).slice(0, 6).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
-    wellness: wellnessServices.filter(s => s.is_visible).slice(0, 6).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
-    skin: skinServices.filter(s => s.is_visible).slice(0, 6).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
+    medical: medicalServices.filter(s => s.is_visible).slice(0, 7).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
+    wellness: wellnessServices.filter(s => s.is_visible).slice(0, 7).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
+    skin: skinServices.filter(s => s.is_visible).slice(0, 7).map(s => ({ label: s.name, href: `/services/${s.slug}` })),
   }
 
   return (
