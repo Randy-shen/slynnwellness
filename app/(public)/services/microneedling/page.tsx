@@ -369,6 +369,9 @@ export default async function MicroneedlingPage() {
               </div>
             ))}
           </div>
+          <p className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#9a8f86', margin: '24px 0 0' }}>
+            Want to add your own platelets to the treatment? See <Link href="/services/rf-microneedling-prp" className="underline hover:text-[#D4AF37] transition-colors">RF Microneedling + PRP</Link>.
+          </p>
         </div>
       </section>
 
@@ -388,23 +391,21 @@ export default async function MicroneedlingPage() {
             {beforeAfterImages.map((src, i) => (
               <div
                 key={i}
-                className="rounded-3xl overflow-hidden"
+                className="rounded-3xl overflow-hidden flex flex-col"
                 style={{
                   background: 'rgba(255,250,245,0.85)',
                   border: '1px solid rgba(233,221,209,0.9)',
                   boxShadow: '0 20px 60px rgba(90,66,44,0.08)',
                 }}
               >
-                <div
-                  className="relative"
-                  style={{
-                    height: '280px',
-                    backgroundImage: `url(${src})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                >
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 40%, rgba(0,0,0,0.22) 100%)' }} />
+                {/* Composite before/after image shown at its natural aspect ratio — no cropping. */}
+                <div className="relative">
+                  <img
+                    src={src}
+                    alt={`Candela Matrix Pro RF microneedling before and after, patient ${i + 1}`}
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 40%, rgba(0,0,0,0.22) 100%)', pointerEvents: 'none' }} />
                   <span
                     className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase"
                     style={{ background: 'rgba(0,0,0,0.45)', backdropFilter: 'blur(6px)', color: 'rgba(255,255,255,0.9)', fontFamily: 'Montserrat, sans-serif' }}
@@ -417,9 +418,8 @@ export default async function MicroneedlingPage() {
                   >
                     After
                   </span>
-                  <div className="absolute inset-y-0 left-1/2 w-px" style={{ background: 'rgba(255,255,255,0.5)' }} />
                 </div>
-                <div className="p-4">
+                <div className="p-4 mt-auto">
                   <p className="text-xs text-center" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>
                     Patient {i + 1} · Candela Matrix Pro
                   </p>

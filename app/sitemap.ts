@@ -7,8 +7,8 @@ export const revalidate = 3600
 
 const LAST_UPDATED = {
   home: new Date('2026-05-13'),
-  categoryPages: new Date('2026-05-20'),
-  servicePages: new Date('2026-05-20'),
+  categoryPages: new Date('2026-11-08'),
+  servicePages: new Date('2026-11-08'),
   membership: new Date('2026-04-25'),
   contact: new Date('2026-04-24'),
   book: new Date('2026-04-24'),

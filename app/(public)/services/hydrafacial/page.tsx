@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     'HydraFacial deals Pasadena',
     // Treatment level / variations
     'HydraFacial Signature Pasadena',
-    'HydraFacial Deluxe',
+    'HydraFacial Grand',
     'HydraFacial Platinum',
     'HydraFacial Syndeo',
     'HydraFacial Keravive scalp',
@@ -144,7 +144,7 @@ const timeline = [
   {
     step: 'Step 02',
     title: 'Treatment',
-    description: 'Relaxing 30–45 minute treatment using the HYDRAFACIAL device with customized serums.',
+    description: 'Relaxing 60–100 minute treatment (depending on your level) using the HYDRAFACIAL device with customized serums.',
   },
   {
     step: 'Step 03',
@@ -172,8 +172,8 @@ const faqs = [
     a: 'Yes. HYDRAFACIAL is gentle enough for sensitive skin types and can be customized to avoid any irritating ingredients.',
   },
   {
-    q: 'What is the difference between Signature, Deluxe, and Platinum?',
-    a: 'Signature is the core treatment. Deluxe adds a targeted booster serum. Platinum adds lymphatic drainage and LED light therapy for the most comprehensive result.',
+    q: 'What is the difference between Signature, Grand, and Platinum?',
+    a: 'Signature (60 minutes) is the essential treatment with gentle extractions, a customized mask, and a relaxing arm massage. Grand (70 minutes) adds a customized booster and red light therapy. Platinum (100 minutes) adds facial lymphatic drainage for the most comprehensive result.',
   },
   {
     q: 'Can HYDRAFACIAL be combined with other treatments?',
@@ -341,16 +341,16 @@ export default async function HYDRAFACIALPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { name: 'Signature', single: '$189', package: '$499', sessions: '3 sessions' },
-              { name: 'Deluxe', single: '$229', package: '$599', sessions: '3 sessions' },
-              { name: 'Platinum', single: '$299', package: '$799', sessions: '3 sessions' },
+              { name: 'Signature', single: '$195', duration: '60 minutes', package: '$468', sessions: '3 sessions' },
+              { name: 'Grand', single: '$250', duration: '70 minutes', package: '$600', sessions: '3 sessions' },
+              { name: 'Platinum', single: '$300', duration: '100 minutes', package: '$720', sessions: '3 sessions' },
             ].map((item) => (
               <div key={item.name} className="rounded-2xl p-6" style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}>
                 <h3 className="font-light mb-4" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.3rem', margin: '0 0 16px' }}>{item.name}</h3>
                 <div className="w-full h-px mb-4" style={{ background: 'rgba(233,221,209,0.9)' }} />
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>Single session</span>
+                    <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>Single session · {item.duration}</span>
                     <span className="font-semibold" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem', color: '#2C2C2C' }}>{item.single}</span>
                   </div>
                   <div className="flex items-center justify-between px-3 py-2 rounded-xl" style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.2)' }}>
@@ -469,17 +469,17 @@ export default async function HYDRAFACIALPage() {
               {
                 tag: '01',
                 title: 'Signature',
-                description: 'The core HYDRAFACIAL experience. Deep cleansing, gentle exfoliation, painless extraction, and intense hydration in one streamlined treatment.',
+                description: 'An essential approach to skin maintenance, combining deep cleansing, gentle exfoliation, and intensive hydration for an instantly refreshed complexion. Includes HYDRAFACIAL, gentle extractions, a customized mask, and a relaxing arm massage. 60 minutes.',
               },
               {
                 tag: '02',
-                title: 'Deluxe',
-                description: 'Everything in Signature plus a targeted booster serum customized to your skin concern — brightening, anti-aging, or clarifying.',
+                title: 'Grand',
+                description: 'A luxurious, multi-step HYDRAFACIAL combining deep cleansing, advanced exfoliation, and targeted hydration with personalized skin enhancements. Featuring a customized booster, customized mask, and red light therapy, this enhanced facial addresses individual skin concerns while promoting a smoother, brighter, and more radiant complexion. Includes gentle extractions and a relaxing arm massage. 70 minutes.',
               },
               {
                 tag: '03',
                 title: 'Platinum',
-                description: 'The ultimate HYDRAFACIAL. Full Deluxe treatment enhanced with lymphatic drainage to reduce puffiness and LED light therapy for collagen support.',
+                description: 'An exclusive, multi-step HYDRAFACIAL designed to deeply cleanse, exfoliate, and hydrate while addressing visible signs of fatigue, congestion, and puffiness. Featuring a customized booster, red light therapy, and facial lymphatic drainage, this comprehensive treatment leaves skin exceptionally smooth, hydrated, and radiant — an ideal addition to a medical aesthetic treatment plan, offering skin preparation before select procedures and ongoing care following recovery. Includes a customized mask, gentle extractions, and a relaxing arm massage. 100 minutes.',
               },
               {
                 tag: '04',
