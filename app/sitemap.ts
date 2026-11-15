@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { getServices } from '@/lib/supabase/admin'
+import { getSiteSettings } from '@/lib/supabase/settings'
 
 const SITE_URL = 'https://www.slynnwellness.com'
 
@@ -15,6 +16,7 @@ const LAST_UPDATED = {
   policies: new Date('2026-04-18'),
   privacy: new Date('2026-04-24'),
   terms: new Date('2026-04-24'),
+  paymentPlans: new Date('2026-11-15'),
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -46,5 +48,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.85,
   }))
 
-  return [...staticPages, ...servicePages]
+  // /payment-plans exists only while a Cherry URL is set in Admin → Settings.
+  let financingPages: MetadataRoute.Sitemap = []
+  try {
+    const settings = await getSiteSettings()
+    if (settings.financing_url) {
+      financingPages = [{ url: `${SITE_URL}/payment-plans`, lastModified: LAST_UPDATED.paymentPlans, changeFrequency: 'monthly', priority: 0.7 }]
+    }
+  } catch {
+    financingPages = []
+  }
+
+  return [...staticPages, ...servicePages, ...financingPages]
 }

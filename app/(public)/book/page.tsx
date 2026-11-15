@@ -68,6 +68,16 @@ export default async function BookPage() {
               After you agree, you&apos;ll continue to our secure booking portal to choose your service, provider, date, and time.
             </p>
 
+            {settings.financing_url && (
+              <p className="text-xs mb-6" style={{ fontFamily: 'Montserrat, sans-serif', color: '#8B6340', lineHeight: 1.7 }}>
+                Prefer to pay over time?{' '}
+                <Link href="/payment-plans" className="underline hover:text-[#D4AF37] transition-colors">
+                  Payment plans
+                </Link>{' '}
+                are available through Cherry.
+              </p>
+            )}
+
             <BookingConsent bookingUrl={settings.booking_url} />
           </div>
 

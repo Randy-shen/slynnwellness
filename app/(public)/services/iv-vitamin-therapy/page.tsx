@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import ServiceSchema from '@/components/seo/ServiceSchema'
+import FinancingNote from '@/components/sections/FinancingNote'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getIVTherapies, IVTherapy } from '@/lib/supabase/iv-therapies'
 
@@ -317,6 +318,8 @@ export default async function IVVitaminTherapyPage() {
           ))}
         </div>
       </div>
+
+      <FinancingNote financingUrl={settings.financing_url} />
 
       {/* Book CTA */}
       <section

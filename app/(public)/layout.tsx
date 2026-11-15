@@ -33,6 +33,7 @@ export default async function PublicLayout({
       <Header
         bookingUrl="/book"
         navServices={navServices}
+        financingEnabled={!!settings.financing_url}
         address={`${settings.address}, ${settings.city}, ${settings.state} ${settings.zip}`}
         phone={settings.phone}
         email={settings.email}

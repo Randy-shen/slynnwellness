@@ -6,7 +6,7 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 export const metadata: Metadata = {
   title: 'Cancellation Policy',
   description:
-    'Appointment and cancellation policy for Slynn Wellness in Pasadena, CA. Please review our 48-hour cancellation requirement before booking.',
+    'Appointment and cancellation policy for Slynn Wellness in Pasadena, CA. Please review our 24-hour cancellation requirement before booking.',
   alternates: { canonical: '/policies' },
 }
 
@@ -75,34 +75,29 @@ export default async function PoliciesPage() {
               </h2>
               <div className="space-y-4 text-sm leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif', color: '#5a5148' }}>
                 <p>
-                  We require at least <strong style={{ color: '#2C2C2C' }}>48 hours&apos; notice</strong> to cancel or reschedule an appointment at no charge. Cancellations made within this window allow us to offer your time slot to another patient.
+                  We require at least <strong style={{ color: '#2C2C2C' }}>24 hours&apos; notice</strong> to cancel or reschedule an appointment at no charge. Cancellations made within this window allow us to offer your time slot to another patient.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   {[
                     {
-                      label: '48+ Hours Notice',
+                      label: '24+ Hours Notice',
                       desc: 'No charge. Full cancellation or reschedule at no cost.',
                       highlight: false,
                     },
                     {
-                      label: 'Less than 48 Hours',
+                      label: 'Less than 24 Hours',
                       desc: 'Late cancellation fee of $50 charged to the card on file.',
                       highlight: false,
                     },
                     {
                       label: 'No-Show',
-                      desc: 'Missed appointment without notice — $75 fee charged to the card on file.',
+                      desc: 'Missed appointment without notice — $50 fee charged to the card on file.',
                       highlight: true,
                     },
-                    {
-                      label: 'Prepaid Packages',
-                      desc: 'Late cancellations or no-shows will result in forfeiture of one session from your package.',
-                      highlight: false,
-                    },
-                  ].map((item) => (
+                  ].map((item, i) => (
                     <div
                       key={item.label}
-                      className="p-4 rounded-2xl"
+                      className={`p-4 rounded-2xl ${i === 2 ? 'sm:col-span-2' : ''}`}
                       style={{
                         background: item.highlight ? 'rgba(212,175,55,0.08)' : 'rgba(255,255,255,0.72)',
                         border: item.highlight ? '1px solid rgba(212,175,55,0.25)' : '1px solid rgba(233,221,209,0.9)',

@@ -29,17 +29,20 @@ interface HeaderProps {
   address?: string
   phone?: string
   email?: string
+  financingEnabled?: boolean
 }
 
-export default function Header({ bookingUrl, navServices, address, phone, email }: HeaderProps) {
+export default function Header({ bookingUrl, navServices, address, phone, email, financingEnabled = false }: HeaderProps) {
   const pathname = usePathname()
   const isHomepage = pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
+  // No Home tab (the logo links home). The desktop row is tight at 1280px, so every label
+  // is kept on one line except 'Payment Plans', which is allowed to wrap to two lines when
+  // space runs short rather than squeezing the Book Now button.
   const navItems: NavItem[] = [
-    { label: 'Home', href: '/' },
     {
       label: 'Medical Aesthetic',
       href: '/medical-aesthetic',
@@ -55,7 +58,8 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
       href: '/skin-scalp-care',
       dropdown: navServices.skin,
     },
-    { label: 'Procare Membership', href: '/membership' },
+    { label: 'Membership', href: '/membership' },
+    ...(financingEnabled ? [{ label: 'Payment Plans', href: '/payment-plans' }] : []),
     { label: 'Shop', href: '/shop' },
     { label: 'Contact', href: '/contact' },
   ]
@@ -96,7 +100,7 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
                 {/* Desktop: side by side with divider */}
                 <div className="hidden sm:flex items-center gap-3">
                   <span
-                    className="text-2xl lg:text-3xl tracking-[0.08em] font-medium"
+                    className="text-2xl tracking-[0.08em] font-medium"
                     style={{
                       background: 'linear-gradient(180deg, #F7EBCF 0%, #DEC27D 42%, #B78A3E 100%)',
                       WebkitBackgroundClip: 'text',
@@ -104,9 +108,9 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
                       backgroundClip: 'text',
                     }}
                   >SLYNN</span>
-                  <span className="w-px h-5 lg:h-6" style={{ background: '#DFC27F', opacity: 0.7 }} />
+                  <span className="w-px h-5" style={{ background: '#DFC27F', opacity: 0.7 }} />
                   <span
-                    className="text-2xl lg:text-3xl tracking-[0.08em] font-medium"
+                    className="text-2xl tracking-[0.08em] font-medium"
                     style={{
                       background: 'linear-gradient(180deg, #F7EBCF 0%, #DEC27D 42%, #B78A3E 100%)',
                       WebkitBackgroundClip: 'text',
@@ -150,7 +154,7 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center px-3 py-2 text-xs font-medium tracking-wider uppercase transition-colors duration-200 ${
+                    className={`flex items-center px-2 py-2 text-xs font-medium tracking-wide uppercase transition-colors duration-200 ${item.href === '/payment-plans' ? 'text-center justify-center leading-tight' : 'whitespace-nowrap'} ${
                       !scrolled && isHomepage ? 'hover:text-[#F6E7BF]' : 'text-[#2C2C2C] hover:text-[#DFC27F]'
                     }`}
                     style={{
@@ -193,10 +197,10 @@ export default function Header({ bookingUrl, navServices, address, phone, email 
             </nav>
 
             {/* Book Now CTA */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden lg:flex items-center flex-shrink-0">
               <a
                 href={bookingUrl}
-                className="px-5 py-2 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#B8960A] transition-colors duration-200"
+                className="px-5 py-2 bg-[#D4AF37] text-white text-xs font-medium tracking-wider uppercase whitespace-nowrap hover:bg-[#B8960A] transition-colors duration-200"
                 style={{ fontFamily: 'Montserrat, sans-serif' }}
               >
                 Book Now

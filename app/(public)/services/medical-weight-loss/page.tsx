@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import ServiceSchema from '@/components/seo/ServiceSchema'
+import FinancingNote from '@/components/sections/FinancingNote'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -785,6 +786,8 @@ export default async function MedicalWeightLossPage() {
           </div>
         </div>
       </section>
+
+      <FinancingNote financingUrl={settings.financing_url} />
 
       {/* ── SECTION 6: FAQ + CTA side by side ────────────────────────────────── */}
       <section

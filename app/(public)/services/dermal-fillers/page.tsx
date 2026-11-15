@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import ServiceSchema from '@/components/seo/ServiceSchema'
+import FinancingNote from '@/components/sections/FinancingNote'
 import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
 import ImageCarousel from '@/components/sections/ImageCarousel'
@@ -380,6 +381,8 @@ export default async function RESTYLANEFillerPage() {
 
         </div>
       </section>
+
+      <FinancingNote financingUrl={settings.financing_url} />
 
       {/* Before & After */}
       <section className="py-10">

@@ -131,6 +131,7 @@ export default function AdminSettingsPage() {
           hero_video_url: data.hero_video_url ?? '',
           hero_poster_url: data.hero_poster_url ?? '',
           google_maps_url: data.google_maps_url ?? '',
+          financing_url: data.financing_url ?? '',
           popup_description: data.popup_description ?? '',
         }))
       } catch {
@@ -318,6 +319,22 @@ export default function AdminSettingsPage() {
               placeholder="https://booking.aestheticrecord.com/slynn-wellness"
               type="url"
               hint="The URL used for the Book Appointment button throughout the site."
+            />
+          </div>
+        </section>
+
+        {/* Financing */}
+        <section>
+          <SectionHeading title="Financing" />
+          <div className="max-w-2xl">
+            <Field
+              label="Cherry Application URL"
+              name="financing_url"
+              value={settings.financing_url}
+              onChange={handleChange}
+              placeholder="https://pay.withcherry.com/your-practice"
+              type="url"
+              hint="Your merchant-specific Cherry application link. Leave empty to hide the Payment Plans tab, footer link, and page. Only enter the LIVE link, not the demo one."
             />
           </div>
         </section>
