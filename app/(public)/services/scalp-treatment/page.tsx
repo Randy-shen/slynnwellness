@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import ServiceSchema from '@/components/seo/ServiceSchema'
+import FinancingNote from '@/components/sections/FinancingNote'
 import { getSiteSettings } from '@/lib/supabase/settings'
 
 export const metadata: Metadata = {
@@ -323,6 +324,8 @@ export default async function ScalpTreatmentPage() {
           </div>
         </div>
       </div>
+
+      <FinancingNote financingUrl={settings.financing_url} />
 
       {/* Overview */}
       <section id="overview" className="py-10">

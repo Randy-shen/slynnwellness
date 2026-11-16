@@ -6,6 +6,7 @@ import ServiceCategories from '@/components/sections/ServiceCategories'
 import WhyUs from '@/components/sections/WhyUs'
 import Testimonials from '@/components/sections/Testimonials'
 import LocationPreview from '@/components/sections/LocationPreview'
+import FinancingNote from '@/components/sections/FinancingNote'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -33,6 +34,11 @@ export default async function HomePage() {
       />
       <ServiceCategories bookingUrl="/book" servicesByCategory={servicesByCategory} />
       <WhyUs />
+      <FinancingNote
+        financingUrl={settings.financing_url}
+        heading="Flexible payment plans with Cherry"
+        body="Split the cost of eligible treatments into monthly payments. Checking your options takes a couple of minutes and uses a soft credit check that does not affect your credit score. Subject to approval."
+      />
       <Testimonials />
       <LocationPreview settings={settings} />
     </>

@@ -5,6 +5,7 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 import { getServiceBySlug } from '@/lib/supabase/admin'
 import ImageCarousel from '@/components/sections/ImageCarousel'
 import ServiceSchema from '@/components/seo/ServiceSchema'
+import FinancingNote from '@/components/sections/FinancingNote'
 
 const carouselImages = [
   { src: 'https://bcpbkzcpkxvvuasgpbgs.supabase.co/storage/v1/object/public/media/images/botox.png', alt: 'Botox treatment' },
@@ -461,6 +462,8 @@ export default async function BotoxXeominPage() {
           </div>
         </div>
       </section>
+
+      <FinancingNote financingUrl={settings.financing_url} />
 
       {/* Before & After */}
       <section className="py-10">

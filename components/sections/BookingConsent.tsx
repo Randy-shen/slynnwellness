@@ -11,14 +11,13 @@ export default function BookingConsent({ bookingUrl }: { bookingUrl: string }) {
       {/* Policy summary cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[
-          { label: '48+ Hours Notice', desc: 'Cancel or reschedule at no charge.', icon: '✓' },
-          { label: 'Less than 48 Hours', desc: '$50 late cancellation fee charged to card on file.', icon: '!' },
-          { label: 'No-Show', desc: '$75 fee charged to card on file for missed appointments.', icon: '!' },
-          { label: 'Prepaid Packages', desc: 'No-shows forfeit one session from your package.', icon: '!' },
-        ].map((item) => (
+          { label: '24+ Hours Notice', desc: 'Cancel or reschedule at no charge.', icon: '✓' },
+          { label: 'Less than 24 Hours', desc: '$50 late cancellation fee charged to card on file.', icon: '!' },
+          { label: 'No-Show', desc: '$50 fee charged to card on file for missed appointments.', icon: '!' },
+        ].map((item, i) => (
           <div
             key={item.label}
-            className="flex gap-3 p-4 rounded-2xl"
+            className={`flex gap-3 p-4 rounded-2xl ${i === 2 ? 'sm:col-span-2' : ''}`}
             style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}
           >
             <span

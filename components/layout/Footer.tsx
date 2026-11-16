@@ -152,6 +152,7 @@ export default async function Footer() {
             <ul className="space-y-2">
               {[
                 { label: 'Procare Membership', href: '/membership' },
+                ...(settings.financing_url ? [{ label: 'Payment Plans', href: '/payment-plans' }] : []),
                 { label: 'Shop', href: '/shop' },
                 { label: 'Contact Us', href: '/contact' },
                 { label: 'Book Appointment', href: '/book' },
