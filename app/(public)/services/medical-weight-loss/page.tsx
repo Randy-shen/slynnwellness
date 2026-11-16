@@ -8,7 +8,7 @@ import { getSiteSettings } from '@/lib/supabase/settings'
 export const metadata: Metadata = {
   title: 'GLP-1 Medical Weight Loss in Pasadena, CA',
   description:
-    'Medical weight loss with FDA-cleared GLP-1 medications (Semaglutide and Tirzepatide) at Slynn Wellness in Pasadena, CA — physician-supervised, personalized programs. Serving Pasadena, Altadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area.',
+    'Medical weight loss in Pasadena, CA: GLP-1 programs with Ozempic, Wegovy, Zepbound, Mounjaro, and Foundayo at Slynn Wellness. Transparent per-4-week pricing, no membership fee, consultation included.',
   keywords: [
     // Core service
     'medical weight loss Pasadena',
@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     'Semaglutide injection Pasadena',
     'Semaglutide prescription Pasadena',
     'Semaglutide cost Pasadena',
-    'compounded Semaglutide',
     'Semaglutide clinic Pasadena',
     // Tirzepatide
     'Tirzepatide Pasadena',
@@ -41,7 +40,6 @@ export const metadata: Metadata = {
     'Tirzepatide injection Pasadena',
     'Tirzepatide prescription Pasadena',
     'Tirzepatide cost Pasadena',
-    'compounded Tirzepatide',
     'Tirzepatide clinic Pasadena',
     // Brand-name medications
     'Ozempic Pasadena',
@@ -157,25 +155,48 @@ const steps = [
   },
 ]
 
+// Prices are totals per 4 weeks (no membership fee). Keep in sync with the printed price sheet.
 const medications = [
   {
-    name: 'Semaglutide',
-    description:
-      'A GLP-1 receptor agonist clinically proven to reduce appetite and support meaningful, lasting weight loss.',
-    pricing: [
-      { label: 'One-Time', price: 'From $79' },
-      { label: '4 Weeks', price: 'From $189' },
-      { label: '12 Weeks', price: 'From $559' },
+    form: 'Weekly Syringe',
+    name: 'Ozempic® / Wegovy®',
+    generic: 'Semaglutide — Weekly Syringe',
+    doses: [
+      { dose: '0.25–0.5 mg', price: '$248' },
+      { dose: '1.0–2.4 mg', price: '$398' },
+      { dose: 'Above 2.4 mg', price: '$448' },
     ],
   },
   {
-    name: 'Tirzepatide',
-    description:
-      'Targets both GLP-1 and GIP receptors for enhanced appetite control and superior metabolic outcomes.',
-    pricing: [
-      { label: 'One-Time', price: 'From $99' },
-      { label: '4 Weeks', price: 'From $249' },
-      { label: '12 Weeks', price: 'From $729' },
+    form: 'Weekly Syringe',
+    name: 'Zepbound® / Mounjaro®',
+    generic: 'Tirzepatide — Weekly Syringe',
+    doses: [
+      { dose: '2.5 mg', price: '$348' },
+      { dose: '5 mg', price: '$448' },
+      { dose: '7.5–10 mg', price: '$498' },
+      { dose: '12.5–15 mg', price: '$548' },
+    ],
+  },
+  {
+    form: 'Daily Pill',
+    name: 'Wegovy®',
+    generic: 'Semaglutide — Daily Pill',
+    doses: [
+      { dose: '1.5 mg', price: '$198' },
+      { dose: '4 mg', price: '$248' },
+      { dose: '9–25 mg', price: '$358' },
+    ],
+  },
+  {
+    form: 'Daily Pill',
+    name: 'Foundayo®',
+    generic: 'Orforglipron — Daily Pill',
+    doses: [
+      { dose: '0.8 mg', price: '$198' },
+      { dose: '2.5–5.5 mg', price: '$248' },
+      { dose: '9–12.5 mg', price: '$348' },
+      { dose: '14.5 / 17.2 mg', price: '$448' },
     ],
   },
 ]
@@ -284,7 +305,7 @@ export default async function MedicalWeightLossPage() {
       <ServiceSchema
         slug="medical-weight-loss"
         name="Medical Weight Loss"
-        description="Achieve sustainable weight loss with FDA-cleared GLP-1 medications — Semaglutide and Tirzepatide — under physician supervision at Slynn Wellness in Pasadena, CA. Personalized programs serving Pasadena, San Marino, Arcadia, Glendale, and the greater Los Angeles area."
+        description="Medical weight loss at Slynn Wellness in Pasadena, CA with GLP-1 programs including Ozempic, Wegovy, Zepbound, Mounjaro, and Foundayo. Every program starts with a clinic or telehealth consultation; pricing is per 4 weeks with no membership fee."
         category="Wellness"
         faqs={faqs}
         priceRange="$$$"
@@ -686,10 +707,20 @@ export default async function MedicalWeightLossPage() {
             </h2>
           </div>
 
+          {/* Pricing basis */}
+          <div style={{ ...cardStyle, padding: '1.5rem 2rem', marginBottom: '1.5rem' }}>
+            <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.9rem', fontWeight: 600, color: '#2f2b28', margin: '0 0 0.5rem' }}>
+              Prices are total prices per 4 weeks. No membership fee.
+            </p>
+            <p style={{ ...bodyStyle, fontSize: '0.85rem', margin: 0 }}>
+              Every program starts with a clinic consultation — telehealth or in clinic. Pick up your medication at the clinic, or have it shipped anywhere within California.
+            </p>
+          </div>
+
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
               gap: '1.5rem',
             }}
           >
@@ -704,26 +735,34 @@ export default async function MedicalWeightLossPage() {
                   gap: '1.5rem',
                 }}
               >
-                {/* Med name + description */}
+                {/* Form + name + generic */}
                 <div>
+                  <span style={{ ...kickerStyle, display: 'block', marginBottom: '0.6rem' }}>{med.form}</span>
                   <h3
                     style={{
                       fontFamily: 'Cormorant Garamond, serif',
                       fontWeight: 500,
                       fontSize: '1.9rem',
                       color: '#2f2b28',
-                      margin: '0 0 0.75rem',
+                      margin: '0 0 0.4rem',
                       lineHeight: 1.15,
                     }}
                   >
-                    {med.name}
+                    {/* Render ® as a small superscript, as on the printed price sheet */}
+                    {med.name.split('®').map((part, i, arr) => (
+                      <span key={i}>
+                        {part}
+                        {i < arr.length - 1 && <sup style={{ fontSize: '0.45em', verticalAlign: 'super', marginLeft: '0.05em' }}>®</sup>}
+                      </span>
+                    ))}
                   </h3>
-                  <p style={{ ...bodyStyle, fontSize: '0.78rem' }}>
-                    {med.description}
+                  <p style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.85rem', fontWeight: 500, color: '#8B6340', margin: '0 0 0.35rem' }}>
+                    {med.generic}
                   </p>
+                  <p style={{ ...bodyStyle, fontSize: '0.78rem', margin: 0 }}>Total price per 4 weeks</p>
                 </div>
 
-                {/* Pricing rows */}
+                {/* Dose table */}
                 <div
                   style={{
                     borderTop: '1px solid rgba(203,187,160,0.3)',
@@ -733,9 +772,14 @@ export default async function MedicalWeightLossPage() {
                     gap: '0.65rem',
                   }}
                 >
-                  {med.pricing.map((row) => (
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0 1rem' }}>
+                    {['Dose', 'Total price'].map((h) => (
+                      <span key={h} style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#9a8f86', fontWeight: 600 }}>{h}</span>
+                    ))}
+                  </div>
+                  {med.doses.map((row) => (
                     <div
-                      key={row.label}
+                      key={row.dose}
                       style={{
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -746,26 +790,10 @@ export default async function MedicalWeightLossPage() {
                         border: '1px solid rgba(203,187,160,0.25)',
                       }}
                     >
-                      <span
-                        style={{
-                          fontFamily: 'Montserrat, sans-serif',
-                          fontSize: '0.7rem',
-                          letterSpacing: '0.1em',
-                          textTransform: 'uppercase',
-                          color: '#5a534d',
-                          fontWeight: 500,
-                        }}
-                      >
-                        {row.label}
+                      <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.8rem', color: '#5a534d', fontWeight: 500 }}>
+                        {row.dose}
                       </span>
-                      <span
-                        style={{
-                          fontFamily: 'Cormorant Garamond, serif',
-                          fontWeight: 600,
-                          fontSize: '1.15rem',
-                          color: '#2f2b28',
-                        }}
-                      >
+                      <span style={{ fontFamily: 'Cormorant Garamond, serif', fontWeight: 600, fontSize: '1.15rem', color: '#2f2b28' }}>
                         {row.price}
                       </span>
                     </div>
@@ -777,7 +805,7 @@ export default async function MedicalWeightLossPage() {
                   href="/book"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ ...ctaButtonStyle, width: '100%', boxSizing: 'border-box' as const }}
+                  style={{ ...ctaButtonStyle, width: '100%', boxSizing: 'border-box' as const, marginTop: 'auto' }}
                 >
                   Book Consultation
                 </a>

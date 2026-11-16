@@ -359,30 +359,57 @@ export default async function JUVEDERMPage() {
               Pricing
             </h2>
             <p className="text-sm lg:max-w-sm" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', margin: 0 }}>
-              Pricing varies based on the area treated and amount of product used. A consultation will determine the right plan for your goals.
+              Prices include the syringes listed for each area. Additional syringes are available if more volume is needed, and a consultation will determine the right plan for your goals.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              { area: 'Lips', price: '$459', note: 'Per area' },
-              { area: 'Face', price: '$399 – $899', note: 'Per area' },
-              { area: 'Cheeks', price: '$699 – $1,299', note: 'Per area' },
-            ].map((item) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {([
+              { area: 'Mini Lip', price: '$349', note: 'Includes 1 × 0.55 mL factory-sealed syringe — a subtle, natural enhancement' },
+              { area: 'Lips (Full)', price: '$549', note: 'Includes 1 × 1 mL syringe' },
+              { area: 'Smile Lines / Nasolabial Folds', price: '$549', note: 'Includes 1 syringe' },
+              { area: 'Marionette Lines', price: '$549', note: 'Includes 1 syringe' },
+              { area: 'Chin Enhancement', price: '$649', note: 'Includes 1 syringe' },
+              { area: 'Under Eyes / Tear Trough', price: '$749', note: 'Includes 1 syringe' },
+              { area: 'Cheeks', price: '$1,199', from: true, note: 'Includes 2 syringes' },
+              { area: 'Jawline Definition', price: '$1,199', from: true, note: 'Includes 2 syringes' },
+              { area: 'Full Facial Balancing', price: '$1,999', from: true, note: 'Includes 4 syringes — a complete, harmonized plan across multiple areas', highlight: true },
+            ] as { area: string; price: string; note: string; from?: boolean; highlight?: boolean }[]).map((item) => (
               <div
                 key={item.area}
-                className="rounded-2xl px-5 py-3"
-                style={{ background: 'rgba(255,250,245,0.85)', border: '1px solid rgba(233,221,209,0.9)', boxShadow: '0 10px 30px rgba(90,66,44,0.06)' }}
+                className="rounded-2xl p-5 flex flex-col"
+                style={{
+                  background: item.highlight ? 'rgba(212,175,55,0.10)' : 'rgba(255,250,245,0.85)',
+                  border: item.highlight ? '1px solid rgba(212,175,55,0.4)' : '1px solid rgba(233,221,209,0.9)',
+                  boxShadow: '0 10px 30px rgba(90,66,44,0.06)',
+                }}
               >
-                <div className="flex items-center justify-between w-full gap-4">
-                  <h3 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem', margin: 0 }}>{item.area}</h3>
-                  <div className="flex flex-col items-end">
-                    <span className="font-semibold" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem', color: '#D4AF37' }}>{item.price}</span>
-                    <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#B8A99A' }}>{item.note}</span>
-                  </div>
-                </div>
+                {/* Title slot reserves two lines so prices align across each row */}
+                <h3 className="font-light" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.2rem', margin: '0 0 4px', minHeight: '2.6em', lineHeight: 1.3 }}>{item.area}</h3>
+                <span
+                  className="text-xs font-semibold tracking-widest uppercase"
+                  style={{ fontFamily: 'Montserrat, sans-serif', color: '#8B6340', visibility: item.from ? 'visible' : 'hidden' }}
+                  aria-hidden={!item.from}
+                >
+                  From
+                </span>
+                <span className="font-semibold mb-3" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.6rem', color: '#D4AF37' }}>{item.price}</span>
+                <div className="w-full h-px mb-3 mt-auto" style={{ background: item.highlight ? 'rgba(212,175,55,0.35)' : 'rgba(233,221,209,0.9)' }} />
+                {/* Note slot reserves two lines so the divider above it sits at the same height in every card */}
+                <span className="text-xs leading-relaxed block" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66', minHeight: '3.25em' }}>{item.note}</span>
               </div>
             ))}
+          </div>
+
+          {/* Add-on syringes */}
+          <div
+            className="mt-4 rounded-2xl px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4"
+            style={{ background: 'rgba(255,255,255,0.72)', border: '1px solid rgba(233,221,209,0.9)' }}
+          >
+            <strong className="text-sm flex-shrink-0" style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.05rem', color: '#2C2C2C' }}>Need more volume?</strong>
+            <span className="text-xs" style={{ fontFamily: 'Montserrat, sans-serif', color: '#7a6f66' }}>
+              Additional syringe beyond what&apos;s included: <strong style={{ color: '#D4AF37' }}>$499</strong> (standard formulas) · <strong style={{ color: '#D4AF37' }}>$599</strong> (Voluma / Volux)
+            </span>
           </div>
         </div>
       </section>
