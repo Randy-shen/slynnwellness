@@ -158,9 +158,9 @@ const steps = [
 // Prices are totals per 4 weeks (no membership fee). Keep in sync with the printed price sheet.
 const medications = [
   {
-    form: 'Weekly Syringe',
+    form: '',
     name: 'Ozempic® / Wegovy®',
-    generic: 'Semaglutide — Weekly Syringe',
+    generic: 'Semaglutide',
     doses: [
       { dose: '0.25–0.5 mg', price: '$248' },
       { dose: '1.0–2.4 mg', price: '$398' },
@@ -168,9 +168,9 @@ const medications = [
     ],
   },
   {
-    form: 'Weekly Syringe',
+    form: '',
     name: 'Zepbound® / Mounjaro®',
-    generic: 'Tirzepatide — Weekly Syringe',
+    generic: 'Tirzepatide',
     doses: [
       { dose: '2.5 mg', price: '$348' },
       { dose: '5 mg', price: '$448' },
@@ -737,7 +737,9 @@ export default async function MedicalWeightLossPage() {
               >
                 {/* Form + name + generic */}
                 <div>
-                  <span style={{ ...kickerStyle, display: 'block', marginBottom: '0.6rem' }}>{med.form}</span>
+                  {med.form && (
+                    <span style={{ ...kickerStyle, display: 'block', marginBottom: '0.6rem' }}>{med.form}</span>
+                  )}
                   <h3
                     style={{
                       fontFamily: 'Cormorant Garamond, serif',
